@@ -1,0 +1,14 @@
+.DS_Store
+
+# Material de trabajo local (respaldos de Moodle, fuentes y páginas no publicadas)
+/LOCAL/
+
+# Instrucciones de trabajo, no forman parte de la página
+CLAUDE.md
+
+# Python
+__pycache__/
+.venv/
+
+# PDFs
+*.pdf
