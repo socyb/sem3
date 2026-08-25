@@ -298,3 +298,38 @@ td b{color:var(--ink)}
   .alto-limite img{max-height:12cm}
   @page{size:landscape;margin:0}
 }
+
+/* ── La lista de los 50 de The Atlantic ─────────────────────────────────── */
+.lista50{
+  columns:4; column-gap:clamp(1rem,2.4vw,2.2rem); margin:1rem 0 0;
+  padding:0; list-style:none; font-size:clamp(.68rem,1.02vw,.86rem);
+}
+.lista50 li{
+  break-inside:avoid; padding:.16rem 0; line-height:1.32; color:var(--ink-soft);
+}
+.lista50 li b{
+  display:inline-block; min-width:1.9em; font-family:var(--mono);
+  font-weight:500; color:var(--guinda);
+}
+.lista50 li i{font-style:normal;color:var(--muted)}
+.lista50 li.marcado{color:var(--ink);font-weight:700}
+.lista50 li.marcado b{color:var(--cobalt)}
+@media (max-width:1200px){.lista50{columns:3}}
+@media (max-width:860px){.lista50{columns:2}}
+@media (max-width:560px){.lista50{columns:1}}
+@media print{.lista50{columns:3}}
+
+/* Bloque de tiempos de una actividad */
+.tiempos{list-style:none;margin:1rem 0 0;padding:0}
+.tiempos li{
+  display:grid; grid-template-columns:5.2rem 1fr; gap:.9rem; align-items:start;
+  padding:.55rem 0; border-bottom:1px dashed var(--line);
+  font-size:clamp(.9rem,1.35vw,1.12rem); line-height:1.42; color:var(--ink-soft);
+}
+.tiempos li:last-child{border-bottom:0}
+.tiempos li b{
+  font-family:var(--mono); font-weight:500; font-size:clamp(.76rem,1.1vw,.9rem);
+  color:var(--guinda); letter-spacing:.04em; padding-top:.15rem;
+}
+.tiempos li span strong{color:var(--ink)}
+@media (max-width:560px){.tiempos li{grid-template-columns:1fr;gap:.15rem}}
