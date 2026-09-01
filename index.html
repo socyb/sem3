@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#c1123f">
-  <meta name="description" content="Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · Semestre 2027-1. Página del curso: la sesión de hoy, la ruta del semestre y cómo se evalúa.">
+  <meta name="description" content="Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · Semestre 2027-1. La sesión de hoy, la bitácora de las sesiones anteriores, la ruta del semestre y cómo se evalúa.">
   <meta property="og:title" content="Seminario de Negocios Internacionales III · FCA UNAM · 2027-1">
   <meta property="og:description" content="Página del seminario: la sesión de hoy, la ruta del semestre y cómo se evalúa.">
   <meta property="og:type" content="website">
@@ -36,7 +36,6 @@
     </a>
     <nav class="topnav" aria-label="Secciones del curso">
       <a href="#sesion-actual">Hoy</a>
-      <a href="#sesiones">Sesiones</a>
       <a href="#ruta">Ruta</a>
       <a href="#evaluacion">Evaluación</a>
       <a href="#profesor">Profesor</a>
@@ -75,7 +74,7 @@
         <p class="hero-meta"><a href="#profesor"><b>Dr. Jorge Cardiel Herrera</b></a> · Facultad de Contaduría y Administración, UNAM<br>Martes en C-102 · 16:00—19:00</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#sesion-actual">Empieza por tu radar →</a>
+          <a class="btn btn-primary" href="#sesion-actual">Lo de hoy: ciberseguridad →</a>
           <a class="btn btn-ghost" href="#ruta">Ver la ruta del semestre</a>
         </div>
 
@@ -103,379 +102,303 @@
   <section class="nowbar" aria-label="Información de hoy">
     <div class="nowbar-inner">
       <p class="nowbar-item"><span><i class="live-dot" aria-hidden="true"></i>Hoy</span><strong id="todayDate">—</strong></p>
-      <p class="nowbar-item"><span>Sesión</span><strong id="activeSession">—</strong></p>
-      <p class="nowbar-item"><span>Trae contigo</span><strong>Un objeto que uses todos los días y algo para escribir</strong></p>
+      <p class="nowbar-item"><span id="activeWhen">Sesión</span><strong id="activeSession">—</strong></p>
+      <p class="nowbar-item"><span>Trae contigo</span><strong id="todayBring">—</strong></p>
     </div>
   </section>
 
-  <!-- ═══════════════════ SESIÓN 01 · MESA DE INNOVACIONES ═══════════════ -->
+  <!-- ═════════════════ BITÁCORA · LA LÍNEA DEL SEMINARIO ════════════════ -->
   <section class="section" id="sesion-actual">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">Sesión 01 · Martes 18 de agosto · Salón C-102</p>
-        <h2>Mesa de innovaciones</h2>
-        <p class="lead">Antes de discutir qué tecnología conviene a una empresa, conviene saber desde dónde la estamos mirando. Hoy nos conocemos: cada quien arma su radar de innovación —quién eres, qué tecnología te mueve, en qué sector la ves, de dónde sacas lo que sabes y a dónde quieres llegar— y con todos los radares trazamos el mapa del grupo.</p>
-        <p style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem">
-          <span class="pill">🛰 45—60 min</span>
-          <span class="pill pill-blue">Todo el grupo</span>
-          <span class="pill pill-teal">Sin preparación previa</span>
-        </p>
-      </div>
-
-      <!-- Radar interactivo -->
-      <div class="sphere-wrap">
-        <div class="sphere" id="sphere">
-          <svg class="sphere-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true">
-            <circle cx="100" cy="100" r="96" stroke-width="1.2"/>
-            <circle cx="100" cy="100" r="62" stroke-width=".8" stroke-dasharray="3 5"/>
-            <path stroke-width=".5" opacity=".5" d="M43.1 25.1L89.0 11.9M43.1 25.1L49.6 46.5M43.1 25.1L13.0 67.0M138.1 25.1L132.6 10.9M138.1 25.1L89.0 11.9M138.1 25.1L105.4 46.5M138.1 25.1L176.0 45.0M138.1 25.1L159.2 67.0M156.9 174.9L123.2 189.1M156.9 174.9L170.2 155.0M82.6 176.6L72.8 135.6M82.6 176.6L36.2 156.0M82.6 176.6L67.4 189.1M82.6 176.6L123.2 189.1M82.6 176.6L126.6 156.0M71.1 84.0L105.4 46.5M71.1 84.0L49.6 46.5M71.1 84.0L29.4 101.6M71.1 84.0L72.8 135.6M71.1 84.0L119.8 101.6M162.5 118.7L159.2 67.0M162.5 118.7L119.8 101.6M162.5 118.7L126.6 156.0M162.5 118.7L170.2 155.0M162.5 118.7L190.4 100.0M191.2 81.3L190.4 100.0M8.8 118.7L29.4 101.6M8.8 118.7L13.0 67.0M8.8 118.7L24.0 155.0M8.8 118.7L36.2 156.0M76.8 10.9L89.0 11.9M132.6 10.9L89.0 11.9M132.6 10.9L176.0 45.0M89.0 11.9L105.4 46.5M89.0 11.9L49.6 46.5M105.4 46.5L49.6 46.5M105.4 46.5L159.2 67.0M105.4 46.5L119.8 101.6M49.6 46.5L29.4 101.6M49.6 46.5L13.0 67.0M29.4 101.6L13.0 67.0M29.4 101.6L72.8 135.6M29.4 101.6L36.2 156.0M176.0 45.0L159.2 67.0M176.0 45.0L190.4 100.0M24.0 155.0L36.2 156.0M72.8 135.6L36.2 156.0M72.8 135.6L119.8 101.6M72.8 135.6L126.6 156.0M36.2 156.0L67.4 189.1M159.2 67.0L119.8 101.6M159.2 67.0L190.4 100.0M119.8 101.6L126.6 156.0M187.0 133.0L170.2 155.0M187.0 133.0L190.4 100.0M67.4 189.1L123.2 189.1M123.2 189.1L126.6 156.0M123.2 189.1L170.2 155.0M126.6 156.0L170.2 155.0M170.2 155.0L190.4 100.0"/>
-            <path stroke-width=".9" d="M43.1 25.1L29.8 45.0M43.1 25.1L76.8 10.9M61.9 174.9L24.0 155.0M61.9 174.9L40.8 133.0M61.9 174.9L94.6 153.5M61.9 174.9L111.0 188.1M61.9 174.9L67.4 189.1M156.9 174.9L187.0 133.0M156.9 174.9L150.4 153.5M156.9 174.9L111.0 188.1M128.9 116.0L80.2 98.4M128.9 116.0L127.2 64.4M128.9 116.0L170.6 98.4M128.9 116.0L150.4 153.5M128.9 116.0L94.6 153.5M117.4 23.4L73.4 44.0M117.4 23.4L76.8 10.9M117.4 23.4L132.6 10.9M117.4 23.4L163.8 44.0M117.4 23.4L127.2 64.4M191.2 81.3L163.8 44.0M191.2 81.3L176.0 45.0M191.2 81.3L187.0 133.0M191.2 81.3L170.6 98.4M8.8 118.7L9.6 100.0M37.5 81.3L29.8 45.0M37.5 81.3L73.4 44.0M37.5 81.3L9.6 100.0M37.5 81.3L80.2 98.4M37.5 81.3L40.8 133.0M29.8 45.0L73.4 44.0M29.8 45.0L76.8 10.9M29.8 45.0L13.0 67.0M29.8 45.0L9.6 100.0M73.4 44.0L76.8 10.9M73.4 44.0L80.2 98.4M73.4 44.0L127.2 64.4M76.8 10.9L132.6 10.9M132.6 10.9L163.8 44.0M13.0 67.0L9.6 100.0M9.6 100.0L24.0 155.0M9.6 100.0L40.8 133.0M163.8 44.0L176.0 45.0M163.8 44.0L127.2 64.4M163.8 44.0L170.6 98.4M80.2 98.4L127.2 64.4M80.2 98.4L40.8 133.0M80.2 98.4L94.6 153.5M127.2 64.4L170.6 98.4M24.0 155.0L40.8 133.0M24.0 155.0L67.4 189.1M40.8 133.0L94.6 153.5M187.0 133.0L170.6 98.4M187.0 133.0L150.4 153.5M170.6 98.4L150.4 153.5M150.4 153.5L94.6 153.5M150.4 153.5L111.0 188.1M94.6 153.5L111.0 188.1M111.0 188.1L67.4 189.1M111.0 188.1L123.2 189.1"/>
-          </svg>
-
-          <button class="sphere-node node-a" type="button" data-node="a" aria-pressed="true">
-            <span class="node-tag">01</span><span class="node-name">Quién</span>
-          </button>
-          <button class="sphere-node node-b" type="button" data-node="b" aria-pressed="false">
-            <span class="node-tag">02</span><span class="node-name">Qué</span>
-          </button>
-          <button class="sphere-node node-c" type="button" data-node="c" aria-pressed="false">
-            <span class="node-tag">03</span><span class="node-name">Dónde</span>
-          </button>
-          <button class="sphere-node node-d" type="button" data-node="d" aria-pressed="false">
-            <span class="node-tag">04</span><span class="node-name">Cómo</span>
-          </button>
-          <button class="sphere-hub" type="button" data-node="e" aria-pressed="false">
-            <small>Centro</small><strong>Para qué</strong>
-          </button>
-        </div>
-
-        <div class="sphere-detail" id="sphereDetail" aria-live="polite">
-          <p class="kicker" id="cdKicker">01 · Quién</p>
-          <p class="cd-q" id="cdQuestion">¿Cómo te llamas y qué estudias?</p>
-          <p class="cd-hint" id="cdHint">Tu nombre, tu carrera y el semestre en el que vas. Si trabajas o haces prácticas, cuéntalo: ahí ya estás viendo tecnología de cerca.</p>
-          <ul class="cd-eg" id="cdExamples"></ul>
-        </div>
-      </div>
-
-      <!-- Las cinco respuestas -->
-      <div class="section-head" style="margin-top:1rem">
-        <p class="kicker k-blue">Lo que vas a decir en voz alta</p>
-        <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Tus cinco respuestas</h2>
-        <p class="lead">Ninguna respuesta es demasiado sencilla. Contesta con lo que de verdad te pasa por la cabeza, no con lo que suene académico.</p>
-      </div>
-
-      <div class="qgrid" style="margin-bottom:3rem">
-        <article class="qcard">
-          <span class="qn">01</span>
-          <h3>¿Cómo te llamas y qué estudias?</h3>
-          <p>Nombre, carrera, semestre. Y si trabajas o haces prácticas, dilo.</p>
-          <span class="eg">Ej. «Soy Ana, Negocios Internacionales, séptimo semestre, hago prácticas en compras.»</span>
-        </article>
-        <article class="qcard">
-          <span class="qn">02</span>
-          <h3>¿Qué tecnología o innovación te interesa hoy y por qué?</h3>
-          <p>Una sola, no cinco. La que te da curiosidad, entusiasmo o desconfianza.</p>
-          <span class="eg">Ej. inteligencia artificial · pagos digitales · autos eléctricos · biotecnología · drones · energía solar</span>
-        </article>
-        <article class="qcard">
-          <span class="qn">03</span>
-          <h3>¿Qué industria o sector sigues más?</h3>
-          <p>Donde quieres trabajar, donde trabaja tu familia o el que te tocó en las prácticas.</p>
-          <span class="eg">Ej. automotriz · farmacéutica · logística · agroindustria · banca · comercio electrónico</span>
-        </article>
-        <article class="qcard">
-          <span class="qn">04</span>
-          <h3>¿De dónde sacas lo que sabes de tecnología?</h3>
-          <p>Tus fuentes y también tu tiempo libre: series, libros, música, deportes, videojuegos.</p>
-          <span class="eg">Ej. TikTok · YouTube · pódcast · prensa · clases · trabajo · familia</span>
-        </article>
-        <article class="qcard">
-          <span class="qn">05</span>
-          <h3>¿Qué te gustaría poder hacer mejor al terminar el seminario?</h3>
-          <p>Una habilidad concreta. Es la que vamos a entrenar contigo durante el semestre.</p>
-          <span class="eg">Ej. evaluar una tecnología · escribir un informe · leer un indicador · defender una recomendación</span>
-        </article>
-      </div>
-
-      <!-- El objeto que traes -->
-      <div class="grid-2" style="margin-bottom:3rem">
-        <article class="card" style="background:var(--tint-red)">
-          <span class="pill">Segunda ronda</span>
-          <h3 style="margin-top:.9rem">El objeto que usas todos los días</h3>
-          <p>Saca de la mochila, del bolsillo o de la cabeza algo que uses a diario: el celular, los audífonos, una app de transporte, la terminal de pago del trabajo, un medicamento, una bicicleta. Al contarlo, intenta responder cuatro cosas:</p>
-          <ul style="padding-left:1.15rem;margin:0">
-            <li><strong>¿De qué está hecho?</strong> Materiales, energía, datos, software, personas.</li>
-            <li><strong>¿Quién lo hizo?</strong> Empresas, universidades, gobiernos, comunidades.</li>
-            <li><strong>¿Qué cambió cuando llegó?</strong> En tu vida, en un trabajo, en una ciudad.</li>
-            <li><strong>¿Quién gana y quién pierde con él?</strong> Casi nunca es la misma gente.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill pill-plum">Sin miedo</span>
-          <h3 style="margin-top:.9rem">Este es el punto de partida</h3>
-          <p>No se trata de demostrar que ya sabes de patentes, chips o inteligencia artificial, sino de mostrar por dónde entras al tema.</p>
-          <p>Un video de TikTok cuenta aquí igual que un informe de la OCDE. Lo que vamos a discutir es precisamente eso: <strong>qué te llega, cómo te llega y qué se queda fuera.</strong></p>
-          <p style="margin-bottom:0">Si de plano no se te ocurre ningún objeto, cuenta la última vez que una tecnología te hizo enojar. También sirve.</p>
-        </article>
-      </div>
-
-      <!-- Producto vs proceso -->
-      <div class="section-head">
-        <p class="kicker k-amber">El primer concepto del seminario</p>
-        <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Dos maneras de mirar la misma innovación</h2>
-        <p class="lead">Conforme vayan saliendo los objetos, los vamos a ir clasificando. No para etiquetar, sino para que veas que una misma innovación cambia de forma según el lente que le pongas.</p>
-      </div>
-
-      <div class="contrast" style="margin-bottom:3rem">
-        <article class="is-classic">
-          <span class="pill pill-blue">Lente 1</span>
-          <h3>La innovación como producto</h3>
-          <p style="font-size:.95rem;color:var(--ink-soft)">Mira la cosa: qué hace, cuánto cuesta, quién la vende.</p>
-          <ul>
-            <li>Novedad técnica y desempeño</li>
-            <li>Patentes, marcas y propiedad intelectual</li>
-            <li>Cuota de mercado y ventaja competitiva</li>
-            <li>Inversión en investigación y desarrollo</li>
-          </ul>
-        </article>
-        <article class="is-critical">
-          <span class="pill pill-amber">Lente 2</span>
-          <h3>La innovación como proceso social</h3>
-          <p style="font-size:.95rem;color:var(--ink-soft)">Mira la red: quién decide, quién trabaja, quién paga la cuenta.</p>
-          <ul>
-            <li>Organización del trabajo y cultura de empresa</li>
-            <li>Políticas públicas, regulación y financiamiento</li>
-            <li>Materiales, energía y efectos ambientales</li>
-            <li>Quién queda dentro y quién queda fuera</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- Cómo transcurre -->
-      <div class="grid-2" style="align-items:start;margin-bottom:3rem">
-        <div class="sticky-col">
-          <p class="kicker k-teal">Cómo transcurre</p>
-          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Cuatro momentos</h2>
-          <p class="lead" style="margin-bottom:1.4rem">Se forman 8 equipos de trabajo para trabajar en los diferentes aspectos del tema. Cada equipo elige un expositor que presentará a todos y hará un resumen de lo comentado.</p>
-          <p style="display:flex;flex-wrap:wrap;gap:.5rem;margin:0">
-            <span class="pill pill-teal">Sin diapositivas</span>
-            <span class="pill pill-plum">Sin entregable</span>
-          </p>
-        </div>
-        <ol class="steps">
-          <li>
-            <div>
-              <h3>El profesor abre</h3>
-              <p>Comparte primero su propio radar: qué tecnología le preocupa hoy, con qué lente trabaja y qué espera de este grupo.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Ronda de radares</h3>
-              <p>Cada quien responde las cinco preguntas. Breve: alrededor de un minuto por persona.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Los objetos sobre la mesa</h3>
-              <p>Cuentas el objeto que usas a diario y entre todos identificamos de qué está hecho, quién lo produce y a quién beneficia.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>El mapa del grupo</h3>
-              <p>Cerramos agrupando lo que salió: tecnologías dominantes, sectores y lentes. Ese mapa se queda como referencia y volveremos a él durante el semestre.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ CONSTRUCTOR DE RADAR ═══════════════════════ -->
-  <section class="section section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker k-plum">Herramienta</p>
-        <h2>Arma tu radar</h2>
-        <p class="lead">Escribe aquí tus respuestas y tendrás tu radar listo para leerlo en clase. Se guarda solo en este dispositivo: nadie más lo ve, y puedes copiarlo o imprimirlo cuando quieras.</p>
-      </div>
-
-      <div class="builder">
-        <form class="fields" id="builderForm" autocomplete="off">
-          <div class="field">
-            <label for="fName">Tu nombre <b>·</b> 01 — Quién</label>
-            <input id="fName" type="text" maxlength="60" placeholder="Nombre y carrera">
-          </div>
-          <div class="field">
-            <label for="fTech">02 — Qué · ¿Qué tecnología o innovación te mueve hoy?</label>
-            <input id="fTech" type="text" maxlength="120" placeholder="Ej. la inteligencia artificial en los procesos de compra">
-          </div>
-          <div class="field">
-            <label for="fSector">03 — Dónde · ¿Qué industria o sector sigues?</label>
-            <input id="fSector" type="text" maxlength="120" placeholder="Ej. la industria automotriz del Bajío">
-          </div>
-          <div class="field">
-            <label for="fSources">04 — Cómo · ¿De dónde sacas lo que sabes de tecnología?</label>
-            <input id="fSources" type="text" maxlength="120" placeholder="Ej. YouTube, pódcast y lo que se comenta en el trabajo">
-          </div>
-          <div class="field">
-            <label for="fGoal">Centro — Para qué · ¿Qué quieres poder hacer al terminar el seminario?</label>
-            <input id="fGoal" type="text" maxlength="120" placeholder="Ej. sustentar con evidencia si a una empresa le conviene una tecnología">
-          </div>
-          <div class="field">
-            <label for="fDevice">El objeto que usas todos los días</label>
-            <textarea id="fDevice" rows="3" maxlength="400" placeholder="Qué es, de qué está hecho, quién lo produce y qué cambió cuando llegó."></textarea>
-          </div>
-
-          <div class="builder-actions">
-            <button class="btn btn-primary" id="copyBtn" type="button">Copiar mi radar</button>
-            <button class="btn btn-small" id="printCardBtn" type="button">Imprimir</button>
-            <button class="btn btn-small" id="clearBtn" type="button">Borrar</button>
-            <p class="builder-note">Lo que escribas se guarda automáticamente en tu navegador.</p>
-          </div>
-        </form>
-
-        <article class="rcard" id="rcard">
-          <div class="rcard-head">
-            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.4"/>
-              <ellipse cx="16" cy="16" rx="5.8" ry="14" stroke="currentColor" stroke-width="1.1"/>
-              <path d="M2 16h28M5 8.6h22M5 23.4h22" stroke="currentColor" stroke-width="1.1"/>
-            </svg>
-            <strong>Mi radar de innovación</strong>
-            <span>2027-1</span>
-          </div>
-          <div class="rcard-body">
-            <p class="rcard-name" id="rcName"></p>
-            <dl class="rcard-grid">
-              <div><dt>02 · Tecnología</dt><dd id="rcTech"></dd></div>
-              <div><dt>03 · Sector</dt><dd id="rcSector"></dd></div>
-              <div><dt>04 · Fuentes</dt><dd id="rcSources"></dd></div>
-              <div><dt>Centro · Rumbo</dt><dd id="rcGoal"></dd></div>
-              <div><dt>Objeto</dt><dd id="rcDevice"></dd></div>
-            </dl>
-          </div>
-          <p class="rcard-foot">Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ DESPUÉS DE LA SESIÓN ═══════════════════════ -->
-  <section class="section">
-    <div class="wrap">
-      <a class="card" href="carta_grupo.html" target="_blank" rel="noopener"
-         style="display:block;margin-bottom:2rem;border-color:var(--guinda);color:inherit;text-decoration:none">
-        <span class="pill">Ya está lista</span>
-        <h3 style="margin-top:.9rem">El radar del grupo</h3>
-        <p>Los treinta y nueve radares que subieron al foro, encimados en un solo mapa: qué tecnología nos mueve, qué sector seguimos, de dónde sacamos lo que sabemos, para qué estamos aquí y qué objeto traemos todos los días. Búscate adentro —y fíjate en el punto ciego que salió.</p>
-        <p style="margin-bottom:0"><strong>Abrir el mapa →</strong></p>
-      </a>
-
-      <a class="card" href="presentacion_s02.html" target="_blank" rel="noopener"
-         style="display:block;margin-bottom:2rem;border-color:var(--cobalt);color:inherit;text-decoration:none">
-        <span class="pill pill-blue">Sesión 02 · Martes 25 de agosto</span>
-        <h3 style="margin-top:.9rem">Nadie inventó la radio</h3>
-        <p>La presentación de hoy: qué cuenta como innovación según el Manual de Oslo, y por qué el auto eléctrico, el smartphone, la inteligencia artificial y la radio no tienen ni un solo inventor ni una sola fecha. Trae la lista de los 50 avances de <em>The Atlantic</em> para descargar, y queda publicada para que la repases desde el teléfono.</p>
-        <p style="margin-bottom:0"><strong>Abrir la presentación →</strong></p>
-      </a>
-
-      <div class="grid-2" style="align-items:start">
-        <article class="card" style="background:var(--tint-amber)">
-          <span class="pill pill-amber">Para el martes 25 de agosto</span>
-          <h3 style="margin-top:.9rem">Primera lectura y control de lectura</h3>
-          <p>En Moodle está la <strong>Actividad 1</strong> con la primera lectura del seminario: los capítulos 2 y 3 del <em>Manual de Oslo</em> (OCDE, 2018), que es el manual con el que se mide oficialmente la innovación en el mundo.</p>
-          <ol style="padding-left:1.2rem;margin:0 0 1rem">
-            <li><strong>Lee</strong> los dos capítulos con calma.</li>
-            <li><strong>Escribe</strong> un control de lectura de al menos una página (unas 300 palabras).</li>
-            <li><strong>Incluye</strong> una cita o definición del texto y explica por qué te pareció relevante. Formato APA 7.</li>
-            <li><strong>Clasifica</strong> el objeto que llevaste a clase según la taxonomía del manual: ¿es innovación de producto o de proceso? Justifícalo en dos líneas.</li>
-          </ol>
-          <p style="margin-bottom:0"><strong>Entrega:</strong> archivo PDF en Moodle, antes de que empiece la sesión.</p>
-        </article>
-
-        <div>
-          <p class="kicker k-teal">Al final de la sesión</p>
-          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Qué nos llevamos</h2>
-          <div class="grid-3" style="margin-top:1.2rem;grid-template-columns:1fr">
-            <article class="card" style="box-shadow:var(--shadow-xs)">
-              <h3 style="font-size:1.05rem">Nos conocemos</h3>
-              <p style="margin:0;font-size:.9rem;color:var(--ink-soft)">Sabemos quién sigue qué sector, quién viene de dónde y con quién conviene trabajar cuando formemos los equipos.</p>
-            </article>
-            <article class="card" style="box-shadow:var(--shadow-xs)">
-              <h3 style="font-size:1.05rem">Un mapa colectivo</h3>
-              <p style="margin:0;font-size:.9rem;color:var(--ink-soft)">Las tecnologías y los sectores que salgan hoy se vuelven los ejemplos a los que volvemos durante el semestre.</p>
-            </article>
-            <article class="card" style="box-shadow:var(--shadow-xs)">
-              <h3 style="font-size:1.05rem">Un primer concepto</h3>
-              <p style="margin:0;font-size:.9rem;color:var(--ink-soft)">La distinción entre innovación como producto y como proceso social, aplicada ya a objetos reales traídos por el grupo.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ ROMPEHIELOS ════════════════════════════ -->
-  <section class="section section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker k-blue">Por si te trabas</p>
-        <h2>Preguntas para romper el hielo</h2>
-        <p class="lead">Si en la ronda no sabes por dónde empezar, toma cualquiera de estas y responde esa. Todas llevan al mismo lugar.</p>
-      </div>
-
-      <div class="qgrid">
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>¿Qué tecnología no te gustaría perder?</h3>
-          <p>Si mañana desapareciera, ¿cuál te haría más falta y por qué? Puede ser tan pequeña como el agua caliente.</p>
-        </article>
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>¿Qué palabra asocias con «innovación»?</h3>
-          <p>Progreso, negocio, startup, patente, desperdicio, futuro, moda. La primera que se te venga.</p>
-        </article>
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>¿Qué tecnología te da desconfianza?</h3>
-          <p>Elige una y di en una frase qué es lo que no te termina de cuadrar.</p>
-        </article>
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>¿Qué se hace hoy en tu casa distinto que hace diez años?</h3>
-          <p>Pagos, compras, trabajo, escuela, salud, entretenimiento. Algo cambió, y algo lo hizo cambiar.</p>
-        </article>
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>¿Qué crees que no conoces?</h3>
-          <p>¿Cuál es tu punto ciego sobre el mundo de la tecnología y los negocios?</p>
-        </article>
-        <article class="qcard">
-          <span class="qn">?</span>
-          <h3>Si trabajaras en una empresa global…</h3>
-          <p>¿Qué pregunta te gustaría poder responder cuando alguien proponga «vamos a implementar esta tecnología»?</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="band" aria-hidden="true"></div>
-
-  <!-- ══════════════════════════ SESIONES ════════════════════════════════ -->
-  <section class="section" id="sesiones">
     <div class="wrap">
       <div class="head-row">
         <div class="section-head">
           <p class="kicker">Bitácora del seminario</p>
-          <h2>Nuestras sesiones</h2>
-          <p class="lead">Lo que hemos trabajado hasta hoy, en orden.</p>
+          <h2>Dónde vamos</h2>
+          <p class="lead">Arriba está lo que toca ahora. Toca cualquier parada de la línea para volver a una sesión anterior: nada se borra, todo sigue aquí.</p>
         </div>
         <p class="mono muted" style="margin:0" id="sessionCount"></p>
       </div>
-      <div class="archive" id="archiveList"></div>
+
+      <div class="timeline" id="timeline">
+        <div class="tl-track" id="tlTrack" role="tablist" aria-label="Sesiones del seminario"></div>
+      </div>
+
+      <!-- ─────────────────── SESIÓN 03 · CON INVITADO ─────────────────── -->
+      <div class="session-panel" id="panel-3" data-sesion="3" role="tabpanel" aria-labelledby="tab-3" tabindex="-1" hidden>
+        <div class="section-head">
+          <p class="kicker">Sesión 03 · Martes 1 de septiembre · Salón C-102</p>
+          <h2>Ciberseguridad: cuando la tecnología falla</h2>
+          <p class="lead">Llevamos dos sesiones preguntando quién decide una innovación y quién la paga. Hoy viene alguien que aparece cuando esa innovación se rompe: el <strong>Ing. Juan Esteban Castellanos</strong>, director del centro de operaciones de seguridad de Intelligent Networks. Trae las dos mitades del asunto: el panorama —cuánto cuesta una brecha, dónde está parado México— y el oficio, que es cómo se ve por dentro el trabajo de defender una empresa.</p>
+          <p style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem">
+            <span class="pill">🛡 Sesión con invitado</span>
+            <span class="pill pill-blue">16:00—19:00</span>
+          </p>
+        </div>
+
+        <!-- Quién viene -->
+        <article class="guest" style="margin-bottom:2.4rem">
+          <div class="guest-side">
+            <figure class="guest-avatar">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema de la sesión: un escudo sobre una retícula de radar">
+                <rect width="120" height="120" fill="#122234"/>
+                <g fill="none" stroke="#4a7fd4" stroke-width="1" opacity=".45">
+                  <circle cx="60" cy="60" r="52"/><circle cx="60" cy="60" r="38"/><circle cx="60" cy="60" r="24"/>
+                  <path d="M8 60h104M60 8v104M23 23l74 74M97 23l-74 74"/>
+                </g>
+                <path d="M60 24 L92 36 V64 C92 82 78 92 60 98 C42 92 28 82 28 64 V36 Z"
+                      fill="#16202c" stroke="#f6f1e6" stroke-width="3" stroke-linejoin="round"/>
+                <circle cx="60" cy="57" r="9" fill="none" stroke="#c1123f" stroke-width="4"/>
+                <rect x="44" y="57" width="32" height="24" rx="4" fill="#c1123f"/>
+                <rect x="57" y="65" width="6" height="9" rx="3" fill="#16202c"/>
+                <g stroke="#4a7fd4" stroke-width="2" opacity=".8">
+                  <path d="M14 100h18M88 100h18M14 20h10M96 20h10"/>
+                </g>
+              </svg>
+            </figure>
+            <strong>Ing. Juan Esteban Castellanos</strong>
+            <span>Director de SOC · Intelligent Networks</span>
+            <span style="margin-top:.5rem">Ingeniería mecatrónica, UNAM<br>Maestría en ciberseguridad, La Salle</span>
+          </div>
+
+          <div class="guest-body">
+            <p class="kicker k-blue">Quién viene hoy</p>
+            <p>Dirige el <strong>SOC</strong> de Intelligent Networks: el equipo que vigila las redes de otras empresas las veinticuatro horas y entra cuando algo truena. Un centro de operaciones de seguridad es eso, gente de guardia frente a pantallas, no un programa que se instala.</p>
+            <p>Su ruta no empezó en una computadora. Empezó en campo, diseñando operaciones para Halliburton en Veracruz, Tabasco, Campeche y Tamaulipas, y calculando sistemas industriales de aire comprimido y automatización. De ahí viene lo que lo hace raro: trabaja las dos mitades del problema, la de las <strong>tecnologías de la información</strong> —correo, nube, bases de datos— y la de las <strong>tecnologías de operación</strong>, que son los PLC y los SCADA que mueven una planta. Esa segunda mitad es la que detiene una línea de producción cuando la atacan.</p>
+            <p>Antes dirigió el SOC de S2Grupo en la Ciudad de México y el equipo de respuesta a incidentes de Intelligent Networks, y trabajó en preventa de ciberseguridad en A3Sec. También da clases de Redes y creatividad y de Matemáticas creativas en el Centro de Diseño, Cine y Televisión.</p>
+
+            <ul class="guest-tags">
+              <li>Respuesta a incidentes</li>
+              <li>Hackeo ético</li>
+              <li>Ciberseguridad OT · PLC, HMI, SCADA</li>
+              <li>Gestión de vulnerabilidades</li>
+              <li>Análisis de riesgos</li>
+              <li>Manejo de crisis</li>
+              <li>Linux</li>
+            </ul>
+
+            <ol class="trayecto">
+              <li><b>2012 — 2016</b><div><strong>Ingeniero de diseño · Halliburton</strong><span>Operación en campo y coordinación de herramientas de fondo en Veracruz, Tabasco, Campeche y Tamaulipas.</span></div></li>
+              <li><b>2016 — 2017</b><div><strong>Ingeniería · ILSA</strong><span>Proyectos industriales de neumática, hidráulica y automatización en el Bajío y el área metropolitana.</span></div></li>
+              <li><b>2017 — 2023</b><div><strong>Director de ingeniería · S2Grupo</strong><span>Dirección del SOC en la Ciudad de México y consultoría para industria pública y privada en México y Centroamérica.</span></div></li>
+              <li><b>2023 — 2025</b><div><strong>Director de respuesta a incidentes · Intelligent Networks</strong><span>Dirección del CSIRT y arquitecturas de ciberseguridad para entornos industriales.</span></div></li>
+              <li><b>2025 — 2026</b><div><strong>Consultor de preventa · A3Sec</strong><span>Propuestas técnicas, pruebas de concepto y presentaciones con clientes y socios.</span></div></li>
+              <li><b>Hoy</b><div><strong>Director de SOC · Intelligent Networks</strong><span>Y profesor de licenciatura en el Centro de Diseño, Cine y Televisión.</span></div></li>
+            </ol>
+          </div>
+        </article>
+
+        <div class="section-head">
+          <p class="kicker k-blue">Para la parte de preguntas</p>
+          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Llega con una lista</h2>
+          <p class="lead">Se queda al final para quien quiera hablar de prácticas o de rutas de carrera. Si no se te ocurre nada en el momento, toma cualquiera de estas.</p>
+        </div>
+
+        <div class="qgrid" style="margin-bottom:3rem">
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Qué te hace descartar un currículum?</h3>
+            <p>Cuando entrevistas para el SOC, ¿qué buscas y qué te hace decir que no?</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Por dónde entra alguien de Negocios Internacionales?</h3>
+            <p>¿Hay carril que no pase por la consola: gobierno, riesgo de terceros, cumplimiento, crisis?</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Qué pasa en las primeras horas de una crisis?</h3>
+            <p>¿Quién decide si se paga el rescate, y con qué información sobre la mesa?</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Cuánto cambió la inteligencia artificial este oficio?</h3>
+            <p>Del lado de quien ataca y del lado de quien defiende. ¿Cuál de los dos ganó más?</p>
+          </article>
+        </div>
+
+        <article class="card" style="background:var(--tint-amber);max-width:62rem">
+          <span class="pill pill-amber">Después de la sesión</span>
+          <h3 style="margin-top:.9rem">Vuelve a tu radar</h3>
+          <p>En la sesión 01, treinta y dos de los treinta y nueve radares del grupo apuntaban a la inteligencia artificial. Hoy le apareció un costado que no estaba en ninguno: quién la ataca, quién la defiende y quién paga la cuenta cuando falla.</p>
+          <p style="margin-bottom:0">Si algo de lo de hoy te movió, escríbelo en el foro o en el glosario de Moodle. Cuenta como participación, y es el 30% de tu calificación.</p>
+        </article>
+      </div>
+
+      <!-- ─────────────── SESIÓN 02 · QUÉ CUENTA COMO INNOVACIÓN ───────── -->
+      <div class="session-panel" id="panel-2" data-sesion="2" role="tabpanel" aria-labelledby="tab-2" tabindex="-1" hidden>
+        <div class="section-head">
+          <p class="kicker k-blue">Sesión 02 · Martes 25 de agosto · Salón C-102</p>
+          <h2>¿Qué cuenta como innovación?</h2>
+          <p class="lead">Le buscamos autor a cuatro cosas que usas todos los días —el auto eléctrico, el smartphone, la inteligencia artificial y la radio— y no lo encontramos. Antes hubo que ponernos de acuerdo en qué estábamos buscando: la definición del <em>Manual de Oslo</em> y sus tres exigencias.</p>
+        </div>
+
+        <a class="link-card is-blue" href="presentacion_s02.html" target="_blank" rel="noopener">
+          <span class="pill pill-blue">La presentación</span>
+          <h3>Nadie inventó la radio</h3>
+          <p>Las cuarenta y dos láminas de la sesión, con las páginas del <em>Manual de Oslo</em> que leímos, la cadena de la radio de 1873 a 1920 y la lista de los 50 avances de <em>The Atlantic</em> para descargar.</p>
+          <p class="go">Abrir la presentación →</p>
+        </a>
+
+        <div class="section-head" style="margin-top:2.6rem">
+          <p class="kicker k-amber">El concepto que quedó</p>
+          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Dos maneras de mirar la misma innovación</h2>
+          <p class="lead">Una misma innovación cambia de forma según el lente que le pongas. Los dos lentes siguen abiertos el resto del semestre: vuelve a ellos cada vez que analices un caso.</p>
+        </div>
+
+        <div class="contrast" style="margin-bottom:3rem">
+          <article class="is-classic">
+            <span class="pill pill-blue">Lente 1</span>
+            <h3>La innovación como producto</h3>
+            <p style="font-size:.95rem;color:var(--ink-soft)">Mira la cosa: qué hace, cuánto cuesta, quién la vende.</p>
+            <ul>
+              <li>Novedad técnica y desempeño</li>
+              <li>Patentes, marcas y propiedad intelectual</li>
+              <li>Cuota de mercado y ventaja competitiva</li>
+              <li>Inversión en investigación y desarrollo</li>
+            </ul>
+          </article>
+          <article class="is-critical">
+            <span class="pill pill-amber">Lente 2</span>
+            <h3>La innovación como proceso social</h3>
+            <p style="font-size:.95rem;color:var(--ink-soft)">Mira la red: quién decide, quién trabaja, quién paga la cuenta.</p>
+            <ul>
+              <li>Organización del trabajo y cultura de empresa</li>
+              <li>Políticas públicas, regulación y financiamiento</li>
+              <li>Materiales, energía y efectos ambientales</li>
+              <li>Quién queda dentro y quién queda fuera</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card" style="background:var(--tint-amber);margin-top:1rem">
+          <span class="pill pill-amber">La lectura de esta unidad</span>
+          <h3 style="margin-top:.9rem">Manual de Oslo, capítulos 2 y 3</h3>
+          <p>En Moodle está la <strong>Actividad 1</strong>: los capítulos 2 y 3 del <em>Manual de Oslo</em> (OCDE y Eurostat, 2018), el instructivo con el que los países miden oficialmente la innovación. Cuando leas que «México innova menos que Corea», alguien aplicó este manual para poder decirlo.</p>
+          <p style="margin-bottom:0">El control de lectura pedía una página con una cita en formato APA 7 y la clasificación de tu objeto: ¿innovación de producto o de proceso? Si te falta entregarlo, sigue abierto en Moodle.</p>
+        </article>
+      </div>
+
+      <!-- ─────────────── SESIÓN 01 · MESA DE INNOVACIONES ─────────────── -->
+      <div class="session-panel" id="panel-1" data-sesion="1" role="tabpanel" aria-labelledby="tab-1" tabindex="-1" hidden>
+        <div class="section-head">
+          <p class="kicker k-plum">Sesión 01 · Martes 18 de agosto · Salón C-102</p>
+          <h2>Mesa de innovaciones</h2>
+          <p class="lead">Nos conocimos armando cada quien su radar: quién eres, qué tecnología te mueve, en qué sector la ves, de dónde sacas lo que sabes y a dónde quieres llegar. Con los treinta y nueve radares del grupo trazamos un solo mapa, y ese mapa tenía un punto ciego.</p>
+        </div>
+
+        <a class="link-card is-red" href="carta_grupo.html" target="_blank" rel="noopener">
+          <span class="pill">La devolución</span>
+          <h3>El radar del grupo</h3>
+          <p>Los treinta y nueve radares del foro encimados en un solo mapa: qué tecnología nos mueve, qué sector seguimos, de dónde sacamos lo que sabemos, para qué estamos aquí y qué objeto traemos todos los días. Búscate adentro —y fíjate en lo que casi nadie sigue.</p>
+          <p class="go">Abrir el mapa →</p>
+        </a>
+
+        <div class="section-head" style="margin-top:2.6rem">
+          <p class="kicker k-plum">Las cinco preguntas</p>
+          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Tu radar de innovación</h2>
+          <p class="lead">Toca cada punto de la esfera para volver a leer qué preguntaba. Ninguna respuesta era demasiado sencilla entonces, y sigue sin serlo.</p>
+        </div>
+
+        <!-- Radar interactivo -->
+        <div class="sphere-wrap">
+          <div class="sphere" id="sphere">
+            <svg class="sphere-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="100" cy="100" r="96" stroke-width="1.2"/>
+              <circle cx="100" cy="100" r="62" stroke-width=".8" stroke-dasharray="3 5"/>
+              <path stroke-width=".5" opacity=".5" d="M43.1 25.1L89.0 11.9M43.1 25.1L49.6 46.5M43.1 25.1L13.0 67.0M138.1 25.1L132.6 10.9M138.1 25.1L89.0 11.9M138.1 25.1L105.4 46.5M138.1 25.1L176.0 45.0M138.1 25.1L159.2 67.0M156.9 174.9L123.2 189.1M156.9 174.9L170.2 155.0M82.6 176.6L72.8 135.6M82.6 176.6L36.2 156.0M82.6 176.6L67.4 189.1M82.6 176.6L123.2 189.1M82.6 176.6L126.6 156.0M71.1 84.0L105.4 46.5M71.1 84.0L49.6 46.5M71.1 84.0L29.4 101.6M71.1 84.0L72.8 135.6M71.1 84.0L119.8 101.6M162.5 118.7L159.2 67.0M162.5 118.7L119.8 101.6M162.5 118.7L126.6 156.0M162.5 118.7L170.2 155.0M162.5 118.7L190.4 100.0M191.2 81.3L190.4 100.0M8.8 118.7L29.4 101.6M8.8 118.7L13.0 67.0M8.8 118.7L24.0 155.0M8.8 118.7L36.2 156.0M76.8 10.9L89.0 11.9M132.6 10.9L89.0 11.9M132.6 10.9L176.0 45.0M89.0 11.9L105.4 46.5M89.0 11.9L49.6 46.5M105.4 46.5L49.6 46.5M105.4 46.5L159.2 67.0M105.4 46.5L119.8 101.6M49.6 46.5L29.4 101.6M49.6 46.5L13.0 67.0M29.4 101.6L13.0 67.0M29.4 101.6L72.8 135.6M29.4 101.6L36.2 156.0M176.0 45.0L159.2 67.0M176.0 45.0L190.4 100.0M24.0 155.0L36.2 156.0M72.8 135.6L36.2 156.0M72.8 135.6L119.8 101.6M72.8 135.6L126.6 156.0M36.2 156.0L67.4 189.1M159.2 67.0L119.8 101.6M159.2 67.0L190.4 100.0M119.8 101.6L126.6 156.0M187.0 133.0L170.2 155.0M187.0 133.0L190.4 100.0M67.4 189.1L123.2 189.1M123.2 189.1L126.6 156.0M123.2 189.1L170.2 155.0M126.6 156.0L170.2 155.0M170.2 155.0L190.4 100.0"/>
+              <path stroke-width=".9" d="M43.1 25.1L29.8 45.0M43.1 25.1L76.8 10.9M61.9 174.9L24.0 155.0M61.9 174.9L40.8 133.0M61.9 174.9L94.6 153.5M61.9 174.9L111.0 188.1M61.9 174.9L67.4 189.1M156.9 174.9L187.0 133.0M156.9 174.9L150.4 153.5M156.9 174.9L111.0 188.1M128.9 116.0L80.2 98.4M128.9 116.0L127.2 64.4M128.9 116.0L170.6 98.4M128.9 116.0L150.4 153.5M128.9 116.0L94.6 153.5M117.4 23.4L73.4 44.0M117.4 23.4L76.8 10.9M117.4 23.4L132.6 10.9M117.4 23.4L163.8 44.0M117.4 23.4L127.2 64.4M191.2 81.3L163.8 44.0M191.2 81.3L176.0 45.0M191.2 81.3L187.0 133.0M191.2 81.3L170.6 98.4M8.8 118.7L9.6 100.0M37.5 81.3L29.8 45.0M37.5 81.3L73.4 44.0M37.5 81.3L9.6 100.0M37.5 81.3L80.2 98.4M37.5 81.3L40.8 133.0M29.8 45.0L73.4 44.0M29.8 45.0L76.8 10.9M29.8 45.0L13.0 67.0M29.8 45.0L9.6 100.0M73.4 44.0L76.8 10.9M73.4 44.0L80.2 98.4M73.4 44.0L127.2 64.4M76.8 10.9L132.6 10.9M132.6 10.9L163.8 44.0M13.0 67.0L9.6 100.0M9.6 100.0L24.0 155.0M9.6 100.0L40.8 133.0M163.8 44.0L176.0 45.0M163.8 44.0L127.2 64.4M163.8 44.0L170.6 98.4M80.2 98.4L127.2 64.4M80.2 98.4L40.8 133.0M80.2 98.4L94.6 153.5M127.2 64.4L170.6 98.4M24.0 155.0L40.8 133.0M24.0 155.0L67.4 189.1M40.8 133.0L94.6 153.5M187.0 133.0L170.6 98.4M187.0 133.0L150.4 153.5M170.6 98.4L150.4 153.5M150.4 153.5L94.6 153.5M150.4 153.5L111.0 188.1M94.6 153.5L111.0 188.1M111.0 188.1L67.4 189.1M111.0 188.1L123.2 189.1"/>
+            </svg>
+
+            <button class="sphere-node node-a" type="button" data-node="a" aria-pressed="true">
+              <span class="node-tag">01</span><span class="node-name">Quién</span>
+            </button>
+            <button class="sphere-node node-b" type="button" data-node="b" aria-pressed="false">
+              <span class="node-tag">02</span><span class="node-name">Qué</span>
+            </button>
+            <button class="sphere-node node-c" type="button" data-node="c" aria-pressed="false">
+              <span class="node-tag">03</span><span class="node-name">Dónde</span>
+            </button>
+            <button class="sphere-node node-d" type="button" data-node="d" aria-pressed="false">
+              <span class="node-tag">04</span><span class="node-name">Cómo</span>
+            </button>
+            <button class="sphere-hub" type="button" data-node="e" aria-pressed="false">
+              <small>Centro</small><strong>Para qué</strong>
+            </button>
+          </div>
+
+          <div class="sphere-detail" id="sphereDetail" aria-live="polite">
+            <p class="kicker" id="cdKicker">01 · Quién</p>
+            <p class="cd-q" id="cdQuestion">¿Cómo te llamas y qué estudias?</p>
+            <p class="cd-hint" id="cdHint">Tu nombre, tu carrera y el semestre en el que vas. Si trabajas o haces prácticas, cuéntalo: ahí ya estás viendo tecnología de cerca.</p>
+            <ul class="cd-eg" id="cdExamples"></ul>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top:3rem">
+          <p class="kicker k-plum">La herramienta, todavía tuya</p>
+          <h2 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">Arma tu radar</h2>
+          <p class="lead">Escribe aquí tus respuestas y tendrás tu radar listo para copiarlo o imprimirlo. Se guarda solo en este dispositivo: nadie más lo ve. Vale la pena volver en diciembre y ver qué cambió.</p>
+        </div>
+
+        <div class="builder">
+          <form class="fields" id="builderForm" autocomplete="off">
+            <div class="field">
+              <label for="fName">Tu nombre <b>·</b> 01 — Quién</label>
+              <input id="fName" type="text" maxlength="60" placeholder="Nombre y carrera">
+            </div>
+            <div class="field">
+              <label for="fTech">02 — Qué · ¿Qué tecnología o innovación te mueve hoy?</label>
+              <input id="fTech" type="text" maxlength="120" placeholder="Ej. la inteligencia artificial en los procesos de compra">
+            </div>
+            <div class="field">
+              <label for="fSector">03 — Dónde · ¿Qué industria o sector sigues?</label>
+              <input id="fSector" type="text" maxlength="120" placeholder="Ej. la industria automotriz del Bajío">
+            </div>
+            <div class="field">
+              <label for="fSources">04 — Cómo · ¿De dónde sacas lo que sabes de tecnología?</label>
+              <input id="fSources" type="text" maxlength="120" placeholder="Ej. YouTube, pódcast y lo que se comenta en el trabajo">
+            </div>
+            <div class="field">
+              <label for="fGoal">Centro — Para qué · ¿Qué quieres poder hacer al terminar el seminario?</label>
+              <input id="fGoal" type="text" maxlength="120" placeholder="Ej. sustentar con evidencia si a una empresa le conviene una tecnología">
+            </div>
+            <div class="field">
+              <label for="fDevice">El objeto que usas todos los días</label>
+              <textarea id="fDevice" rows="3" maxlength="400" placeholder="Qué es, de qué está hecho, quién lo produce y qué cambió cuando llegó."></textarea>
+            </div>
+
+            <div class="builder-actions">
+              <button class="btn btn-primary" id="copyBtn" type="button">Copiar mi radar</button>
+              <button class="btn btn-small" id="printCardBtn" type="button">Imprimir</button>
+              <button class="btn btn-small" id="clearBtn" type="button">Borrar</button>
+              <p class="builder-note">Lo que escribas se guarda automáticamente en tu navegador.</p>
+            </div>
+          </form>
+
+          <article class="rcard" id="rcard">
+            <div class="rcard-head">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.4"/>
+                <ellipse cx="16" cy="16" rx="5.8" ry="14" stroke="currentColor" stroke-width="1.1"/>
+                <path d="M2 16h28M5 8.6h22M5 23.4h22" stroke="currentColor" stroke-width="1.1"/>
+              </svg>
+              <strong>Mi radar de innovación</strong>
+              <span>2027-1</span>
+            </div>
+            <div class="rcard-body">
+              <p class="rcard-name" id="rcName"></p>
+              <dl class="rcard-grid">
+                <div><dt>02 · Tecnología</dt><dd id="rcTech"></dd></div>
+                <div><dt>03 · Sector</dt><dd id="rcSector"></dd></div>
+                <div><dt>04 · Fuentes</dt><dd id="rcSources"></dd></div>
+                <div><dt>Centro · Rumbo</dt><dd id="rcGoal"></dd></div>
+                <div><dt>Objeto</dt><dd id="rcDevice"></dd></div>
+              </dl>
+            </div>
+            <p class="rcard-foot">Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746</p>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 

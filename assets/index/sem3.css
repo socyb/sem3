@@ -709,3 +709,126 @@ footer a{color:var(--amber)}
   border:2px solid var(--edge);border-left:10px solid var(--cobalt);
   border-radius:var(--radius-sm);background:var(--tint-blue);font-size:.92rem;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LÍNEA DEL TIEMPO · la bitácora del seminario
+   Cada parada abre la sesión que le toca; la de hoy viene abierta.
+   ══════════════════════════════════════════════════════════════════════════ */
+.timeline{overflow-x:auto;overscroll-behavior-x:contain;padding-bottom:.6rem;margin-bottom:2.6rem;
+  scrollbar-width:thin}
+.tl-track{position:relative;display:flex;gap:1rem;min-width:max-content;padding:1.9rem .2rem .35rem}
+.tl-track::before{
+  content:"";position:absolute;top:calc(1.9rem - 9px);left:22px;right:22px;height:3px;
+  background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 17px);
+}
+.tl-stop{
+  position:relative;flex:0 0 clamp(196px,23vw,244px);display:flex;flex-direction:column;
+  align-items:stretch;gap:0;padding:0;border:0;background:none;cursor:pointer;
+  font:inherit;color:inherit;text-align:left;
+}
+.tl-mark{position:absolute;top:calc(-1.9rem + 9px);left:22px;width:16px;height:16px;
+  transform:translate(-50%,-50%);border-radius:50%;border:2.5px solid var(--edge);
+  background:var(--paper);transition:background var(--t),box-shadow var(--t)}
+.tl-card{
+  display:flex;flex-direction:column;gap:.15rem;padding:.85rem .95rem 1rem;
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-xs);transition:transform var(--t),box-shadow var(--t),background var(--t);
+}
+.tl-stop:hover .tl-card{transform:translate(-2px,-2px);box-shadow:var(--shadow-sm)}
+.tl-stop:active .tl-card{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--edge)}
+.tl-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--cobalt)}
+.tl-card time{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tl-card strong{font-family:var(--display);font-size:1.06rem;font-weight:900;letter-spacing:-.02em;line-height:1.14;margin-top:.25rem}
+.tl-card small{font-size:.82rem;color:var(--ink-soft);line-height:1.3}
+.tl-tag{
+  align-self:flex-start;margin-top:.6rem;padding:.16rem .55rem;border:1.5px solid var(--line);
+  border-radius:999px;font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);
+}
+.tl-stop[aria-selected="true"] .tl-card{background:var(--tint-red);border-color:var(--guinda);box-shadow:var(--shadow-sm)}
+.tl-stop[aria-selected="true"] .tl-mark{background:var(--guinda);box-shadow:0 0 0 5px var(--tint-red)}
+.tl-stop[aria-selected="true"] .tl-tag{background:var(--guinda);border-color:var(--guinda);color:#fff}
+html[data-theme="dark"] .tl-stop[aria-selected="true"] .tl-tag{color:#180510}
+.tl-stop.is-live .tl-num{color:var(--guinda)}
+.tl-stop.is-locked{cursor:default;opacity:.62}
+.tl-stop.is-locked .tl-card{background:transparent;border-style:dashed;box-shadow:none}
+.tl-stop.is-locked .tl-mark{background:var(--paper-2);border-style:dashed}
+.tl-stop.is-locked:hover .tl-card{transform:none;box-shadow:none}
+
+/* Los paneles de sesión: solo se ve el que está abierto. */
+.session-panel[hidden]{display:none}
+.session-panel{animation:panel-in .24s ease both}
+@keyframes panel-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.session-panel{animation:none}}
+
+/* Tarjeta-liga ancha (la presentación, el mapa del grupo) */
+.link-card{
+  display:block;margin-bottom:1.6rem;padding:clamp(1.15rem,2.4vw,1.7rem);
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);color:inherit;text-decoration:none;
+  transition:transform var(--t),box-shadow var(--t);
+}
+.link-card:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow);color:inherit}
+.link-card h3{margin:.9rem 0 .5rem;font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:900}
+.link-card p{color:var(--ink-soft)}
+.link-card p:last-child{margin-bottom:0}
+.link-card .go{font-family:var(--display);font-weight:900;color:var(--guinda)}
+.link-card.is-red{border-color:var(--guinda)}
+.link-card.is-blue{border-color:var(--cobalt)}
+.link-card.is-blue .go{color:var(--cobalt)}
+.link-card.is-teal{border-color:var(--teal)}
+.link-card.is-teal .go{color:var(--teal)}
+
+/* ══════════════════════════ INVITADO ══════════════════════════════════════ */
+.guest{
+  display:grid;grid-template-columns:210px 1fr;gap:clamp(1.2rem,3vw,2.4rem);
+  align-items:start;padding:clamp(1.3rem,3vw,2.2rem);
+  background:var(--card);border:2px solid var(--edge);border-left:10px solid var(--cobalt);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm);
+}
+@media (max-width:760px){.guest{grid-template-columns:1fr}}
+.guest-side{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem}
+.guest-avatar{
+  margin:0 0 .8rem;width:150px;height:150px;border:2px solid var(--edge);
+  border-radius:var(--radius-sm);box-shadow:var(--shadow-xs);overflow:hidden;background:var(--tint-blue);
+}
+.guest-avatar svg{display:block;width:100%;height:100%}
+.guest-side strong{font-family:var(--display);font-size:1.22rem;font-weight:900;letter-spacing:-.03em;line-height:1.12}
+.guest-side span{font-size:.84rem;color:var(--muted)}
+.guest-body > p{color:var(--ink-soft)}
+.guest-body > p:first-child{font-size:clamp(1.02rem,1.7vw,1.14rem);color:var(--ink)}
+.guest-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.3rem 0 0;padding:0;list-style:none}
+.guest-tags li{
+  padding:.3rem .7rem;border:1.5px solid var(--line);border-radius:999px;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--ink-soft);background:var(--paper-2);
+}
+
+/* Trayectoria: una columna de paradas con año */
+.trayecto{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.55rem}
+.trayecto li{display:grid;grid-template-columns:118px 1fr;gap:.9rem;align-items:baseline;
+  padding:.55rem 0;border-top:1px dashed var(--line)}
+.trayecto li:first-child{border-top:0}
+.trayecto b{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--cobalt);font-weight:500}
+.trayecto strong{display:block;font-size:.98rem;font-weight:700}
+.trayecto span{display:block;font-size:.86rem;color:var(--muted);line-height:1.35}
+@media (max-width:560px){.trayecto li{grid-template-columns:1fr;gap:.15rem}}
+
+/* Lista numerada de acciones (la higiene digital) */
+.check-list{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;counter-reset:chk}
+.check-list li{
+  display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  padding:.85rem 1rem;background:var(--card);border:2px solid var(--edge);
+  border-radius:var(--radius-sm);box-shadow:var(--shadow-xs);
+}
+.check-list li::before{
+  counter-increment:chk;content:counter(chk,decimal-leading-zero);
+  font-family:var(--mono);font-size:.78rem;color:var(--teal);padding-top:.15rem;
+}
+.check-list strong{display:block;font-family:var(--display);font-size:1.04rem;font-weight:900;letter-spacing:-.02em;line-height:1.2}
+.check-list span{display:block;margin-top:.2rem;font-size:.88rem;color:var(--ink-soft);line-height:1.45}
+
+@media print{
+  .timeline{display:none}
+  .session-panel[hidden]{display:block !important}
+  .link-card,.guest,.check-list li{box-shadow:none}
+}

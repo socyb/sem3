@@ -77,38 +77,65 @@
   /* ── Calendario del seminario ───────────────────────────────────────── */
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
   const sessions = [
-    [ 1,"2026-08-18","Mesa de innovaciones","Nos conocemos · qué tecnología te mueve","I"],
-    [ 2,"2026-08-25","¿Qué cuenta como innovación?","Manual de Oslo · producto y proceso","I"],
-    [ 3,"2026-09-01","Genealogía de un invento","Origen · actores · impactos","I"],
-    [ 4,"2026-09-08","Innovación y cultura organizacional","Trabajo · empresa · el mito de Sísifo","I"],
-    [ 5,"2026-09-22","¿Quién paga la innovación?","Gasto en I+D · público y privado","II"],
-    [ 6,"2026-09-29","Medir la innovación","Indicadores · índices · dónde está México","II"],
-    [ 7,"2026-10-06","Del laboratorio al mercado","Silicon Valley y sus críticas","II"],
-    [ 8,"2026-10-13","Síntesis de I+D · primer parcial","Repaso · examen","II"],
-    [ 9,"2026-10-20","La cadena de la inteligencia artificial","Cómputo · datos · energía · trabajo","III"],
-    [10,"2026-10-27","Chips y minerales críticos","Cuellos de botella · dependencia","III"],
-    [11,"2026-11-03","Sectores emergentes","Biotecnología · energía · movilidad","III"],
-    [12,"2026-11-10","México y los sectores de alto crecimiento","Plan México · semiconductores · nearshoring","III"],
-    [13,"2026-11-17","Datos, plataformas y vigilancia","Capitalismo de vigilancia · filtro burbuja","IV"],
-    [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV"],
-    [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · exposiciones","IV"],
-    [16,"2026-12-08","Cierre del seminario","Exposiciones · examen final","IV"]
-  ].map(([number, date, title, subtitle, unit]) => ({ number, date, title, subtitle, unit, room: "C-102" }));
+    [ 1,"2026-08-18","Mesa de innovaciones","Nos conocemos · qué tecnología te mueve","I",
+      "Un objeto que uses todos los días y algo para escribir"],
+    [ 2,"2026-08-25","¿Qué cuenta como innovación?","Manual de Oslo · producto y proceso","I",
+      "Tu control de lectura del Manual de Oslo"],
+    [ 3,"2026-09-01","Ciberseguridad","Con el Ing. Juan Esteban Castellanos · Director de SOC","I",
+      "Las dudas que traigas"],
+    [ 4,"2026-09-08","Innovación y cultura organizacional","Trabajo · empresa · el mito de Sísifo","I",
+      "Tu control de lectura y ganas de discutir"],
+    [ 5,"2026-09-22","¿Quién paga la innovación?","Gasto en I+D · público y privado","II",
+      "Tu control de lectura"],
+    [ 6,"2026-09-29","Medir la innovación","Indicadores · índices · dónde está México","II",
+      "Tu control de lectura"],
+    [ 7,"2026-10-06","Del laboratorio al mercado","Silicon Valley y sus críticas","II",
+      "Tu control de lectura"],
+    [ 8,"2026-10-13","Síntesis de I+D · primer parcial","Repaso · examen","II",
+      "Todo lo del primer tema repasado"],
+    [ 9,"2026-10-20","La cadena de la inteligencia artificial","Cómputo · datos · energía · trabajo","III",
+      "Tu control de lectura"],
+    [10,"2026-10-27","Chips y minerales críticos","Cuellos de botella · dependencia","III",
+      "Tu control de lectura"],
+    [11,"2026-11-03","Sectores emergentes","Biotecnología · energía · movilidad","III",
+      "Tu control de lectura"],
+    [12,"2026-11-10","México y los sectores de alto crecimiento","Plan México · semiconductores · nearshoring","III",
+      "Tu control de lectura"],
+    [13,"2026-11-17","Datos, plataformas y vigilancia","Capitalismo de vigilancia · filtro burbuja","IV",
+      "Tu control de lectura"],
+    [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
+      "Todo lo del segundo tema repasado"],
+    [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · exposiciones","IV",
+      "Tu exposición lista"],
+    [16,"2026-12-08","Cierre del seminario","Exposiciones · examen final","IV",
+      "Tu exposición y el trabajo final"]
+  ].map(([number, date, title, subtitle, unit, bring]) =>
+    ({ number, date, title, subtitle, unit, bring, room: "C-102" }));
 
   const MONTHS = { "01":"ene","02":"feb","03":"mar","04":"abr","05":"may","06":"jun",
                    "07":"jul","08":"ago","09":"sep","10":"oct","11":"nov","12":"dic" };
 
-  const queryDate = new URLSearchParams(location.search).get("fecha");
+  const params = new URLSearchParams(location.search);
+  const queryDate = params.get("fecha");
   const localDate = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Mexico_City", year: "numeric", month: "2-digit", day: "2-digit"
   }).format(new Date());
   const today = /^\d{4}-\d{2}-\d{2}$/.test(queryDate || "") ? queryDate : localDate;
   const cursor = today < sessions[0].date ? sessions[0].date : today;
 
-  const unlocked = sessions.filter(s => s.date <= cursor);
+  // Una sesión entra en vigor desde la víspera: la noche anterior ya puedes ver
+  // lo que toca y con qué hay que llegar.
+  const vispera = (iso) => {
+    const t = new Date(`${iso}T12:00:00Z`);
+    t.setUTCDate(t.getUTCDate() - 1);
+    return t.toISOString().slice(0, 10);
+  };
+
+  const unlocked = sessions.filter(s => vispera(s.date) <= cursor);
   const current  = unlocked[unlocked.length - 1] || sessions[0];
   const [y, m, d] = cursor.split("-");
   const pad = n => String(n).padStart(2, "0");
+  const shortDate = iso => `${Number(iso.slice(8))} ${MONTHS[iso.slice(5, 7)]}`;
 
   const dateEl = $("#todayDate");
   if (dateEl) dateEl.textContent = `${Number(d)} ${MONTHS[m]} ${y}`;
@@ -116,23 +143,126 @@
   const activeEl = $("#activeSession");
   if (activeEl) activeEl.textContent = `${pad(current.number)} · ${current.title}`;
 
+  const whenEl = $("#activeWhen");
+  if (whenEl) {
+    whenEl.textContent = current.date === cursor ? "Sesión de hoy"
+                       : current.date >  cursor ? "Sesión de mañana"
+                       : "Última sesión";
+  }
+
   const countEl = $("#sessionCount");
   if (countEl) countEl.textContent = `${pad(unlocked.length)} / ${sessions.length}`;
 
-  const list = $("#archiveList");
-  if (list) {
-    list.replaceChildren(...[...unlocked].reverse().map(s => {
-      const item = document.createElement("article");
-      item.className = "archive-item" + (s.number === current.number ? " is-current" : "");
-      item.innerHTML =
-        `<span class="ai-num">${pad(s.number)}</span>` +
-        `<time datetime="${s.date}">${Number(s.date.slice(8))} ${MONTHS[s.date.slice(5, 7)]}</time>` +
-        `<span class="ai-body"><strong></strong><small></small></span>` +
-        `<span class="ai-tag">${s.number === current.number ? "Hoy" : "Tema " + s.unit}</span>`;
-      item.querySelector("strong").textContent = s.title;
-      item.querySelector("small").textContent  = `${s.subtitle} · ${s.room}`;
-      return item;
-    }));
+  /* ── Línea del tiempo: una parada por sesión, la de hoy abierta ──────── */
+  // Solo tienen panel escrito las sesiones que ya ocurrieron y se documentaron;
+  // si una parada no lo tiene, la línea la muestra pero no la abre.
+  const track  = $("#tlTrack");
+  const panels = $$(".session-panel");
+
+  const bringEl = $("#todayBring");
+  if (bringEl) bringEl.textContent = current.bring;
+
+  const panelFor = n => panels.find(p => Number(p.dataset.sesion) === n) || null;
+
+  if (track) {
+    const stops = [];
+
+    const openSession = (number, push = true) => {
+      const panel = panelFor(number);
+      if (!panel) return;
+      panels.forEach(p => { p.hidden = p !== panel; });
+      stops.forEach(btn => {
+        const on = Number(btn.dataset.sesion) === number;
+        btn.setAttribute("aria-selected", String(on));
+        btn.tabIndex = on ? 0 : -1;
+      });
+      if (push) {
+        const u = new URL(location.href);
+        u.searchParams.set("sesion", pad(number));
+        history.replaceState(null, "", u);
+      }
+    };
+
+    unlocked.forEach(s => {
+      const esHoy = s.number === current.number;
+      const cuando = s.date === cursor ? "Hoy" : s.date > cursor ? "Mañana" : "Tema " + s.unit;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tl-stop" + (esHoy ? " is-live" : "");
+      btn.id = `tab-${s.number}`;
+      btn.dataset.sesion = s.number;
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", "false");
+      btn.tabIndex = -1;
+      btn.innerHTML =
+        `<span class="tl-mark" aria-hidden="true"></span>` +
+        `<span class="tl-card">` +
+          `<span class="tl-num">Sesión ${pad(s.number)}</span>` +
+          `<time datetime="${s.date}">${shortDate(s.date)}</time>` +
+          `<strong></strong><small></small>` +
+          `<span class="tl-tag">${esHoy ? cuando : "Tema " + s.unit}</span>` +
+        `</span>`;
+      btn.querySelector("strong").textContent = s.title;
+      btn.querySelector("small").textContent  = s.subtitle;
+
+      if (panelFor(s.number)) {
+        btn.setAttribute("aria-controls", `panel-${s.number}`);
+        btn.addEventListener("click", () => openSession(s.number));
+      } else {
+        btn.disabled = true;
+        btn.classList.add("is-locked");
+      }
+      track.appendChild(btn);
+      stops.push(btn);
+    });
+
+    const faltan = sessions.length - unlocked.length;
+    if (faltan > 0) {
+      const resto = document.createElement("div");
+      resto.className = "tl-stop is-locked";
+      resto.innerHTML =
+        `<span class="tl-mark" aria-hidden="true"></span>` +
+        `<span class="tl-card">` +
+          `<span class="tl-num">Lo que falta</span>` +
+          `<time datetime="${sessions[sessions.length - 1].date}">hasta el ${shortDate(sessions[sessions.length - 1].date)}</time>` +
+          `<strong>${faltan} ${faltan === 1 ? "sesión" : "sesiones"}</strong>` +
+          `<small>Cada una aparece aquí el día que la trabajamos.</small>` +
+        `</span>`;
+      track.appendChild(resto);
+    }
+
+    // Moverse por la línea con las flechas del teclado.
+    track.addEventListener("keydown", (e) => {
+      const abiertos = stops.filter(b => !b.disabled);
+      const i = abiertos.indexOf(document.activeElement);
+      if (i < 0) return;
+      let j = null;
+      if (e.key === "ArrowRight") j = Math.min(abiertos.length - 1, i + 1);
+      if (e.key === "ArrowLeft")  j = Math.max(0, i - 1);
+      if (e.key === "Home")       j = 0;
+      if (e.key === "End")        j = abiertos.length - 1;
+      if (j === null) return;
+      e.preventDefault();
+      abiertos[j].focus();
+      openSession(Number(abiertos[j].dataset.sesion));
+    });
+
+    // Al abrir: la sesión que pida la liga, si no la de hoy, si no la última escrita.
+    const pedida = Number(params.get("sesion"));
+    const escritas = unlocked.filter(s => panelFor(s.number)).map(s => s.number);
+    const inicio =
+      (escritas.includes(pedida) && pedida) ||
+      (escritas.includes(current.number) && current.number) ||
+      escritas[escritas.length - 1];
+
+    if (inicio) {
+      openSession(inicio, false);
+      const btn = stops.find(b => Number(b.dataset.sesion) === inicio);
+      const rail = $("#timeline");
+      if (btn && rail && rail.scrollWidth > rail.clientWidth) {
+        rail.scrollLeft = Math.max(0, btn.offsetLeft - (rail.clientWidth - btn.offsetWidth) / 2);
+      }
+    }
   }
 
   /* ── Radar de innovación ────────────────────────────────────────────── */
