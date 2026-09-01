@@ -74,6 +74,23 @@
     });
   }
 
+  /* ── Fecha de la última actualización ───────────────────────────────── */
+  // El pie trae una fecha escrita a mano; si el servidor dice cuándo se subió
+  // el archivo, gana esa. Cuando no manda ese dato el navegador devuelve la hora
+  // actual, así que descartamos lo que parezca «ahora mismo».
+  const stamp = $("#lastUpdate");
+  if (stamp) {
+    const modified = new Date(document.lastModified);
+    if (!Number.isNaN(modified.valueOf()) && Date.now() - modified.getTime() > 60000) {
+      stamp.dateTime = new Intl.DateTimeFormat("en-CA", {
+        year: "numeric", month: "2-digit", day: "2-digit"
+      }).format(modified);
+      stamp.textContent = new Intl.DateTimeFormat("es-MX", {
+        day: "numeric", month: "long", year: "numeric"
+      }).format(modified);
+    }
+  }
+
   /* ── Calendario del seminario ───────────────────────────────────────── */
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
   const sessions = [
