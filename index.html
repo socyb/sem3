@@ -18,7 +18,7 @@
 <body>
   <a class="skip-link" href="#sesion-actual">Ir a la sesión de hoy</a>
 
-  <noscript><p class="noscript">Activa JavaScript para ver la sesión de hoy y para guardar tu radar en este dispositivo. Todo lo demás se lee sin problema.</p></noscript>
+  <noscript><p class="noscript">Activa JavaScript para ver la sesión que toca, moverte entre las anteriores y guardar tu radar en este dispositivo. Todo lo demás se lee sin problema.</p></noscript>
 
   <!-- ══════════════════════════ BARRA SUPERIOR ══════════════════════════ -->
   <header class="topbar" id="inicio">
@@ -74,7 +74,7 @@
         <p class="hero-meta"><a href="#profesor"><b>Dr. Jorge Cardiel Herrera</b></a> · Facultad de Contaduría y Administración, UNAM<br>Martes en C-102 · 16:00—19:00</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#sesion-actual">Lo de hoy: ciberseguridad →</a>
+          <a class="btn btn-primary" href="#sesion-actual" id="heroCta">Lo de esta sesión →</a>
           <a class="btn btn-ghost" href="#ruta">Ver la ruta del semestre</a>
         </div>
 
@@ -121,6 +121,109 @@
 
       <div class="timeline" id="timeline">
         <div class="tl-track" id="tlTrack" role="tablist" aria-label="Sesiones del seminario"></div>
+      </div>
+
+      <!-- ────────────────── SESIÓN 04 · CON INVITADA ─────────────────── -->
+      <div class="session-panel" id="panel-4" data-sesion="4" role="tabpanel" aria-labelledby="tab-4" tabindex="-1" hidden>
+        <div class="section-head">
+          <p class="kicker k-teal">Sesión 04 · Martes 8 de septiembre · Salón C-102</p>
+          <h2>Dónde aterriza el dinero</h2>
+          <p class="lead">Llevamos tres sesiones preguntando quién decide una innovación y quién la paga. El martes esa pregunta se vuelve un mapa: viene la <strong>Lic. Yixili Ruiz Mendoza</strong>, analista de inversiones y <em>site location</em> para México y América Latina en CBRE. Su trabajo es decir en qué ciudad conviene poner una planta, un centro de datos o una oficina —y sostener por qué ahí y no doscientos kilómetros más allá.</p>
+          <p style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem">
+            <span class="pill pill-teal">🧭 Sesión con invitada</span>
+            <span class="pill pill-blue">16:00—19:00</span>
+            <span class="pill pill-amber">Con lectura previa</span>
+          </p>
+        </div>
+
+        <!-- Lo que hay que leer antes -->
+        <a class="link-card is-teal" href="https://www.bain.com/insights/m-and-a-midyear-outlook-2026-a-winners-paradox/" target="_blank" rel="noopener noreferrer">
+          <span class="pill pill-teal">Léelo antes del martes</span>
+          <h3>M&amp;A Midyear Outlook 2026 · <em>A Winner’s Paradox</em></h3>
+          <p>Lo mandó ella para que lleguemos con un antecedente. Es un informe breve de Bain &amp; Company (29 de junio de 2026, en inglés): el mercado mundial de fusiones y adquisiciones creció <strong>41%</strong> en los primeros cinco meses del año y va camino al segundo más alto de la historia, con 74 operaciones de más de diez mil millones de dólares desde enero de 2025.</p>
+          <p>La paradoja del título es la de quien va ganando: cómo seguir comprando empresas a ese ritmo mientras te reconstruyes por dentro para la inteligencia artificial.</p>
+          <p class="go">Abrir el reporte ↗</p>
+        </a>
+
+        <!-- Quién viene -->
+        <article class="guest" style="margin:2.4rem 0">
+          <div class="guest-side">
+            <figure class="guest-avatar">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema de la sesión: un alfiler de mapa clavado sobre una retícula de terrenos">
+                <rect width="120" height="120" fill="#12242a"/>
+                <g fill="none" stroke="#3aa392" stroke-width="1" opacity=".42">
+                  <path d="M0 20h120M0 44h120M0 68h120M0 92h120M20 0v120M44 0v120M68 0v120M92 0v120"/>
+                </g>
+                <g fill="none" stroke="#f6f1e6" stroke-width="2" opacity=".5" stroke-dasharray="4 3">
+                  <rect x="12" y="70" width="26" height="20"/>
+                  <rect x="82" y="70" width="26" height="20"/>
+                </g>
+                <rect x="42" y="60" width="36" height="30" fill="#16202c" stroke="#f6f1e6" stroke-width="3"/>
+                <path d="M60 14 C71 14 80 23 80 34 C80 47 60 66 60 66 C60 66 40 47 40 34 C40 23 49 14 60 14 Z"
+                      fill="#c1123f" stroke="#f6f1e6" stroke-width="3" stroke-linejoin="round"/>
+                <circle cx="60" cy="33" r="7.5" fill="#12242a"/>
+                <g stroke="#4a9fd4" stroke-width="2" opacity=".8">
+                  <path d="M6 34h16M98 34h16M6 106h14M100 106h14"/>
+                </g>
+              </svg>
+            </figure>
+            <strong>Lic. Yixili Ruiz Mendoza</strong>
+            <span>Analista de inversiones y site location · CBRE</span>
+            <span style="margin-top:.5rem">Negocios Internacionales, UNAM<br>Georg-August-Universität Göttingen</span>
+          </div>
+
+          <div class="guest-body">
+            <p class="kicker k-teal">Quién viene el martes</p>
+            <p>Estudió lo mismo que tú, en esta misma facultad: la licenciatura en <strong>Negocios Internacionales</strong>. Hoy trabaja en el área de consultoría de <strong>CBRE</strong> como analista de inversiones y <em>site location</em> para México y América Latina, que es el oficio de decidir dónde se instala el dinero.</p>
+            <p>Su formación se afinó en la <strong>Georg-August-Universität Göttingen</strong>, en Alemania, donde se especializó en flujos de inversión, política económica y desarrollo económico. Esas tres cosas se cruzan cada vez que una empresa elige un país: cuánto capital se está moviendo, qué está haciendo el gobierno con él y qué le queda a la región donde aterriza.</p>
+            <p>También ha dado clase aquí, como profesora adjunta en la FCA. Su trabajo mezcla los números con lo que los números no alcanzan a decir —investigación cuantitativa y cualitativa a la vez— para armar una recomendación que alguien más va a firmar. Eso último es exactamente lo que este seminario quiere que sepas hacer.</p>
+
+            <ul class="guest-tags">
+              <li>Site location</li>
+              <li>Flujos de inversión</li>
+              <li>Política económica</li>
+              <li>Desarrollo económico regional</li>
+              <li>Investigación cuantitativa y cualitativa</li>
+              <li>México y América Latina</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="section-head">
+          <p class="kicker k-teal">Para la parte de preguntas</p>
+
+          <p class="lead">La sesión se arma con lo que preguntes. Si no se te ocurre nada en el momento, toma cualquiera de estas.</p>
+        </div>
+
+        <div class="qgrid" style="margin-bottom:3rem">
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Qué termina decidiendo dónde se instala una empresa?</h3>
+            <p>Cuando dos ciudades compiten por el mismo proyecto: ¿el suelo, la energía, la gente, los impuestos, la seguridad?</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>El reporte no desagrega América Latina. ¿Qué se ve desde aquí?</h3>
+            <p>La ola de fusiones que describe Bain, ¿llega a México o nos toca de rebote?</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Qué datos pides y cuáles no existen?</h3>
+            <p>Cómo se arma un análisis cuando la cifra que necesitas no está publicada en ninguna parte.</p>
+          </article>
+          <article class="qcard">
+            <span class="qn">?</span>
+            <h3>¿Por dónde entra alguien de esta carrera?</h3>
+            <p>Estudiaste lo mismo que nosotros: qué te sirvió de la licenciatura y qué tuviste que aprender por fuera.</p>
+          </article>
+        </div>
+
+        <article class="card" style="background:var(--tint-teal);max-width:62rem">
+          <span class="pill pill-teal">Con qué llegar</span>
+          <h3 style="margin-top:.9rem">Tres cosas</h3>
+          <p>El reporte leído, dos cifras que te hayan sorprendido y una pregunta escrita para ella. Con eso alcanza.</p>
+          <p style="margin-bottom:0">Lo que preguntes y lo que comentes cuenta como participación, y la participación es el 30% de tu calificación. Si prefieres escribirlo, el foro de Moodle sirve igual.</p>
+        </article>
       </div>
 
       <!-- ─────────────────── SESIÓN 03 · CON INVITADO ─────────────────── -->
@@ -414,17 +517,17 @@
       <div class="route-grid">
         <article class="route-card">
           <span class="rc-num">I</span>
-          <p class="rc-dates">18 agosto — 8 septiembre</p>
+          <p class="rc-dates">18 agosto — 22 septiembre</p>
           <h3>Los negocios y la innovación tecnológica</h3>
-          <p>Qué se considera innovación y qué no. Taxonomías del <em>Manual de Oslo</em>, genealogía de los inventos y el peso de la cultura organizacional.</p>
-          <p class="rc-hours">12 horas · 4 sesiones</p>
+          <p>Qué se considera innovación y qué no. Taxonomías del <em>Manual de Oslo</em>, genealogía de los inventos, dónde aterriza el dinero y el peso de la cultura organizacional en el trabajo.</p>
+          <p class="rc-hours">15 horas · 5 sesiones</p>
         </article>
         <article class="route-card">
           <span class="rc-num">II</span>
-          <p class="rc-dates">22 septiembre — 13 octubre</p>
+          <p class="rc-dates">29 septiembre — 13 octubre</p>
           <h3>Inversión en investigación y desarrollo</h3>
           <p>Quién financia la I+D, cómo se mide, qué dicen los indicadores internacionales y dónde queda México en ellos.</p>
-          <p class="rc-hours">12 horas · 4 sesiones</p>
+          <p class="rc-hours">9 horas · 3 sesiones</p>
         </article>
         <article class="route-card">
           <span class="rc-num">III</span>
@@ -598,6 +701,11 @@
         <h2>Para tener a la mano</h2>
       </div>
       <div class="res-grid">
+        <a class="res-card" href="https://www.bain.com/insights/m-and-a-midyear-outlook-2026-a-winners-paradox/" target="_blank" rel="noopener noreferrer">
+          <span class="res-icon">📈</span>
+          <strong>M&amp;A Midyear Outlook 2026</strong>
+          <p>La lectura previa de la sesión 04</p>
+        </a>
         <a class="res-card" href="presentacion_s02.html" target="_blank" rel="noopener">
           <span class="res-icon">📻</span>
           <strong>Nadie inventó la radio</strong>
@@ -650,7 +758,7 @@
       </p>
       <a class="to-top" href="#inicio" aria-label="Volver al inicio">↑</a>
     </div>
-    <p class="foot-note">Última actualización · <time id="lastUpdate" datetime="2026-08-31">31 de agosto de 2026</time></p>
+    <p class="foot-note">Última actualización · <time id="lastUpdate" datetime="2026-09-04">4 de septiembre de 2026</time></p>
   </footer>
 
   <!-- ═══════════════════ MARCO EMERGENTE · CÓDIGO QR ═══════════════════ -->

@@ -93,6 +93,8 @@
 
   /* ── Calendario del seminario ───────────────────────────────────────── */
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
+  // El séptimo dato es opcional: la fecha desde la que se abre la sesión. Sirve
+  // cuando hay algo que leer antes y no basta con abrirla la víspera.
   const sessions = [
     [ 1,"2026-08-18","Mesa de innovaciones","Nos conocemos · qué tecnología te mueve","I",
       "Un objeto que uses todos los días y algo para escribir"],
@@ -100,13 +102,13 @@
       "Tu control de lectura del Manual de Oslo"],
     [ 3,"2026-09-01","Ciberseguridad","Con el Ing. Juan Esteban Castellanos · Director de SOC","I",
       "Las dudas que traigas"],
-    [ 4,"2026-09-08","Innovación y cultura organizacional","Trabajo · empresa · el mito de Sísifo","I",
+    [ 4,"2026-09-08","Dónde aterriza el dinero","Con la Lic. Yixili Ruiz Mendoza · Inversión y site location","I",
+      "El reporte de Bain leído y una pregunta para ella","2026-09-04"],
+    [ 5,"2026-09-22","Innovación y cultura organizacional","Trabajo · empresa · el mito de Sísifo","I",
       "Tu control de lectura y ganas de discutir"],
-    [ 5,"2026-09-22","¿Quién paga la innovación?","Gasto en I+D · público y privado","II",
+    [ 6,"2026-09-29","¿Quién paga la innovación?","Gasto en I+D · público y privado","II",
       "Tu control de lectura"],
-    [ 6,"2026-09-29","Medir la innovación","Indicadores · índices · dónde está México","II",
-      "Tu control de lectura"],
-    [ 7,"2026-10-06","Del laboratorio al mercado","Silicon Valley y sus críticas","II",
+    [ 7,"2026-10-06","Medir la innovación","Indicadores · índices · dónde está México","II",
       "Tu control de lectura"],
     [ 8,"2026-10-13","Síntesis de I+D · primer parcial","Repaso · examen","II",
       "Todo lo del primer tema repasado"],
@@ -126,8 +128,8 @@
       "Tu exposición lista"],
     [16,"2026-12-08","Cierre del seminario","Exposiciones · examen final","IV",
       "Tu exposición y el trabajo final"]
-  ].map(([number, date, title, subtitle, unit, bring]) =>
-    ({ number, date, title, subtitle, unit, bring, room: "C-102" }));
+  ].map(([number, date, title, subtitle, unit, bring, open]) =>
+    ({ number, date, title, subtitle, unit, bring, open, room: "C-102" }));
 
   const MONTHS = { "01":"ene","02":"feb","03":"mar","04":"abr","05":"may","06":"jun",
                    "07":"jul","08":"ago","09":"sep","10":"oct","11":"nov","12":"dic" };
@@ -148,7 +150,8 @@
     return t.toISOString().slice(0, 10);
   };
 
-  const unlocked = sessions.filter(s => vispera(s.date) <= cursor);
+  const abre = s => s.open || vispera(s.date);
+  const unlocked = sessions.filter(s => abre(s) <= cursor);
   const current  = unlocked[unlocked.length - 1] || sessions[0];
   const [y, m, d] = cursor.split("-");
   const pad = n => String(n).padStart(2, "0");
@@ -160,11 +163,17 @@
   const activeEl = $("#activeSession");
   if (activeEl) activeEl.textContent = `${pad(current.number)} · ${current.title}`;
 
+  const cuandoEs = (s) => s.date === cursor          ? "Sesión de hoy"
+                        : vispera(s.date) === cursor ? "Sesión de mañana"
+                        : s.date > cursor            ? "Próxima sesión"
+                        : "Última sesión";
+
   const whenEl = $("#activeWhen");
-  if (whenEl) {
-    whenEl.textContent = current.date === cursor ? "Sesión de hoy"
-                       : current.date >  cursor ? "Sesión de mañana"
-                       : "Última sesión";
+  if (whenEl) whenEl.textContent = cuandoEs(current);
+
+  const ctaEl = $("#heroCta");
+  if (ctaEl) {
+    ctaEl.textContent = `${current.date > cursor ? "Lo que sigue" : "Lo de hoy"}: ${current.title} →`;
   }
 
   const countEl = $("#sessionCount");
@@ -202,7 +211,10 @@
 
     unlocked.forEach(s => {
       const esHoy = s.number === current.number;
-      const cuando = s.date === cursor ? "Hoy" : s.date > cursor ? "Mañana" : "Tema " + s.unit;
+      const cuando = s.date === cursor          ? "Hoy"
+                   : vispera(s.date) === cursor ? "Mañana"
+                   : s.date > cursor            ? "Próxima"
+                   : "Tema " + s.unit;
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "tl-stop" + (esHoy ? " is-live" : "");
