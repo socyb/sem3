@@ -102,7 +102,7 @@
       "Tu control de lectura del Manual de Oslo"],
     [ 3,"2026-09-01","Ciberseguridad","Con el Ing. Juan Esteban Castellanos · Director de SOC","I",
       "Las dudas que traigas"],
-    [ 4,"2026-09-08","Dónde aterriza el dinero","Con la Lic. Yixili Ruiz Mendoza · Inversión y site location","I",
+    [ 4,"2026-09-08","Dónde aterriza el dinero","Con la Lic. Yixili Ruiz Mendoza · Fusiones y adquisiciones (M&A)","I",
       "El reporte de Bain leído y una pregunta para ella","2026-09-04"],
     [ 5,"2026-09-22","Innovación y cultura organizacional","Trabajo · empresa · el mito de Sísifo","I",
       "Tu control de lectura y ganas de discutir"],
