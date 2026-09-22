@@ -845,3 +845,57 @@ html[data-theme="dark"] .tl-stop[aria-selected="true"] .tl-tag{color:#180510}
   background:color-mix(in srgb,var(--paper) 18%,transparent);
 }
 @media print{ .foot-note{color:#000} .foot-note::before{background:#000} }
+
+/* ══════════════════════ VIDEOS Y LECTURA (sesión 05) ══════════════════════ */
+/* Video incrustado: marco de tinta con proporción 16:9 */
+.video-frame{
+  position:relative;aspect-ratio:16/9;margin:0 0 1rem;overflow:hidden;
+  background:var(--ink);border:2px solid var(--edge);border-radius:var(--radius);box-shadow:var(--shadow-sm);
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-lead{max-width:62rem}
+
+/* Rejilla de pares: dos columnas en escritorio, una en el celular */
+.grid-pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:1.3rem}
+
+/* Ficha del video: canal, fecha, duración, idioma */
+.vmeta{display:flex;flex-wrap:wrap;gap:.35rem .5rem;margin:0 0 1.2rem;padding:0;list-style:none}
+.vmeta li{
+  padding:.22rem .6rem;border:1.5px solid var(--line);border-radius:999px;background:var(--paper-2);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--ink-soft);
+}
+.trayecto b a{color:inherit;text-decoration:none}
+.trayecto b a:hover{color:var(--guinda);text-decoration:underline}
+
+/* Lista breve dentro de tarjetas de video */
+.vbullets{margin:.2rem 0 1rem;padding-left:1.1rem}
+.vbullets li{margin-bottom:.3rem;font-size:.93rem;color:var(--ink-soft)}
+.bridge{
+  margin:0;padding:.75rem .9rem;border-left:4px solid var(--amber);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  background:var(--tint-amber);font-size:.9rem;line-height:1.5;
+}
+.bridge b{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--amber);display:block;margin-bottom:.15rem}
+.card .go{font-family:var(--display);font-weight:900}
+
+/* Epígrafe (Fausto) */
+.epigraph{
+  margin:0 0 3rem;padding:clamp(1.3rem,3vw,2.2rem);max-width:62rem;
+  background:var(--card);border:2px solid var(--edge);border-left:10px solid var(--plum);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm);
+}
+.epigraph blockquote{margin:0}
+.epigraph .de{font-family:var(--display);font-size:clamp(1.3rem,2.8vw,1.9rem);font-weight:600;line-height:1.2;letter-spacing:-.02em;margin:0 0 .6rem}
+.epigraph .es{font-size:clamp(1.02rem,1.7vw,1.15rem);color:var(--ink-soft);margin:0 0 .9rem}
+.epigraph figcaption{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--muted)}
+.epigraph .aside{margin:1.3rem 0 0;padding-top:1rem;border-top:1px dashed var(--line);font-size:.93rem;color:var(--ink-soft)}
+.epigraph .aside:last-child{margin-bottom:0}
+
+/* Referencias APA 7: sangría francesa */
+.refs{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.refs li{padding-left:2.2rem;text-indent:-2.2rem;font-size:.93rem;line-height:1.5;overflow-wrap:anywhere}
+.refs h3{margin-top:1.6rem}
+
+@media print{
+  .video-frame{display:none}
+  .epigraph{box-shadow:none}
+}
