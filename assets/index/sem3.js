@@ -320,6 +320,8 @@
 
     if (inicio) {
       openSession(inicio, false);
+      // Si la liga pide una sesión, el lema la acompaña; si no, se queda el de hoy.
+      if (inicio === pedida) ponerLema(pedida);
       const btn = stops.find(b => Number(b.dataset.sesion) === inicio);
       const rail = $("#timeline");
       if (btn && rail && rail.scrollWidth > rail.clientWidth) {
