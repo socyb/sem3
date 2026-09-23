@@ -131,6 +131,37 @@
   ].map(([number, date, title, subtitle, unit, bring, open]) =>
     ({ number, date, title, subtitle, unit, bring, open, room: "C-102" }));
 
+  /* ── Lema de la portada: uno por sesión ─────────────────────────────── */
+  // Primera línea en redonda, segunda en cursiva guinda. La última sesión
+  // vuelve al lema del semestre.
+  const LEMAS = {
+     1: ["Cada quien trae su radar.", "Juntos vemos el punto ciego."],
+     2: ["Inventar no basta.", "Innovar es llegar al mercado."],
+     3: ["Toda tecnología se rompe.", "Alguien tiene que estar ahí."],
+     4: ["Las ideas se discuten.", "El dinero decide dónde aterrizan."],
+     5: ["Toda acción tiene consecuencias.", "Casi nunca las que buscábamos."],
+     6: ["Toda tecnología se enchufa en algún lado.", "Alguien controla la corriente."],
+     7: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
+     8: ["Ocho sesiones, una pregunta.", "¿Quién decide y quién paga?"],
+     9: ["La inteligencia artificial no flota en la nube.", "Corre sobre cómputo, datos, energía y trabajo."],
+    10: ["El futuro cabe en un chip.", "Y el chip, en muy pocas manos."],
+    11: ["Todo sector fue emergente alguna vez.", "La pregunta es quién llega primero."],
+    12: ["El nearshoring no es un regalo.", "México tiene que ganárselo."],
+    13: ["Si es gratis,", "el producto eres tú."],
+    14: ["Las máquinas no despiden a nadie.", "Alguien decide hacerlo."],
+    15: ["Toda tecnología tiene reglas.", "La pregunta es quién las escribe."],
+    16: ["Ninguna tecnología llega sola.", "Alguien decide. Alguien paga."]
+  };
+
+  const heroTitle = $(".hero-title");
+  const ponerLema = (n) => {
+    const lema = LEMAS[n];
+    if (!heroTitle || !lema) return;
+    const em = document.createElement("em");
+    em.textContent = lema[1];
+    heroTitle.replaceChildren(lema[0], document.createElement("br"), em);
+  };
+
   const MONTHS = { "01":"ene","02":"feb","03":"mar","04":"abr","05":"may","06":"jun",
                    "07":"jul","08":"ago","09":"sep","10":"oct","11":"nov","12":"dic" };
 
@@ -159,6 +190,8 @@
 
   const dateEl = $("#todayDate");
   if (dateEl) dateEl.textContent = `${Number(d)} ${MONTHS[m]} ${y}`;
+
+  ponerLema(current.number);
 
   const activeEl = $("#activeSession");
   if (activeEl) activeEl.textContent = `${pad(current.number)} · ${current.title}`;
@@ -197,6 +230,7 @@
       const panel = panelFor(number);
       if (!panel) return;
       panels.forEach(p => { p.hidden = p !== panel; });
+      if (push) ponerLema(number);
       stops.forEach(btn => {
         const on = Number(btn.dataset.sesion) === number;
         btn.setAttribute("aria-selected", String(on));
