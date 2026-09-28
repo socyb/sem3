@@ -140,7 +140,7 @@
      3: ["Toda tecnología se rompe.", "Alguien tiene que estar ahí."],
      4: ["Las ideas se discuten.", "El dinero decide dónde aterrizan."],
      5: ["Toda acción tiene consecuencias.", "Casi nunca las que buscábamos."],
-     6: ["Toda tecnología se enchufa en algún lado.", "Alguien controla la corriente."],
+     6: ["La luz que prendes cruzó una frontera.", "Alguien la compró antes que tú."],
      7: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
      8: ["Ocho sesiones, una pregunta.", "¿Quién decide y quién paga?"],
      9: ["La inteligencia artificial no flota en la nube.", "Corre sobre cómputo, datos, energía y trabajo."],
