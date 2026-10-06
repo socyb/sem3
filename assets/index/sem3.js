@@ -93,6 +93,8 @@
 
   /* ── Calendario del seminario ───────────────────────────────────────── */
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
+  // El 6 de octubre la sesión es la conferencia que la Academia nos asignó en la
+  // Semana Académica: Auditorio Echenique García, de 16:00 a 18:00.
   // El séptimo dato es opcional: la fecha desde la que se abre la sesión. Sirve
   // cuando hay algo que leer antes y no basta con abrirla la víspera.
   const sessions = [
@@ -108,15 +110,15 @@
       "Tu control de lectura y ganas de discutir"],
     [ 6,"2026-09-29","Mercado mundial de energéticos","Con el Ing. Ulises Matus · Gas natural México–Estados Unidos","II",
       "Una pregunta escrita para él"],
-    [ 7,"2026-10-06","Microcréditos y Estudios sobre ciencia, tecnología y sociedad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","II",
-      "Tu control de lectura"],
+    [ 7,"2026-10-06","Conversando con egresados de Negocios Internacionales","Semana Académica · Auditorio Echenique García","II",
+      "Las preguntas que quieras hacerles"],
     [ 8,"2026-10-13","Síntesis de I+D · primer parcial","Repaso · examen","II",
       "Todo lo del primer tema repasado"],
     [ 9,"2026-10-20","La cadena de la inteligencia artificial","Cómputo · datos · energía · trabajo","III",
       "Tu control de lectura"],
-    [10,"2026-10-27","Chips y minerales críticos","Cuellos de botella · dependencia","III",
+    [10,"2026-10-27","Microcréditos y Estudios sobre ciencia, tecnología y sociedad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
       "Tu control de lectura"],
-    [11,"2026-11-03","Sectores emergentes","Biotecnología · energía · movilidad","III",
+    [11,"2026-11-03","Sectores emergentes","Chips y minerales críticos · biotecnología · energía · movilidad","III",
       "Tu control de lectura"],
     [12,"2026-11-10","México y los sectores de alto crecimiento","Plan México · semiconductores · nearshoring","III",
       "Tu control de lectura"],
@@ -141,10 +143,10 @@
      4: ["Las ideas se discuten.", "El dinero decide dónde aterrizan."],
      5: ["Toda acción tiene consecuencias.", "Casi nunca las que buscábamos."],
      6: ["La luz que prendes cruzó una frontera.", "Alguien la compró antes que tú."],
-     7: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
+     7: ["Alguien ya estuvo en tu lugar.", "Pregúntale qué encontró al salir."],
      8: ["Ocho sesiones, una pregunta.", "¿Quién decide y quién paga?"],
      9: ["La inteligencia artificial no flota en la nube.", "Corre sobre cómputo, datos, energía y trabajo."],
-    10: ["El futuro cabe en un chip.", "Y el chip, en muy pocas manos."],
+    10: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
     11: ["Todo sector fue emergente alguna vez.", "La pregunta es quién llega primero."],
     12: ["El nearshoring no es un regalo.", "México tiene que ganárselo."],
     13: ["Si es gratis,", "el producto eres tú."],
