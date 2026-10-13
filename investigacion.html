@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c1123f">
+  <meta name="description" content="Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · 2027-1. Una hora para organizar tu trabajo final, individual o en equipo de hasta 8 personas, escoger el tema y escribir una primera pregunta de investigación, con los consejos de Umberto Eco.">
+  <meta property="og:title" content="Tu pregunta de investigación · Seminario III · FCA UNAM">
+  <meta property="og:description" content="Equipo, tema y una primera pregunta de investigación en una hora.">
+  <meta property="og:type" content="website">
+  <title>Tu pregunta de investigación · Seminario III · FCA UNAM</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c1123f'/%3E%3Ccircle cx='16' cy='16' r='10.5' fill='none' stroke='%23f6f1e6' stroke-width='1.3'/%3E%3Ccircle cx='16' cy='16' r='6.2' fill='none' stroke='%23f6f1e6' stroke-width='1.1'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23f6f1e6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/index/sem3.css">
+  <link rel="stylesheet" href="assets/investigacion/investigacion.css">
+  <script defer src="assets/investigacion/investigacion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#pasos">Ir a los cinco pasos</a>
+
+  <noscript><p class="noscript">Activa JavaScript para usar los relojes, voltear las tarjetas y guardar la tarjeta del equipo. Todo lo demás se lee sin problema.</p></noscript>
+
+  <!-- ══════════════════════════ BARRA SUPERIOR ══════════════════════════ -->
+  <header class="topbar" id="inicio">
+    <a class="brand" href="index.html" title="Volver a la página del seminario">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--guinda)"/>
+        <circle cx="16" cy="16" r="10.5" fill="none" stroke="var(--paper)" stroke-width="1.3"/>
+        <circle cx="16" cy="16" r="6.2" fill="none" stroke="var(--paper)" stroke-width="1.1" opacity=".8"/>
+        <circle cx="16" cy="16" r="2" fill="var(--paper)"/>
+      </svg>
+      <span class="brand-text">
+        <strong>Seminario III</strong>
+        <small>FCA · UNAM · 1746</small>
+      </span>
+    </a>
+    <nav class="topnav" aria-label="Secciones de la actividad">
+      <a href="#pasos">Pasos</a>
+      <a href="#paso-3">Recortar</a>
+      <a href="#paso-4">Preguntar</a>
+      <a href="#tarjeta">Tarjeta</a>
+      <a href="#sigue">Lo que sigue</a>
+      <a href="#formatos">Formatos</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="qr-btn" id="qrBtn" type="button" title="Ver el código QR de esta página en grande" aria-label="Ver el código QR de esta página en grande" aria-haspopup="dialog">
+        <img src="assets/investigacion/qr-investigacion.svg" alt="Código QR de esta página" width="34" height="34" decoding="async">
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" title="Cambiar entre modo claro y oscuro" aria-label="Cambiar entre modo claro y oscuro">🌙</button>
+      <button class="icon-btn" id="printBtn" type="button" title="Imprimir esta página" aria-label="Imprimir esta página">🖨</button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════ PORTADA ═════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="hero-rose" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+        <circle cx="100" cy="100" r="96" stroke-width="1"/>
+        <path stroke-width=".55" opacity=".55" d="M43.1 25.1L89.0 11.9M43.1 25.1L49.6 46.5M43.1 25.1L13.0 67.0M138.1 25.1L132.6 10.9M138.1 25.1L89.0 11.9M138.1 25.1L105.4 46.5M138.1 25.1L176.0 45.0M138.1 25.1L159.2 67.0M156.9 174.9L123.2 189.1M156.9 174.9L170.2 155.0M82.6 176.6L72.8 135.6M82.6 176.6L36.2 156.0M82.6 176.6L67.4 189.1M82.6 176.6L123.2 189.1M82.6 176.6L126.6 156.0M71.1 84.0L105.4 46.5M71.1 84.0L49.6 46.5M71.1 84.0L29.4 101.6M71.1 84.0L72.8 135.6M71.1 84.0L119.8 101.6M162.5 118.7L159.2 67.0M162.5 118.7L119.8 101.6M162.5 118.7L126.6 156.0M162.5 118.7L170.2 155.0M162.5 118.7L190.4 100.0M191.2 81.3L190.4 100.0M8.8 118.7L29.4 101.6M8.8 118.7L13.0 67.0M8.8 118.7L24.0 155.0M8.8 118.7L36.2 156.0M76.8 10.9L89.0 11.9M132.6 10.9L89.0 11.9M132.6 10.9L176.0 45.0M89.0 11.9L105.4 46.5M89.0 11.9L49.6 46.5M105.4 46.5L49.6 46.5M105.4 46.5L159.2 67.0M105.4 46.5L119.8 101.6M49.6 46.5L29.4 101.6M49.6 46.5L13.0 67.0M29.4 101.6L13.0 67.0M29.4 101.6L72.8 135.6M29.4 101.6L36.2 156.0M176.0 45.0L159.2 67.0M176.0 45.0L190.4 100.0M24.0 155.0L36.2 156.0M72.8 135.6L36.2 156.0M72.8 135.6L119.8 101.6M72.8 135.6L126.6 156.0M36.2 156.0L67.4 189.1M159.2 67.0L119.8 101.6M159.2 67.0L190.4 100.0M119.8 101.6L126.6 156.0M187.0 133.0L170.2 155.0M187.0 133.0L190.4 100.0M67.4 189.1L123.2 189.1M123.2 189.1L126.6 156.0M123.2 189.1L170.2 155.0M126.6 156.0L170.2 155.0M170.2 155.0L190.4 100.0"/>
+        <path stroke-width=".95" d="M43.1 25.1L29.8 45.0M43.1 25.1L76.8 10.9M61.9 174.9L24.0 155.0M61.9 174.9L40.8 133.0M61.9 174.9L94.6 153.5M61.9 174.9L111.0 188.1M61.9 174.9L67.4 189.1M156.9 174.9L187.0 133.0M156.9 174.9L150.4 153.5M156.9 174.9L111.0 188.1M128.9 116.0L80.2 98.4M128.9 116.0L127.2 64.4M128.9 116.0L170.6 98.4M128.9 116.0L150.4 153.5M128.9 116.0L94.6 153.5M117.4 23.4L73.4 44.0M117.4 23.4L76.8 10.9M117.4 23.4L132.6 10.9M117.4 23.4L163.8 44.0M117.4 23.4L127.2 64.4M191.2 81.3L163.8 44.0M191.2 81.3L176.0 45.0M191.2 81.3L187.0 133.0M191.2 81.3L170.6 98.4M8.8 118.7L9.6 100.0M37.5 81.3L29.8 45.0M37.5 81.3L73.4 44.0M37.5 81.3L9.6 100.0M37.5 81.3L80.2 98.4M37.5 81.3L40.8 133.0M29.8 45.0L73.4 44.0M29.8 45.0L76.8 10.9M29.8 45.0L13.0 67.0M29.8 45.0L9.6 100.0M73.4 44.0L76.8 10.9M73.4 44.0L80.2 98.4M73.4 44.0L127.2 64.4M76.8 10.9L132.6 10.9M132.6 10.9L163.8 44.0M13.0 67.0L9.6 100.0M9.6 100.0L24.0 155.0M9.6 100.0L40.8 133.0M163.8 44.0L176.0 45.0M163.8 44.0L127.2 64.4M163.8 44.0L170.6 98.4M80.2 98.4L127.2 64.4M80.2 98.4L40.8 133.0M80.2 98.4L94.6 153.5M127.2 64.4L170.6 98.4M24.0 155.0L40.8 133.0M24.0 155.0L67.4 189.1M40.8 133.0L94.6 153.5M187.0 133.0L170.6 98.4M187.0 133.0L150.4 153.5M170.6 98.4L150.4 153.5M150.4 153.5L94.6 153.5M150.4 153.5L111.0 188.1M94.6 153.5L111.0 188.1M111.0 188.1L67.4 189.1M111.0 188.1L123.2 189.1"/>
+      </svg>
+      <svg class="hero-arc" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+        <circle cx="100" cy="100" r="96" stroke-width="1"/>
+        <ellipse cx="100" cy="100" rx="40" ry="96" stroke-width="1"/>
+        <ellipse cx="100" cy="100" rx="72" ry="96" stroke-width="1"/>
+        <path d="M4 100h192M18 60h164M18 140h164" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">Trabajo final · arranque · Grupo 1746 · 2027-1</p>
+        <h1 class="hero-title">Un tema no se investiga.<br><em>Se investiga una pregunta.</em></h1>
+        <p class="hero-sub">Una hora para organizarse, elegir tema y escribir una primera pregunta de investigación. Puedes trabajar individualmente o en equipo de hasta 8 personas.</p>
+        <p class="hero-meta">Seminario de Negocios Internacionales III · <a href="index.html"><b>Página del seminario</b></a><br>Dr. Jorge Cardiel Herrera · Facultad de Contaduría y Administración, UNAM</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#paso-1">Empezar por el paso 1 →</a>
+          <a class="btn btn-ghost" href="#tarjeta">Ir a la tarjeta del equipo</a>
+        </div>
+
+        <ul class="hero-stats">
+          <li><strong>60</strong><span>minutos</span></li>
+          <li><strong>5</strong><span>pasos</span></li>
+          <li><strong>1–8</strong><span>personas por trabajo</span></li>
+          <li><strong>20%</strong><span>de tu calificación</span></li>
+        </ul>
+      </div>
+
+      <figure class="frame is-plate">
+        <svg class="plate-svg" viewBox="0 0 320 272" role="img" aria-labelledby="plateTitle">
+          <title id="plateTitle">Cuatro anillos concéntricos: campo, sector, recorte y, en el centro, la pregunta.</title>
+          <g fill="none" stroke-width="2">
+            <circle cx="160" cy="136" r="124" stroke="var(--line)"/>
+            <circle cx="160" cy="136" r="94" stroke="var(--cobalt)"/>
+            <circle cx="160" cy="136" r="64" stroke="var(--teal)"/>
+            <circle cx="160" cy="136" r="34" stroke="var(--amber)"/>
+          </g>
+          <path d="M14 22L148 124" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="5 5" fill="none"/>
+          <path d="M140 112l10 14-16-4z" fill="var(--ink)"/>
+          <circle cx="160" cy="136" r="15" fill="var(--guinda)" stroke="var(--edge)" stroke-width="2"/>
+          <text x="160" y="142.5" text-anchor="middle" class="plate-q">?</text>
+          <g class="plate-label">
+            <text x="160" y="252">CAMPO</text>
+            <text x="160" y="222" class="pl-sector">SECTOR</text>
+            <text x="160" y="192" class="pl-recorte">RECORTE</text>
+            <text x="160" y="163.5" class="pl-pregunta">PREGUNTA</text>
+          </g>
+        </svg>
+        <figcaption>
+          <b>?</b>
+          <p><strong>Del campo a la pregunta.</strong> Cada anillo deja algo fuera. Lo que queda en el centro es lo que tu equipo va a poder contestar de aquí a diciembre.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"></div>
+
+  <!-- ═════════════════════════════ EL TRABAJO FINAL ════════════════════ -->
+  <section class="section" id="ensayo">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">El trabajo de investigación del semestre</p>
+        <h2>Una pregunta, varios formatos</h2>
+        <p class="lead">De forma individual o en equipo de hasta 8 personas, vas a estudiar una innovación en un sector concreto: qué es, de dónde viene, quién la produce, qué efectos tiene y qué le conviene hacer a una empresa frente a ella. El trabajo final puede ser una <strong>wiki, un policy memo, un video, un podcast, un ensayo</strong> u otro formato que permita comunicar la investigación. Vale 20% de tu calificación y presentarlo es obligatorio para acreditar.</p>
+        <p>Al final de esta página encontrarás <a href="#formatos">qué es cada formato y cómo puede servir para tu investigación</a>.</p>
+      </div>
+
+      <p class="kicker k-blue">Al terminar esta hora tu equipo tiene</p>
+      <div class="deck deck-goals">
+        <article>
+          <span class="pill">01</span>
+          <h3>Una forma de organizarse</h3>
+          <p>De 1 a 8 personas, con las responsabilidades distribuidas y un nombre para el proyecto.</p>
+        </article>
+        <article>
+          <span class="pill pill-blue">02</span>
+          <h3>Un campo</h3>
+          <p>Una innovación y un sector, nombrados con precisión y que les interesen a todos.</p>
+        </article>
+        <article>
+          <span class="pill pill-teal">03</span>
+          <h3>Una pregunta tentativa</h3>
+          <p>Escrita, recortada y lista para cambiar cuando empiecen a leer.</p>
+        </article>
+      </div>
+
+      <div class="eco-note">
+      <figure class="epigraph epigraph-eco">
+        <blockquote>
+          <p class="de">«Cuanto más se restringe el campo mejor se trabaja y se va más seguro.»</p>
+        </blockquote>
+        <figcaption>Umberto Eco · <cite>Cómo se hace una tesis</cite> · p. 32</figcaption>
+        <p class="aside">Eco escribió este manual en 1977 para estudiantes que tenían que hacer su tesis. Casi todo lo que dice sirve igual para un trabajo de equipo de un semestre: escoger un tema que sí se pueda hacer, recortarlo y convertirlo en pregunta. Las citas de esta hora salen de ahí, con su página.</p>
+      </figure>
+      <aside class="eco-images" aria-label="El libro y su autor">
+        <figure>
+          <a href="https://www.abebooks.com/TESIS-T%C3%A9cnicas-procedimientos-estudio-investigaci%C3%B3n-escritura/21597435726/bd" target="_blank" rel="noopener noreferrer">
+            <img class="eco-cover" src="assets/investigacion/eco-como-se-hace-una-tesis.jpg" alt="Portada de Cómo se hace una tesis, de Umberto Eco, editorial Gedisa" width="78" height="118" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Gedisa</figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Umberto_Eco_1984.jpg" target="_blank" rel="noopener noreferrer">
+            <img class="eco-portrait" src="assets/investigacion/umberto-eco.jpg" alt="Retrato de Umberto Eco" width="78" height="118" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Umberto Eco<br><small>Rob Bogaerts / Anefo · CC0</small></figcaption>
+        </figure>
+      </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════ TABLERO ══════════════════════════════ -->
+  <section class="section section-alt" id="pasos">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker k-blue">La hora, en cinco pasos</p>
+        <h2>Por dónde vamos</h2>
+        <p class="lead">Cada paso deja algo escrito en la tarjeta del equipo. Al final de la hora la tarjeta está completa y lista para subirla.</p>
+      </div>
+
+      <ol class="board">
+        <li class="board-item">
+          <a class="board-link" href="#paso-1">
+            <span class="board-num">01</span>
+            <span class="board-min">10 min</span>
+            <strong>Armen el equipo</strong>
+            <small>De 1 a 8 personas, cinco funciones, un nombre.</small>
+          </a>
+          <button class="timer-btn" type="button" data-timer="600" data-label="01 · Armen el equipo" aria-label="Iniciar reloj de 10 minutos para el paso 1">▶ 10:00</button>
+        </li>
+        <li class="board-item">
+          <a class="board-link" href="#paso-2">
+            <span class="board-num">02</span>
+            <span class="board-min">10 min</span>
+            <strong>Escojan el campo</strong>
+            <small>Una innovación y un sector que les interesen a todos.</small>
+          </a>
+          <button class="timer-btn" type="button" data-timer="600" data-label="02 · Escojan el campo" aria-label="Iniciar reloj de 10 minutos para el paso 2">▶ 10:00</button>
+        </li>
+        <li class="board-item">
+          <a class="board-link" href="#paso-3">
+            <span class="board-num">03</span>
+            <span class="board-min">10 min</span>
+            <strong>Recorten</strong>
+            <small>Dónde, cuándo, quiénes y qué quieren decir con su palabra clave.</small>
+          </a>
+          <button class="timer-btn" type="button" data-timer="600" data-label="03 · Recorten" aria-label="Iniciar reloj de 10 minutos para el paso 3">▶ 10:00</button>
+        </li>
+        <li class="board-item">
+          <a class="board-link" href="#paso-4">
+            <span class="board-num">04</span>
+            <span class="board-min">20 min</span>
+            <strong>Pregunten</strong>
+            <small>Del recorte a una pregunta que se pueda contestar con evidencia.</small>
+          </a>
+          <button class="timer-btn" type="button" data-timer="1200" data-label="04 · Pregunten" aria-label="Iniciar reloj de 20 minutos para el paso 4">▶ 20:00</button>
+        </li>
+        <li class="board-item">
+          <a class="board-link" href="#tarjeta">
+            <span class="board-num">05</span>
+            <span class="board-min">10 min</span>
+            <strong>La tarjeta</strong>
+            <small>Pásenla en limpio, pruébenla con otro equipo y súbanla.</small>
+          </a>
+          <button class="timer-btn" type="button" data-timer="600" data-label="05 · La tarjeta" aria-label="Iniciar reloj de 10 minutos para el paso 5">▶ 10:00</button>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PASO 01 ════════════════════════════════ -->
+  <section class="section" id="paso-1">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head">
+          <p class="kicker">Paso 01 · 10 minutos</p>
+          <h2>Armen el equipo</h2>
+          <p class="lead">De 1 a 8 personas: puedes trabajar individualmente o formar un equipo de hasta 8. Si trabajan en equipo, júntense por lo que les interesa: van a pasar dos meses con esa gente y con ese tema.</p>
+        </div>
+        <button class="timer-btn timer-btn-lg" type="button" data-timer="600" data-label="01 · Armen el equipo" aria-label="Iniciar reloj de 10 minutos para el paso 1">▶ 10:00</button>
+      </div>
+
+      <a class="link-card is-blue" href="carta_grupo.html" target="_blank" rel="noopener">
+        <span class="pill pill-blue">¿No sabes con quién?</span>
+        <h3>Busca en el radar del grupo</h3>
+        <p>Ahí están los 39 radares de la primera sesión encimados en un solo mapa. Ubica el tuyo y mira quién apunta a la misma tecnología o al mismo sector que tú.</p>
+        <p class="go">Abrir el radar del grupo →</p>
+      </a>
+
+      <p class="kicker k-blue">Cinco roles</p>
+      <div class="roles">
+        <article class="role">
+          <h3>Coordinación</h3>
+          <p>Lleva el calendario, reparte tareas y cuida que el equipo no se desvíe de la pregunta.</p>
+        </article>
+        <article class="role">
+          <h3>Evidencia</h3>
+          <p>Busca lo que ya se escribió: informes, artículos, libros, notas de prensa. Arma las fichas de cada fuente.</p>
+        </article>
+        <article class="role">
+          <h3>Datos</h3>
+          <p>Consigue las cifras con su fuente —INEGI, Secretaría de Economía, Banxico, UNCTAD, OMPI— y arma las tablas.</p>
+        </article>
+        <article class="role">
+          <h3>Contraargumento</h3>
+          <p>Busca lo que contradice la respuesta del equipo. Si lo encuentra antes que el grupo, les ahorra el mal rato en la exposición.</p>
+        </article>
+        <article class="role">
+          <h3>Relatoría</h3>
+          <p>Escribe la tarjeta de hoy y coordina la redacción o el guion del trabajo final, según el formato elegido. Cuida que se entienda a la primera.</p>
+        </article>
+      </div>
+      <p class="aside-note">Son cinco funciones, no cinco puestos obligatorios. <strong>Si trabajas individualmente, cubres las cinco.</strong> Si son de 2 a 4, cada quien puede asumir más de un rol; si son de 5 a 8, pueden repartirlos y compartir funciones, por ejemplo evidencia o datos. Todos leen y en la exposición participan todos. En esta página, «equipo» y «tarjeta del equipo» también incluyen a quien trabaja individualmente.</p>
+
+      <a class="to-card" href="#fTeam"><span>En la tarjeta</span>nombre del equipo, integrantes y roles →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PASO 02 ════════════════════════════════ -->
+  <section class="section section-alt" id="paso-2">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head">
+          <p class="kicker">Paso 02 · 10 minutos</p>
+          <h2>Escojan el campo</h2>
+          <p class="lead">El trabajo pide dos cosas juntas: una innovación concreta y el sector donde la van a seguir. «Inteligencia artificial» no es un campo; «inteligencia artificial generativa en los Call Centers bilingües» ya empieza a serlo.</p>
+        </div>
+        <button class="timer-btn timer-btn-lg" type="button" data-timer="600" data-label="02 · Escojan el campo" aria-label="Iniciar reloj de 10 minutos para el paso 2">▶ 10:00</button>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <p class="kicker k-blue">Ronda de un minuto</p>
+          <h3>Cada quien dice qué le interesa</h3>
+          <p>Qué tecnología te da curiosidad, entusiasmo o desconfianza, y por qué. Anoten todo sin discutir todavía. Después busquen dónde se cruzan dos o tres intereses: ese cruce suele ser el tema. Si trabajas individualmente, anota tus intereses y elige cuál quieres seguir.</p>
+        </article>
+        <article class="card card-blind">
+          <p class="kicker">El punto ciego del grupo</p>
+          <h3>Lo que seguimos es software; lo que traemos en la mano es materia</h3>
+          <p>En el radar de la primera sesión, 32 de 39 apuntaron a la inteligencia artificial. Pero 32 de los 37 objetos que traen todos los días son aparatos hechos de aluminio, vidrio, litio, cobre, coltán y silicio, y ese sector —electrónica, química, manufactura— lo siguen 3 de 39. Si quieren un tema que pocos equipos van a tomar, ahí hay uno.</p>
+        </article>
+      </div>
+
+      <div class="ideas-wrap">
+        <p class="kicker k-teal">Ideas para arrancar · una innovación × un sector</p>
+        <ul class="ideas">
+          <li>IA generativa <i>×</i> Call Centers</li>
+          <li>Pagos digitales <i>×</i> comercio al por menor</li>
+          <li>Empaque y prueba de chips <i>×</i> electrónica</li>
+          <li>Baterías de litio <i>×</i> automotriz</li>
+          <li>Gas natural licuado <i>×</i> energía</li>
+          <li>Ciberseguridad <i>×</i> banca</li>
+          <li>Crédito por aplicación <i>×</i> microempresas</li>
+          <li>Drones y sensores <i>×</i> agroindustria</li>
+          <li>Robots colaborativos <i>×</i> autopartes</li>
+          <li>Plataformas de reparto <i>×</i> logística de última milla</li>
+          <li>Biotecnología <i>×</i> farmacéutica</li>
+          <li>Rastreo satelital <i>×</i> transporte de carga</li>
+        </ul>
+        <p class="aside-note">Para nombrar el sector con precisión, búsquenlo en la <a href="https://unstats.un.org/unsd/publication/seriesm/seriesm_4rev4s.pdf" target="_blank" rel="noopener noreferrer">Clasificación Industrial Internacional Uniforme (CIIU)</a>, páginas 43 a 60, y quédense con una <strong>clase</strong>: no «tecnología», sino «2610 · Fabricación de componentes y tableros electrónicos» (p. 49).</p>
+      </div>
+
+      <div class="sub-head">
+        <h3>Antes de quedarse con él: las cuatro reglas de Eco</h3>
+        <p>Eco las llama «obvias» y advierte que hay tesis «dramáticamente abortadas precisamente por no haber sabido plantear el problema inicial en estos términos tan obvios» (p. 26). Pasen su campo por las cuatro.</p>
+      </div>
+      <div class="qgrid rules">
+        <article class="qcard">
+          <span class="qn">1</span>
+          <h3>Que les interese</h3>
+          <p>«Que el tema corresponda a los intereses» de quien lo hace: a lo que lee, a su mundo (p. 25). Si trabajan en equipo, debe interesarles a todos, no solo a quien lo propuso.</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">2</span>
+          <h3>Que las fuentes se puedan conseguir</h3>
+          <p>Que estén «al alcance físico» (p. 25): en línea, en la biblioteca, de aquí a diciembre. Si los datos cuestan una suscripción de miles de dólares, no están a su alcance.</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">3</span>
+          <h3>Que las fuentes se puedan leer</h3>
+          <p>Que estén «al alcance cultural» (p. 25): en un idioma y con un nivel técnico que dominen. Un manual de ingeniería de semiconductores en coreano no cuenta.</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">4</span>
+          <h3>Que sepan hacer lo que pide</h3>
+          <p>Que «el cuadro metodológico de la investigación esté al alcance» (p. 25). Si la pregunta solo se contesta con una encuesta nacional, no es su pregunta.</p>
+        </article>
+      </div>
+      <p class="eco-quote">«el que quiera hacer una tesis, debe hacer una tesis que esté capacitado para hacer.» <span>Eco · p. 26</span></p>
+
+      <a class="to-card" href="#fInnov"><span>En la tarjeta</span>la innovación, el sector y las cuatro reglas →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PASO 03 ════════════════════════════════ -->
+  <section class="section" id="paso-3">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head">
+          <p class="kicker">Paso 03 · 10 minutos</p>
+          <h2>Recorten</h2>
+          <p class="lead">«La primera tentación del estudiante es hacer una tesis que hable de muchas cosas» (Eco, p. 27). El remedio es recortar hasta que el tema quepa en lo que pueden leer de aquí a diciembre.</p>
+        </div>
+        <button class="timer-btn timer-btn-lg" type="button" data-timer="600" data-label="03 · Recorten" aria-label="Iniciar reloj de 10 minutos para el paso 3">▶ 10:00</button>
+      </div>
+
+      <div class="ladders">
+        <article class="ladder">
+          <p class="kicker k-amber">El ejemplo de Eco</p>
+          <h3>De la geología al Paricutín</h3>
+          <ol class="rungs">
+            <li>Geología</li>
+            <li>Vulcanología</li>
+            <li>Los volcanes en México</li>
+            <li>La historia del Popocatépetl</li>
+            <li>El nacimiento y la muerte aparente del Paricutín <small>del 20 de febrero de 1943 al 4 de marzo de 1952</small></li>
+          </ol>
+          <p class="ladder-foot">«Pues bien, yo aconsejaría el último tema. Con la condición de que, llegados a este punto, el aspirante diga todo lo que haya que decir sobre ese maldito volcán.» <span>p. 29</span></p>
+        </article>
+        <article class="ladder">
+          <p class="kicker k-blue">El mismo camino, con un tema del seminario</p>
+          <h3>De la tecnología a Jalisco</h3>
+          <ol class="rungs">
+            <li>Tecnología</li>
+            <li>Semiconductores</li>
+            <li>Semiconductores en México</li>
+            <li>Ensamble y prueba de chips en Jalisco</li>
+            <li>Las plantas de ensamble y prueba de chips anunciadas en Jalisco <small>entre 2022 y 2026</small></li>
+          </ol>
+          <p class="ladder-foot">En el último peldaño ya pueden hacer la lista completa, buscar cada anuncio y comprobar qué pasó con él. En el primero no pueden ni empezar.</p>
+        </article>
+      </div>
+
+      <div class="sub-head">
+        <h3>Tres cortes</h3>
+        <p>Eco estudia las radios libres que brotaban en Italia a mediados de los setenta —sí, otra vez la radio— y antes que nada pide «definir con exactitud el ámbito geográfico y temporal» (p. 58). Agreguen a quiénes van a mirar.</p>
+      </div>
+      <div class="deck deck-cuts">
+        <article>
+          <span class="pill">Dónde</span>
+          <h3>Un lugar con nombre</h3>
+          <p>Un país, una región, una ciudad, un corredor. «México y Estados Unidos» ya es un recorte; «el mundo» no.</p>
+        </article>
+        <article>
+          <span class="pill pill-blue">Cuándo</span>
+          <h3>Un periodo con principio y fin</h3>
+          <p>De 2020 a 2025, desde la reforma hasta hoy. En tecnología lo que pasa rápido envejece rápido: fijen la fecha de corte.</p>
+        </article>
+        <article>
+          <span class="pill pill-teal">Quiénes</span>
+          <h3>Qué actores, y todos</h3>
+          <p>Qué empresas, qué gobiernos, qué usuarios. Si eligen un grupo, el grupo entero: «si decido examinar sólo las radios milanesas, sean las radios milanesas, pero todas» (p. 58).</p>
+        </article>
+      </div>
+
+      <article class="card card-define">
+        <p class="kicker k-plum">La palabra clave</p>
+        <h3>Digan qué quieren decir</h3>
+        <p>Eco se detiene en qué es una «radio libre»: «¿Entiendo por radio libre sólo una radio de izquierda? ¿O una radio hecha por un grupo pequeño en situación semi-legal y en territorio nacional? ¿O una radio no dependiente del monopolio estatal […]?» (p. 59). Con las palabras grandes del seminario pasa igual: <em>fintech</em>, <em>nearshoring</em>, <em>startup</em> o <em>inteligencia artificial</em> cambian de sentido según quién las usa. Escriban qué entienden ustedes y qué dejan fuera. Para «innovación» ya tienen una definición: la del <em>Manual de Oslo</em>.</p>
+        <p class="define-eg"><b>Por ejemplo</b>Cuando decimos <em>fintech</em> nos referimos a empresas que prestan dinero o procesan pagos desde una aplicación sin ser bancos. Dejamos fuera las aplicaciones de los bancos.</p>
+      </article>
+
+      <a class="to-card" href="#fWhere"><span>En la tarjeta</span>dónde, cuándo, quiénes y su palabra clave definida →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PASO 04 ════════════════════════════════ -->
+  <section class="section section-alt" id="paso-4">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head">
+          <p class="kicker">Paso 04 · 20 minutos</p>
+          <h2>Pregunten</h2>
+          <p class="lead">El recorte todavía es un tema. Se vuelve investigación cuando lo escriben como pregunta: entonces saben qué buscar, qué les sobra y cuándo terminaron.</p>
+        </div>
+        <button class="timer-btn timer-btn-lg" type="button" data-timer="1200" data-label="04 · Pregunten" aria-label="Iniciar reloj de 20 minutos para el paso 4">▶ 20:00</button>
+      </div>
+
+      <article class="transform">
+        <div class="transform-intro">
+          <p class="kicker k-amber">Un título se vuelve pregunta</p>
+          <p>En julio de 1948 balearon a Palmiro Togliatti, dirigente del Partido Comunista Italiano, y el país estuvo a punto de estallar. Días después, Gino Bartali ganó el Tour de Francia. Eco imagina una tesis sobre eso con tres títulos distintos (pp. 138–139):</p>
+        </div>
+        <ol class="transform-rows">
+          <li>
+            <span>Título público</span>
+            <p>«El atentado de Togliatti y la radio»</p>
+          </li>
+          <li>
+            <span>Título secreto</span>
+            <p>«Análisis de contenido con vistas a mostrar la utilización de la victoria de Gino Bartali en el Tour de France a fin de distraer la atención de la opinión pública del hecho político acaecido»</p>
+          </li>
+          <li class="is-question">
+            <span>La pregunta</span>
+            <p>«¿se ha hecho en la radio un uso específico de la victoria de Gino Bartali que llegue a evidenciar el proyecto de distraer la atención del público del atentado sufrido por Togliatti?»</p>
+          </li>
+        </ol>
+        <p class="transform-foot">El título público cabe en una portada. La pregunta dice qué van a escuchar, qué van a contar y qué tendría que aparecer para responder que sí. «Ya se ve que el “título” (transformado en pregunta) se convierte en parte esencial del plan de trabajo» <span>p. 139</span></p>
+      </article>
+
+      <div class="sub-head">
+        <h3>Cómo se escribe</h3>
+      </div>
+      <ol class="check-list how-list">
+        <li><div><strong>Que se pueda contestar con evidencia</strong><span>Si se responde con sí o no, pregúntense qué dato decidiría el sí o el no. Si ningún dato lo decide, es una opinión.</span></div></li>
+        <li><div><strong>Que lleve el recorte adentro</strong><span>Dónde, cuándo y quiénes van dentro de la pregunta, no en una nota aparte.</span></div></li>
+        <li><div><strong>Que sea una sola</strong><span>Si tiene un «y», quizá son dos. Elijan la principal; las otras quedan como preguntas secundarias. Dos o tres en total, no más.</span></div></li>
+        <li><div><strong>Que no traiga la respuesta</strong><span>«¿Por qué deberían…?» ya decidió. Una pregunta que trae la respuesta adentro es un alegato.</span></div></li>
+        <li><div><strong>Que alcance el semestre</strong><span>Que la puedan contestar con lo que consigan de aquí a diciembre.</span></div></li>
+      </ol>
+
+      <div class="sub-head">
+        <h3>Las cuatro pruebas</h3>
+        <p>Para Eco un trabajo es científico, con fórmulas o sin ellas, si cumple cuatro requisitos (pp. 48–52). Háganselos a su pregunta.</p>
+      </div>
+      <div class="tests">
+        <article class="qcard">
+          <span class="qn">1</span>
+          <h3>¿Se reconoce de qué hablan?</h3>
+          <p>El objeto tiene que estar «definido de tal modo que también sea reconocible por los demás» (p. 48). Si otro equipo no puede decir qué cae dentro y qué fuera, falta definir.</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">2</span>
+          <h3>¿Dice algo que no se sepa ya?</h3>
+          <p>Demostrar otra vez el teorema de Pitágoras «no añadiría nada a nuestro conocimiento» (p. 49). Tampoco sirve preguntar lo que se adivina: Eco recuerda a un alumno que llamó «encuesta» a lo que le contaron una docena de relojeros en dos viajes en tren, con resultados «perfectamente imaginables sin necesidad de hacer la encuesta» (p. 56).</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">3</span>
+          <h3>¿Le sirve a alguien?</h3>
+          <p>La investigación «tiene que ser útil a los demás» (p. 50). En este trabajo, ese alguien es una empresa del sector que tiene que decidir qué hacer frente a la innovación.</p>
+        </article>
+        <article class="qcard">
+          <span class="qn">4</span>
+          <h3>¿Qué dato los haría cambiar de idea?</h3>
+          <p>Quien quiera probar que hay centauros en el Peloponeso tiene que decir «qué tipo de hueso (u otro hallazgo) mandaría al cuerno mi hipótesis el día que fuera encontrado» (pp. 51–52). Si no saben qué los haría cambiar de idea, todavía no tienen pregunta.</p>
+        </article>
+      </div>
+
+      <div class="head-row flip-head">
+        <div class="sub-head">
+          <h3>Afínenlas</h3>
+          <p>Seis preguntas flojas. Antes de voltear cada una, discútanla un minuto: ¿qué prueba no pasa y cómo la arreglarían?</p>
+        </div>
+        <button class="btn btn-primary btn-small" id="fishBtn" type="button">🎣 Pescar una al azar</button>
+      </div>
+      <div class="flips" id="flips">
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 1</span>
+              <span class="flip-q">¿Cómo afecta la inteligencia artificial a los negocios internacionales?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · p. 28</span>
+              <span class="flip-why">Es panorámica: cabe todo y no se contesta nada. Eco la llamaría un «acto de soberbia».</span>
+              <span class="flip-better"><b>Mejor</b>¿Qué servicios de los Call Centers bilingües de Monterrey se han automatizado con IA generativa desde 2023, según lo que anuncian las propias empresas?</span>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 2</span>
+              <span class="flip-q">¿Qué es el nearshoring?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · p. 49</span>
+              <span class="flip-why">Se contesta con una definición. Es Pitágoras otra vez: no añade nada a lo que ya se sabe.</span>
+              <span class="flip-better"><b>Mejor</b>De los proyectos de nearshoring anunciados en Nuevo León en 2023, ¿cuántos tenían una planta en operación en 2026?</span>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 3</span>
+              <span class="flip-q">¿El litio es bueno o malo para México?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · pp. 51–52</span>
+              <span class="flip-why">Pide un juicio, no un dato: ningún hallazgo podría tumbar la respuesta.</span>
+              <span class="flip-better"><b>Mejor</b>¿Qué pasó con las concesiones de litio de empresas extranjeras en México después de la reforma minera de 2022?</span>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 4</span>
+              <span class="flip-q">¿Los jóvenes prefieren pagar con el celular?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · p. 56</span>
+              <span class="flip-why">La respuesta se adivina sin investigar: es la encuesta de los relojeros del tren.</span>
+              <span class="flip-better"><b>Mejor</b>¿Qué ofrecen y cuánto cobran Mercado Pago, Nu y Spin by OXXO a quien no tiene cuenta de banco?</span>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 5</span>
+              <span class="flip-q">¿Por qué las empresas mexicanas deberían innovar más?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · Cómo se escribe, 4</span>
+              <span class="flip-why">Trae la respuesta adentro: el «deberían» ya decidió. Es un alegato, no una pregunta.</span>
+              <span class="flip-better"><b>Mejor</b>En la encuesta del INEGI sobre investigación y desarrollo tecnológico, ¿las empresas manufactureras declaran más innovaciones de producto o de proceso?</span>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="flip-tag">Pregunta floja · 6</span>
+              <span class="flip-q">¿Cuál es el futuro de los autos eléctricos?</span>
+              <span class="flip-hint">Toca para voltear</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-tag">Qué le falta · Cómo se escribe, 5</span>
+              <span class="flip-why">El futuro no deja fuentes. Lo que sí se puede revisar es lo que ya se prometió.</span>
+              <span class="flip-better"><b>Mejor</b>¿Qué armadoras anunciaron que producirían autos eléctricos en México entre 2021 y 2025, y cuántas lo cumplieron?</span>
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <div class="sub-head">
+        <h3>Dónde van a buscar</h3>
+        <p>Para las radios libres Eco distingue tres fuentes (pp. 61–63). Con otros nombres, son las suyas.</p>
+      </div>
+      <div class="deck deck-sources">
+        <article>
+          <span class="pill pill-teal">Datos oficiales</span>
+          <h3>Lo que registra el Estado</h3>
+          <p>«Son siempre los más seguros» (p. 61). INEGI, Secretaría de Economía, Banxico, CNBV, UNCTAD, OMPI, OCDE.</p>
+        </article>
+        <article>
+          <span class="pill pill-amber">Lo que dicen los actores</span>
+          <h3>Informes, comunicados, entrevistas</h3>
+          <p>Que una empresa lo diga no prueba que sea cierto, pero «el hecho de que el que emite haga tal presentación pública es un dato objetivo» (p. 62).</p>
+        </article>
+        <article>
+          <span class="pill pill-plum">Lo que ustedes observan</span>
+          <h3>Seguir algo con método</h3>
+          <p>Eco pide escuchar una radio una semana entera, hora por hora, con «magnetofón y lápiz» (pp. 62–63). Ustedes pueden seguir precios, anuncios, vacantes o aplicaciones igual: siempre lo mismo, a la misma hora, por escrito.</p>
+        </article>
+      </div>
+      <p class="eco-quote">«Tres opiniones hacen sólo un artículo de periódico, cien opiniones hacen una encuesta.» <span>Eco · p. 65</span></p>
+
+      <a class="to-card" href="#fQuestion"><span>En la tarjeta</span>la pregunta, lo que sospechan, el dato que los haría cambiar de idea y dónde van a buscar →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PASO 05 · TARJETA ══════════════════════ -->
+  <section class="section" id="tarjeta">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head">
+          <p class="kicker">Paso 05 · 10 minutos</p>
+          <h2>La tarjeta del equipo</h2>
+          <p class="lead">Una sola por trabajo, individual o en equipo, en un solo teléfono o computadora: lo que escriban se queda guardado en ese aparato. Antes de salir, cópienla.</p>
+        </div>
+        <button class="timer-btn timer-btn-lg" type="button" data-timer="600" data-label="05 · La tarjeta" aria-label="Iniciar reloj de 10 minutos para el paso 5">▶ 10:00</button>
+      </div>
+
+      <div class="builder">
+        <form class="fields" id="teamForm" autocomplete="off">
+          <fieldset class="fset">
+            <legend><b>01</b> El equipo</legend>
+            <div class="field">
+              <label for="fTeam">Nombre del equipo o del proyecto individual</label>
+              <input id="fTeam" type="text" maxlength="60" placeholder="Por ejemplo: Paricutín">
+            </div>
+            <div class="field">
+              <label for="fMembers">Integrantes y roles <b>· de 1 a 8 personas, una por renglón</b></label>
+              <textarea id="fMembers" rows="8" aria-describedby="membersHelp" placeholder="Nombre Apellido — rol o roles que asume"></textarea>
+              <small id="membersHelp">Si trabajas individualmente, escribe tu nombre y «todos los roles». En equipo, pueden combinar o compartir roles.</small>
+            </div>
+          </fieldset>
+
+          <fieldset class="fset">
+            <legend><b>02</b> El campo</legend>
+            <div class="field">
+              <label for="fInnov">La innovación</label>
+              <input id="fInnov" type="text" maxlength="140" placeholder="Por ejemplo: empaque y prueba de chips">
+            </div>
+            <div class="field">
+              <label for="teamSector">El sector <b>· con su clase de la CIIU, si la encontraron</b></label>
+              <input id="teamSector" type="text" maxlength="140" placeholder="Por ejemplo: 2610 · Fabricación de componentes y tableros electrónicos">
+            </div>
+            <div class="checks" role="group" aria-labelledby="rulesLabel">
+              <p class="checks-label" id="rulesLabel">Las cuatro reglas</p>
+              <label><input type="checkbox" data-group="rules" value="Les interesa a todos"> Les interesa a todos</label>
+              <label><input type="checkbox" data-group="rules" value="Las fuentes se pueden conseguir"> Las fuentes se pueden conseguir</label>
+              <label><input type="checkbox" data-group="rules" value="Las fuentes se pueden leer"> Las fuentes se pueden leer</label>
+              <label><input type="checkbox" data-group="rules" value="Saben hacer lo que pide"> Saben hacer lo que pide</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="fset">
+            <legend><b>03</b> El recorte</legend>
+            <div class="field-row">
+              <div class="field">
+                <label for="fWhere">Dónde</label>
+                <input id="fWhere" type="text" maxlength="80" placeholder="Jalisco">
+              </div>
+              <div class="field">
+                <label for="fWhen">Cuándo</label>
+                <input id="fWhen" type="text" maxlength="80" placeholder="2022–2026">
+              </div>
+              <div class="field">
+                <label for="fWho">Quiénes</label>
+                <input id="fWho" type="text" maxlength="80" placeholder="Plantas anunciadas">
+              </div>
+            </div>
+            <div class="field">
+              <label for="fTerm">Cuando decimos… nos referimos a…</label>
+              <textarea id="fTerm" rows="2" placeholder="Cuando decimos «ensamble y prueba» nos referimos a… y dejamos fuera…"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="fset">
+            <legend><b>04</b> La pregunta</legend>
+            <div class="field">
+              <label for="fQuestion">Pregunta de investigación <b>· tentativa</b></label>
+              <textarea id="fQuestion" rows="3" placeholder="¿…?"></textarea>
+            </div>
+            <div class="field">
+              <label for="fHunch">Lo que sospechamos <b>· una respuesta provisional</b></label>
+              <textarea id="fHunch" rows="2" placeholder="Creemos que…"></textarea>
+            </div>
+            <div class="field">
+              <label for="fBone">El dato que nos haría cambiar de idea</label>
+              <textarea id="fBone" rows="2" placeholder="Si encontramos que…, estábamos equivocados."></textarea>
+            </div>
+            <div class="field">
+              <label for="teamSources">Dónde vamos a buscar</label>
+              <textarea id="teamSources" rows="3" placeholder="Datos oficiales: …&#10;Lo que dicen los actores: …&#10;Lo que vamos a observar: …"></textarea>
+            </div>
+            <div class="checks" role="group" aria-labelledby="testsLabel">
+              <p class="checks-label" id="testsLabel">Las cuatro pruebas</p>
+              <label><input type="checkbox" data-group="tests" value="Se reconoce de qué hablamos"> Se reconoce de qué hablamos</label>
+              <label><input type="checkbox" data-group="tests" value="Dice algo que no se sabe ya"> Dice algo que no se sabe ya</label>
+              <label><input type="checkbox" data-group="tests" value="Le sirve a una empresa del sector"> Le sirve a una empresa del sector</label>
+              <label><input type="checkbox" data-group="tests" value="Sabemos qué dato nos haría cambiar de idea"> Sabemos qué dato nos haría cambiar de idea</label>
+            </div>
+          </fieldset>
+
+          <div class="builder-actions">
+            <button class="btn btn-primary" id="teamCopyBtn" type="button">Copiar la tarjeta</button>
+            <button class="btn" id="teamPrintBtn" type="button">Imprimir la tarjeta</button>
+            <button class="btn btn-ghost btn-small" id="teamClearBtn" type="button">Empezar de nuevo</button>
+          </div>
+        </form>
+
+        <aside class="rcard tcard" id="teamCard" aria-label="Vista previa de la tarjeta del equipo">
+          <div class="rcard-head">
+            <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="16" cy="16" r="13"/><circle cx="16" cy="16" r="7.5"/><circle cx="16" cy="16" r="2.4" fill="currentColor"/>
+            </svg>
+            <strong>Tarjeta del equipo</strong>
+            <span>Trabajo final</span>
+          </div>
+          <div class="rcard-body">
+            <p class="rcard-name" id="tcTeam" data-empty="Nombre del equipo o proyecto"></p>
+            <ul class="tc-members" id="tcMembers"></ul>
+            <div class="tc-question">
+              <span>Pregunta tentativa</span>
+              <p id="tcQuestion" data-empty="¿…?"></p>
+            </div>
+            <dl class="rcard-grid">
+              <div><dt>Innovación</dt><dd id="tcInnov"></dd></div>
+              <div><dt>Sector</dt><dd id="tcSector"></dd></div>
+              <div><dt>Recorte</dt><dd id="tcCut"></dd></div>
+              <div><dt>Palabra clave</dt><dd id="tcTerm"></dd></div>
+              <div><dt>Sospechamos</dt><dd id="tcHunch"></dd></div>
+              <div><dt>Cambiaríamos si</dt><dd id="tcBone"></dd></div>
+              <div><dt>Fuentes</dt><dd id="tcSources"></dd></div>
+            </dl>
+            <div class="tc-meters">
+              <p><span>Reglas</span><b id="tcRules">0 / 4</b></p>
+              <p><span>Pruebas</span><b id="tcTests">0 / 4</b></p>
+            </div>
+          </div>
+          <div class="rcard-foot">Seminario III · FCA UNAM · Grupo 1746 · 2027-1</div>
+        </aside>
+      </div>
+
+      <div class="sub-head sub-head-gap">
+        <h3>Antes de salir</h3>
+      </div>
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Pruébenla con otro equipo · 5 minutos</h3>
+            <p>Lean su tarjeta al equipo de al lado. Ellos les hacen dos preguntas: <strong>¿de qué hablan exactamente?</strong> y <strong>¿qué dato los haría cambiar de idea?</strong> Si no pueden contestar, ajusten la tarjeta. Luego cambian los papeles.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Súbanla a Moodle</h3>
+            <p>Copien la tarjeta y súbanla al espacio del trabajo en <a href="https://negociosinternacionales.fca.unam.mx" target="_blank" rel="noopener noreferrer">Moodle</a>. Es el punto de partida de su investigación, cualquiera que sea el formato de la entrega final.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ LO QUE SIGUE ═══════════════════════════ -->
+  <section class="section section-alt" id="sigue">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker k-teal">Después de hoy</p>
+        <h2>La pregunta va a cambiar</h2>
+        <p class="lead">Y está bien. La de hoy es tentativa: sirve para saber qué leer primero. Cuando empiecen a leer la van a afinar, y quizá a cambiar de rumbo.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <p class="kicker k-blue">El viaje en coche</p>
+          <h3>Se sale con una ruta</h3>
+          <p>Eco compara el plan de trabajo con un viaje de mil kilómetros en una semana: nadie sale de casa a ciegas. Se sale con una ruta, y si Siena toma más tiempo del previsto se cancela Montecassino. «Pero el que habéis modificado es ese trayecto, no ningún trayecto» (p. 138).</p>
+        </article>
+        <article class="card">
+          <p class="kicker k-amber">Si no cambia, algo falló</p>
+          <h3>Cambiar es la señal de que aprendieron</h3>
+          <p>«El índice y la introducción finales […] serán diferentes de los iniciales. Es lo normal. Si no fuera así, significaría que toda la investigación efectuada no os ha proporcionado ninguna idea nueva» (p. 141).</p>
+        </article>
+      </div>
+
+      <div class="route-grid route-next">
+        <article class="route-card">
+          <span class="rc-num">1</span>
+          <p class="rc-dates">Hoy</p>
+          <h3>Equipo, tema y pregunta tentativa</h3>
+          <p>La tarjeta del trabajo individual o en equipo, entregada en Moodle.</p>
+        </article>
+        <article class="route-card">
+          <span class="rc-num">2</span>
+          <p class="rc-dates">Primera revisión</p>
+          <h3>Preguntas, hipótesis y fuentes</h3>
+          <p>La pregunta principal afinada y dos secundarias como máximo, una hipótesis provisional, las fuentes reunidas con su ficha completa y una imagen que identifique al equipo.</p>
+        </article>
+        <article class="route-card">
+          <span class="rc-num">3</span>
+          <p class="rc-dates">1 y 8 de diciembre</p>
+          <h3>El trabajo final y la exposición</h3>
+          <p>El trabajo terminado en el formato elegido —wiki, policy memo, video, podcast, ensayo u otro— y una exposición de 15 minutos apoyada en ese material. Si trabajan en equipo, participan todos.</p>
+        </article>
+      </div>
+
+      <p class="aside-note">Lo primero que sigue es buscar qué se ha escrito ya sobre su tema. Eco lo pone antes que el índice y que la introducción: «Lo primero es la inspección bibliográfica» (p. 142).</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FUENTES ════════════════════════════════ -->
+  <section class="section" id="fuentes">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker k-plum">Fuentes</p>
+        <h2>De dónde sale esta hora</h2>
+      </div>
+      <ul class="refs">
+        <li>Eco, U. (1982). <em>Cómo se hace una tesis: técnicas y procedimientos de estudio, investigación y escritura</em> (L. Baranda y A. Clavería Ibáñez, Trads.). Gedisa. (Obra original publicada en 1977)</li>
+        <li>Naciones Unidas. (2009). <em>Clasificación Industrial Internacional Uniforme de todas las actividades económicas (CIIU), Revisión 4</em> (Informes Estadísticos, Serie M, núm. 4, Rev. 4). <a href="https://unstats.un.org/unsd/publication/seriesm/seriesm_4rev4s.pdf" target="_blank" rel="noopener noreferrer">https://unstats.un.org/unsd/publication/seriesm/seriesm_4rev4s.pdf</a></li>
+        <li>OCDE y Eurostat. (2018). <em>Oslo Manual 2018: Guidelines for collecting, reporting and using data on innovation</em> (4.ª ed.). OECD Publishing. <a href="https://doi.org/10.1787/9789264304604-en" target="_blank" rel="noopener noreferrer">https://doi.org/10.1787/9789264304604-en</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FORMATOS ══════════════════════════════ -->
+  <section class="section section-alt" id="formatos" aria-labelledby="formatosTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker k-blue">Elige cómo comunicar tu investigación</p>
+        <h2 id="formatosTitle">¿Qué es cada formato?</h2>
+        <p class="lead">Elijan el formato que mejor permita responder su pregunta y llegar a su público. En todos, la base es la misma: una pregunta delimitada, evidencia con fuentes identificables, análisis y una conclusión propia.</p>
+      </div>
+
+      <div class="deck formats-grid">
+        <article>
+          <span class="pill">Wiki</span>
+          <h3>Una investigación que se puede recorrer</h3>
+          <p>Un conjunto de páginas conectadas por enlaces y editables por sus autores. Permite organizar el tema en secciones —antecedentes, actores, datos, análisis y conclusiones— e integrar texto, imágenes, tablas y referencias. Los enlaces ayudan al lector a explorar las relaciones entre las partes.</p>
+        </article>
+        <article>
+          <span class="pill pill-blue">Policy memo</span>
+          <h3>Un documento para tomar una decisión</h3>
+          <p>Un memorando breve dirigido a alguien que debe decidir, por ejemplo una autoridad pública o la dirección de una empresa. Define un problema, compara opciones con evidencia y recomienda una acción. Explica por qué conviene esa opción, cómo podría aplicarse y qué costos, riesgos o límites tiene.</p>
+        </article>
+        <article>
+          <span class="pill pill-teal">Video</span>
+          <h3>Un argumento con imagen y sonido</h3>
+          <p>Una pieza audiovisual que responde la pregunta mediante un guion, narración, imágenes, gráficos o entrevistas. Puede tomar la forma de un documental breve o de una explicación visual. El montaje debe desarrollar el análisis; los datos, testimonios y materiales utilizados llevan sus créditos y fuentes.</p>
+        </article>
+        <article>
+          <span class="pill">Podcast</span>
+          <h3>Una investigación para escuchar</h3>
+          <p>Un episodio de audio organizado con un guion. Puede combinar narración, conversación y entrevistas para presentar el problema, contrastar evidencia y llegar a una conclusión. Mencionen las fuentes al hablar y reúnan las referencias completas en las notas del episodio para que se puedan consultar.</p>
+        </article>
+        <article>
+          <span class="pill pill-blue">Ensayo</span>
+          <h3>Una respuesta defendida por escrito</h3>
+          <p>Un texto que sostiene una tesis: la respuesta que proponen a su pregunta. Desarrolla argumentos apoyados en fuentes, considera objeciones y cierra con una conclusión. Puede ser un documento escrito o un ensayo interactivo con enlaces, gráficos y otros recursos que ayuden a seguir el razonamiento.</p>
+        </article>
+        <article>
+          <span class="pill pill-teal">Informe de investigación</span>
+          <h3>El proceso y los resultados a la vista</h3>
+          <p>Un documento organizado por pregunta, método, resultados y conclusiones. Explica qué fuentes o datos utilizaron, cómo los analizaron y qué encontraron. Sirve para presentar comparaciones, tablas y hallazgos de manera que otra persona pueda revisar el procedimiento y sus límites.</p>
+        </article>
+      </div>
+
+      <p class="aside-note">También pueden proponer otro formato o combinar varios. Lo central es que se entienda qué investigaron, cómo lo sostienen y qué concluyen; el formato debe ayudar a comunicar ese trabajo. Estas opciones valen tanto para el trabajo individual como para equipos de hasta 8 personas.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PIE ════════════════════════════════════ -->
+  <footer>
+    <div class="foot-grid">
+      <p>
+        <strong>Seminario de Negocios Internacionales III</strong>
+        Licenciatura en Negocios Internacionales · Facultad de Contaduría y Administración · UNAM
+      </p>
+      <p>
+        <strong>Grupo 1746 · Semestre 2027-1</strong>
+        <a href="index.html">Página del seminario</a> · Dr. Jorge Cardiel Herrera<br><a href="mailto:semsocan2019@gmail.com">semsocan2019@gmail.com</a> · <a href="https://socyb.github.io" target="_blank" rel="noopener noreferrer">socyb.github.io</a>
+      </p>
+      <a class="to-top" href="#inicio" aria-label="Volver al inicio">↑</a>
+    </div>
+    <p class="foot-note">Última actualización · <time id="lastUpdate" datetime="2026-10-12">12 de octubre de 2026</time></p>
+  </footer>
+
+  <!-- ═══════════════════ RELOJ DEL PASO ═════════════════════════════════ -->
+  <div class="clock" id="clock" role="timer" aria-label="Reloj del paso" hidden>
+    <span class="clock-label" id="clockLabel"></span>
+    <strong class="clock-time" id="clockTime">10:00</strong>
+    <button class="clock-btn" id="clockPause" type="button" aria-label="Pausar el reloj">❚❚</button>
+    <button class="clock-btn" id="clockStop" type="button" aria-label="Cerrar el reloj">×</button>
+  </div>
+
+  <!-- ═══════════════════ MARCO EMERGENTE · CÓDIGO QR ═══════════════════ -->
+  <dialog class="qr-modal" id="qrModal" aria-labelledby="qrModalTitle">
+    <form method="dialog" class="qr-modal-close-form">
+      <button class="qr-modal-close" value="cerrar" aria-label="Cerrar el código QR">×</button>
+    </form>
+    <p class="kicker">Seminario III · FCA UNAM · 1746 · 2027-1</p>
+    <h2 class="qr-modal-title" id="qrModalTitle">Escanea para abrir esta página</h2>
+    <figure class="qr-frame">
+      <img src="assets/investigacion/qr-investigacion.svg" alt="Código QR que abre la página de la pregunta de investigación" width="420" height="420" decoding="async">
+    </figure>
+    <p class="qr-url mono" id="qrUrl">https://socyb.github.io/sem3/investigacion.html</p>
+    <div class="qr-actions">
+      <button class="btn btn-primary btn-small" id="qrCopyBtn" type="button">Copiar liga</button>
+      <a class="btn btn-ghost btn-small" href="assets/investigacion/qr-investigacion.svg" download="qr-pregunta-investigacion-1746.svg">Descargar QR</a>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

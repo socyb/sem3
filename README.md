@@ -74,6 +74,17 @@ demás páginas del profesor y este repositorio.
 
 ## Detalles de la página
 
+La sesión 08, **Tu pregunta de investigación**, pasa al frente del `index` el
+**13 de octubre de 2026 a las 07:00, hora de Ciudad de México**. La apertura se
+resuelve en el navegador, como las sesiones anteriores, y también actualiza una
+pestaña que haya quedado abierta. La actividad completa se conserva en la bitácora
+y en [`investigacion.html`](investigacion.html); la tarjeta del equipo se guarda
+en el mismo dispositivo al usar cualquiera de las dos páginas.
+
+Para revisar la apertura: `?fecha=2026-10-13&hora=06:59` muestra la sesión anterior
+y `?fecha=2026-10-13&hora=07:00` muestra la sesión 08. Las horas de vista previa se
+interpretan en Ciudad de México; sin estos parámetros se usa el instante real.
+
 - **Un código QR** en la barra superior, que se amplía al hacerle clic. Sirve para
   proyectarlo en clase y que el grupo abra la página desde el celular.
 - **Modo claro y oscuro**, con la preferencia guardada en el dispositivo.

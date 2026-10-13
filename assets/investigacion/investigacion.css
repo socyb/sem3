@@ -1,0 +1,396 @@
+/* ==========================================================================
+   Tu pregunta de investigación · arranque del trabajo final
+   Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · 2027-1
+   Se carga después de assets/index/sem3.css: aquí solo van las piezas nuevas.
+   ========================================================================== */
+
+/* ── Lámina de portada: los anillos ─────────────────────────────────────── */
+.plate-svg{
+  display:block;width:100%;height:auto;aspect-ratio:320/272;
+  padding:clamp(.8rem,2.4vw,1.6rem);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.plate-label text{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-anchor:middle;fill:var(--muted);
+}
+.plate-label .pl-sector{fill:var(--cobalt)}
+.plate-label .pl-recorte{fill:var(--teal)}
+.plate-label .pl-pregunta{fill:var(--amber)}
+.plate-q{font-family:var(--display);font-size:19px;font-weight:900;fill:#fff}
+html[data-theme="dark"] .plate-q{fill:#180510}
+
+/* ── Subtítulos dentro de una sección ───────────────────────────────────── */
+.sub-head{max-width:46rem;margin:2.8rem 0 1.2rem}
+.sub-head h3{font-size:clamp(1.35rem,2.8vw,1.85rem);font-weight:900;margin-bottom:.35rem}
+.sub-head p{margin:0;color:var(--ink-soft)}
+.sub-head-gap{margin-top:3.2rem}
+.head-row .timer-btn-lg{margin-bottom:.35rem}
+
+/* ── Tablero: los cinco pasos con su reloj ──────────────────────────────── */
+.board{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;
+}
+.board-item{
+  display:flex;flex-direction:column;
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius);
+  box-shadow:var(--shadow-xs);overflow:hidden;
+  transition:transform var(--t),box-shadow var(--t);
+}
+.board-item:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-sm)}
+.board-link{
+  flex:1;display:grid;grid-template-columns:auto 1fr;align-content:start;gap:.15rem .7rem;
+  padding:1rem 1.05rem 1.1rem;color:var(--ink);text-decoration:none;
+}
+.board-link:hover{color:var(--ink)}
+.board-num{
+  grid-row:1;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
+  border:2px solid var(--cobalt);background:var(--tint-blue);color:var(--cobalt);
+  font-family:var(--mono);font-size:.76rem;
+}
+.board-min{
+  grid-row:1;align-self:center;justify-self:end;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+}
+.board-link strong{
+  grid-column:1/-1;margin-top:.7rem;
+  font-family:var(--display);font-size:1.16rem;font-weight:900;letter-spacing:-.02em;line-height:1.15;
+}
+.board-link small{grid-column:1/-1;font-size:.86rem;color:var(--ink-soft);line-height:1.4}
+.board-item:nth-child(2) .board-num{border-color:var(--teal);color:var(--teal);background:var(--tint-teal)}
+.board-item:nth-child(3) .board-num{border-color:var(--amber);color:var(--amber);background:var(--tint-amber)}
+.board-item:nth-child(4) .board-num{border-color:var(--guinda);color:var(--guinda);background:var(--tint-red)}
+.board-item:nth-child(5) .board-num{border-color:var(--plum);color:var(--plum);background:var(--tint-plum)}
+
+.timer-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.4rem;
+  padding:.55rem .9rem;border:0;border-top:2px solid var(--edge);
+  background:var(--paper-2);color:var(--ink);cursor:pointer;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;
+  transition:background var(--t),color var(--t);
+}
+.timer-btn:hover{background:var(--ink);color:var(--paper)}
+.timer-btn.is-running{background:var(--guinda);color:#fff}
+html[data-theme="dark"] .timer-btn.is-running{color:#180510}
+.timer-btn-lg{
+  border:2px solid var(--edge);border-radius:999px;box-shadow:var(--shadow-xs);
+  padding:.6rem 1.1rem;font-size:.86rem;background:var(--card);
+  transition:transform var(--t),box-shadow var(--t),background var(--t),color var(--t);
+}
+.timer-btn-lg:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-sm)}
+
+/* ── Las cuatro reglas en una fila ──────────────────────────────────────── */
+.qgrid.rules{grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr))}
+
+/* ── Metas de la hora ───────────────────────────────────────────────────── */
+.deck-goals{margin-bottom:2.6rem}
+.epigraph-eco{margin-bottom:0}
+.epigraph-eco .de{font-style:italic}
+
+/* El libro y el autor acompañan la lectura sin competir con ella. */
+.eco-note{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.8rem;align-items:center}
+.eco-images{display:flex;gap:.85rem;align-items:start}
+.eco-images figure{margin:0;width:78px}
+.eco-images img{display:block;width:78px;height:118px;object-fit:cover;border:1px solid var(--line);border-radius:2px}
+.eco-images .eco-cover{object-fit:contain;background:var(--card)}
+.eco-images figcaption{margin-top:.45rem;font-size:.68rem;line-height:1.4;color:var(--muted)}
+.eco-images small{font-size:.6rem}
+.research-session > .section > .wrap{padding-inline:0}
+.research-session > .section-alt{padding-inline:clamp(1rem,3vw,2rem);border-radius:var(--radius)}
+@media (max-width:760px){
+  .eco-note{grid-template-columns:1fr;gap:1.2rem}
+  .eco-images{justify-content:flex-end}
+}
+
+/* ── Llamada «En la tarjeta» al cierre de cada paso ─────────────────────── */
+.to-card{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .8rem;
+  margin-top:2.2rem;padding:.85rem 1.1rem;max-width:62rem;
+  border:2px dashed var(--guinda);border-radius:var(--radius-sm);
+  background:var(--card);color:var(--ink);text-decoration:none;font-weight:700;
+  transition:background var(--t);
+}
+.to-card:hover{background:var(--tint-red);color:var(--ink)}
+.to-card span{
+  font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--guinda);
+}
+
+/* ── Roles del equipo ───────────────────────────────────────────────────── */
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
+.role{
+  background:var(--card);border:2px solid var(--edge);border-top:8px solid var(--guinda);
+  border-radius:var(--radius);padding:1.05rem 1.1rem;box-shadow:var(--shadow-xs);
+}
+.role h3{font-size:1.12rem;font-weight:900;margin:0 0 .35rem}
+.role p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+.role:nth-child(2){border-top-color:var(--cobalt)}
+.role:nth-child(3){border-top-color:var(--teal)}
+.role:nth-child(4){border-top-color:var(--amber)}
+.role:nth-child(5){border-top-color:var(--plum)}
+
+/* ── El punto ciego ─────────────────────────────────────────────────────── */
+.card-blind{background:var(--tint-red);border-color:var(--guinda)}
+.card-blind h3{color:var(--guinda)}
+
+/* ── Ideas: innovación × sector ─────────────────────────────────────────── */
+.ideas-wrap{margin-top:2.4rem}
+.ideas{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.ideas li{
+  padding:.4rem .8rem;border:1.5px solid var(--edge);border-radius:999px;
+  background:var(--card);font-size:.86rem;font-weight:500;
+}
+.ideas i{font-style:normal;color:var(--guinda);font-weight:700;margin:0 .15rem}
+
+/* ── Cita breve de Eco ──────────────────────────────────────────────────── */
+.eco-quote{
+  max-width:52rem;margin:1.8rem 0 0;padding:.2rem 0 .2rem 1.1rem;
+  border-left:5px solid var(--guinda);
+  font-family:var(--display);font-size:clamp(1.12rem,2.2vw,1.42rem);font-weight:600;
+  font-style:italic;line-height:1.3;letter-spacing:-.01em;
+}
+.eco-quote span,
+.ladder-foot span,
+.transform-foot span{
+  display:block;margin-top:.45rem;font-family:var(--mono);font-style:normal;font-weight:500;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ── Escaleras: del campo al tema ───────────────────────────────────────── */
+.ladders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:1.3rem}
+.ladder{
+  display:flex;flex-direction:column;
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius);
+  padding:clamp(1.15rem,2.6vw,1.6rem);box-shadow:var(--shadow-sm);
+}
+.ladder h3{font-size:clamp(1.25rem,2.4vw,1.5rem);font-weight:900;margin-bottom:1rem}
+.rungs{list-style:none;margin:0 0 1.1rem;padding:0;display:grid;gap:.45rem;justify-items:center}
+.rungs li{
+  width:100%;padding:.55rem .8rem;text-align:center;
+  border:2px solid var(--edge);border-radius:var(--radius-sm);
+  background:var(--paper-2);font-weight:700;font-size:.92rem;line-height:1.3;
+}
+.rungs li:nth-child(2){width:90%}
+.rungs li:nth-child(3){width:80%}
+.rungs li:nth-child(4){width:70%}
+.rungs li:nth-child(5){
+  width:60%;min-width:min(100%,250px);background:var(--guinda);color:#fff;box-shadow:var(--shadow-xs);
+}
+html[data-theme="dark"] .rungs li:nth-child(5){color:#180510}
+.rungs small{display:block;margin-top:.15rem;font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.06em;opacity:.9}
+.ladder-foot{
+  margin:auto 0 0;padding-top:1rem;border-top:1px dashed var(--line);
+  font-size:.94rem;color:var(--ink-soft);
+}
+
+/* ── Los tres cortes y las tres fuentes ─────────────────────────────────── */
+.deck-cuts article,.deck-sources article{display:flex;flex-direction:column;align-items:flex-start}
+.deck-cuts h3,.deck-sources h3{margin-top:.75rem}
+
+/* ── La palabra clave ───────────────────────────────────────────────────── */
+.card-define{margin-top:1.3rem;border-left:10px solid var(--plum)}
+.card-define h3{margin-bottom:.6rem}
+.define-eg{
+  margin:0;padding:.75rem .9rem;border-left:4px solid var(--plum);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--tint-plum);font-size:.92rem;
+}
+.define-eg b{
+  display:block;margin-bottom:.15rem;font-family:var(--mono);font-size:.66rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--plum);
+}
+
+/* ── Un título se vuelve pregunta ───────────────────────────────────────── */
+.transform{
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius);
+  padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-sm);margin-bottom:1rem;
+}
+.transform-intro{max-width:58rem}
+.transform-intro p:last-child{color:var(--ink-soft)}
+.transform-rows{list-style:none;margin:1.2rem 0 1.2rem;padding:0;display:grid;gap:.7rem}
+.transform-rows li{
+  display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;align-items:baseline;
+  padding:.8rem 1rem;border:2px solid var(--line);border-radius:var(--radius-sm);background:var(--paper);
+}
+.transform-rows span{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+}
+.transform-rows p{margin:0;font-family:var(--display);font-size:clamp(1rem,1.8vw,1.14rem);font-weight:600;line-height:1.35}
+.transform-rows li:nth-child(2){margin-left:clamp(0rem,2vw,1.4rem)}
+.transform-rows li.is-question{
+  margin-left:clamp(0rem,4vw,2.8rem);border-color:var(--guinda);background:var(--tint-red);
+}
+.transform-rows li.is-question span{color:var(--guinda)}
+.transform-foot{margin:0;max-width:62rem;color:var(--ink-soft)}
+
+.how-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+.tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:1rem}
+
+/* ── Tarjetas que se voltean ────────────────────────────────────────────── */
+.flip-head{margin:2.8rem 0 1.2rem;align-items:flex-end}
+.flip-head .sub-head{margin:0}
+.flips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.1rem}
+.flip{
+  display:grid;min-height:250px;padding:0;border:0;background:none;cursor:pointer;
+  font:inherit;color:inherit;text-align:left;perspective:1200px;
+}
+.flip-inner{
+  display:grid;height:100%;transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.3,.7,.3,1);
+}
+.flip[aria-pressed="true"] .flip-inner{transform:rotateY(180deg)}
+.flip-face{
+  grid-area:1/1;display:flex;flex-direction:column;gap:.6rem;
+  padding:1.15rem 1.2rem;border:2px solid var(--edge);border-radius:var(--radius);
+  box-shadow:var(--shadow-xs);backface-visibility:hidden;-webkit-backface-visibility:hidden;
+}
+.flip-front{background:var(--card)}
+.flip-back{background:var(--tint-teal);transform:rotateY(180deg)}
+.flip-tag{
+  display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--guinda);
+}
+.flip-back .flip-tag{color:var(--teal)}
+.flip-q{display:block;font-family:var(--display);font-size:clamp(1.2rem,2.3vw,1.42rem);font-weight:900;letter-spacing:-.02em;line-height:1.2}
+.flip-hint{display:block;margin-top:auto;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.flip-why{display:block;font-size:.92rem;color:var(--ink-soft);line-height:1.45}
+.flip-better{
+  display:block;margin-top:auto;padding:.7rem .8rem;border:2px solid var(--edge);
+  border-radius:var(--radius-sm);background:var(--card);font-size:.92rem;font-weight:700;line-height:1.4;
+}
+.flip-better b{
+  display:block;margin-bottom:.2rem;font-family:var(--mono);font-size:.62rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--teal);
+}
+.flip:hover .flip-face{box-shadow:var(--shadow-sm)}
+.flip.is-picked .flip-face{border-color:var(--guinda);box-shadow:0 0 0 4px var(--tint-red),var(--shadow-sm)}
+.flip.is-done .flip-front{opacity:.55}
+
+/* ── Tarjeta del equipo (formulario) ────────────────────────────────────── */
+.fset{
+  margin:0;padding:1.1rem 1.1rem 1.2rem;display:grid;gap:.85rem;
+  border:2px solid var(--edge);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow-xs);
+}
+.fset legend{
+  padding:0 .5rem;font-family:var(--display);font-size:1.12rem;font-weight:900;letter-spacing:-.02em;
+}
+.fset legend b{
+  margin-right:.35rem;font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--guinda);
+}
+.fset .field input,.fset .field textarea{background:var(--paper)}
+.field-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.checks{display:grid;gap:.35rem;padding:.75rem .85rem;border:1.5px dashed var(--line);border-radius:var(--radius-sm)}
+.checks-label{
+  margin:0 0 .2rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.checks label{display:flex;align-items:center;gap:.55rem;font-size:.92rem;cursor:pointer}
+.checks input{width:18px;height:18px;accent-color:var(--guinda);flex:none}
+
+/* ── Tarjeta del equipo (vista previa) ──────────────────────────────────── */
+.tcard .rcard-name:empty::before{content:attr(data-empty);color:var(--muted)}
+.tc-members{margin:-.4rem 0 1rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem}
+.tc-members li{
+  padding:.2rem .6rem;border:1.5px solid var(--line);border-radius:999px;
+  font-size:.78rem;color:var(--ink-soft);background:var(--paper-2);
+}
+.tc-members:empty{display:none}
+.tc-question{
+  margin:0 0 1rem;padding:.85rem .95rem;border:2px solid var(--guinda);
+  border-radius:var(--radius-sm);background:var(--tint-red);
+}
+.tc-question span{
+  display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--guinda);
+}
+.tc-question p{
+  margin:.25rem 0 0;font-family:var(--display);font-size:1.18rem;font-weight:900;
+  letter-spacing:-.02em;line-height:1.25;white-space:pre-line;
+}
+.tc-question p:empty::before{content:attr(data-empty);color:var(--muted)}
+.tcard .rcard-grid dd{white-space:pre-line}
+.tc-meters{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1rem}
+.tc-meters p{
+  margin:0;padding:.55rem .7rem;border:2px solid var(--edge);border-radius:var(--radius-sm);
+  display:flex;align-items:baseline;justify-content:space-between;background:var(--paper-2);
+}
+.tc-meters span{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.tc-meters b{font-family:var(--display);font-size:1.15rem;font-weight:900}
+.tc-meters .is-full{background:var(--tint-teal);border-color:var(--teal)}
+.tc-meters .is-full b{color:var(--teal)}
+
+/* ── Ruta después de hoy ────────────────────────────────────────────────── */
+.route-next{margin-top:1.6rem}
+.route-next .route-card{min-height:0}
+
+/* ── Formatos del trabajo final ─────────────────────────────────────────── */
+.formats-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+
+/* ── Reloj flotante ─────────────────────────────────────────────────────── */
+.clock{
+  position:fixed;left:50%;bottom:1.2rem;z-index:110;transform:translateX(-50%);
+  display:flex;align-items:center;gap:.7rem;
+  padding:.5rem .55rem .5rem 1.1rem;max-width:calc(100vw - 2rem);
+  background:var(--ink);color:var(--paper);border:2px solid var(--edge);border-radius:999px;
+  box-shadow:var(--shadow-sm);
+}
+.clock[hidden]{display:none}
+.clock-label{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
+}
+.clock-time{
+  font-family:var(--display);font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;
+  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;
+}
+.clock-btn{
+  display:grid;place-items:center;width:36px;height:36px;flex:none;cursor:pointer;
+  border:2px solid var(--paper);border-radius:50%;background:transparent;color:var(--paper);
+  font-size:.82rem;line-height:1;
+}
+.clock-btn:hover{background:var(--paper);color:var(--ink)}
+.clock.is-paused .clock-time{opacity:.55}
+.clock.is-done{background:var(--guinda);animation:clock-pulse 1s ease-in-out 4}
+html[data-theme="dark"] .clock.is-done{color:#180510}
+@keyframes clock-pulse{50%{transform:translateX(-50%) scale(1.06)}}
+/* El aviso escondido baja del todo: con el desplazamiento de sem3.css se asoma
+   una franja de unos 13 px al pie de la pantalla. */
+.toast{transform:translateX(-50%) translateY(calc(100% + 2.4rem))}
+/* Con el reloj abierto, el aviso sube para no quedar debajo. */
+html.has-clock .toast.is-on{transform:translateX(-50%) translateY(-4.6rem)}
+
+/* ── Responsivo ─────────────────────────────────────────────────────────── */
+@media (max-width:1100px){
+  .board{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+@media (max-width:760px){
+  .transform-rows li{grid-template-columns:1fr;gap:.25rem}
+  .transform-rows li:nth-child(2),.transform-rows li.is-question{margin-left:0}
+  .field-row{grid-template-columns:1fr}
+  .rungs li:nth-child(2),.rungs li:nth-child(3),.rungs li:nth-child(4),.rungs li:nth-child(5){width:100%}
+  .rungs li:nth-child(2){width:94%}.rungs li:nth-child(3){width:88%}
+  .rungs li:nth-child(4){width:82%}.rungs li:nth-child(5){width:76%}
+  .clock-label{display:none}
+  .flip{min-height:190px}
+}
+@media (prefers-reduced-motion:reduce){
+  .flip-inner{transition:none}
+  .clock.is-done{animation:none}
+}
+
+/* ── Impresión ──────────────────────────────────────────────────────────── */
+@media print{
+  .timer-btn,.clock,#fishBtn,.to-card,.flip-hint{display:none!important}
+  .board-item,.role,.ladder,.transform,.fset,.flip-face{box-shadow:none;break-inside:avoid}
+  .flip{min-height:0;break-inside:avoid}
+  .flip-inner{transform:none!important;display:grid;gap:.5rem}
+  .flip-face{position:static;transform:none!important;backface-visibility:visible;-webkit-backface-visibility:visible}
+  .flip-back{grid-area:auto}
+  html.print-team-card body{visibility:hidden}
+  html.print-team-card #teamCard{display:block;visibility:visible;position:absolute;left:0;top:0;width:100%;box-shadow:none;border-width:1.5px}
+  html.print-team-card #teamCard *{visibility:visible}
+  #panel-8[hidden]{display:none!important}
+}

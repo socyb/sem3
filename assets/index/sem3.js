@@ -95,8 +95,8 @@
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
   // El 6 de octubre la sesión es la conferencia que la Academia nos asignó en la
   // Semana Académica: Auditorio Echenique García, de 16:00 a 18:00.
-  // El séptimo dato es opcional: la fecha desde la que se abre la sesión. Sirve
-  // cuando hay algo que leer antes y no basta con abrirla la víspera.
+  // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
+  // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   const sessions = [
     [ 1,"2026-08-18","Mesa de innovaciones","Nos conocemos · qué tecnología te mueve","I",
       "Un objeto que uses todos los días y algo para escribir"],
@@ -112,8 +112,8 @@
       "Una pregunta escrita para él"],
     [ 7,"2026-10-06","Conversando con egresados de Negocios Internacionales","Semana Académica · Auditorio Echenique García","II",
       "Las preguntas que quieras hacerles"],
-    [ 8,"2026-10-13","Síntesis de I+D · primer parcial","Repaso · examen","II",
-      "Todo lo del primer tema repasado"],
+    [ 8,"2026-10-13","Tu pregunta de investigación","Trabajo final · equipo, tema y pregunta","II",
+      "Una innovación que te interese y algo para escribir","2026-10-13T07:00:00-06:00"],
     [ 9,"2026-10-20","La cadena de la inteligencia artificial","Cómputo · datos · energía · trabajo","III",
       "Tu control de lectura"],
     [10,"2026-10-27","Microcréditos y Estudios sobre ciencia, tecnología y sociedad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
@@ -144,7 +144,7 @@
      5: ["Toda acción tiene consecuencias.", "Casi nunca las que buscábamos."],
      6: ["La luz que prendes cruzó una frontera.", "Alguien la compró antes que tú."],
      7: ["Alguien ya estuvo en tu lugar.", "Pregúntale qué encontró al salir."],
-     8: ["Ocho sesiones, una pregunta.", "¿Quién decide y quién paga?"],
+     8: ["Un tema no se investiga.", "Se investiga una pregunta."],
      9: ["La inteligencia artificial no flota en la nube.", "Corre sobre cómputo, datos, energía y trabajo."],
     10: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
     11: ["Todo sector fue emergente alguna vez.", "La pregunta es quién llega primero."],
@@ -169,10 +169,14 @@
 
   const params = new URLSearchParams(location.search);
   const queryDate = params.get("fecha");
+  const preview = /^\d{4}-\d{2}-\d{2}$/.test(queryDate || "");
+  const queryTime = params.get("hora");
+  const previewTime = /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(queryTime || "") ? queryTime : "12:00";
+  const now = preview ? new Date(`${queryDate}T${previewTime}:00-06:00`) : new Date();
   const localDate = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Mexico_City", year: "numeric", month: "2-digit", day: "2-digit"
-  }).format(new Date());
-  const today = /^\d{4}-\d{2}-\d{2}$/.test(queryDate || "") ? queryDate : localDate;
+  }).format(now);
+  const today = localDate;
   const cursor = today < sessions[0].date ? sessions[0].date : today;
 
   // Una sesión entra en vigor desde la víspera: la noche anterior ya puedes ver
@@ -184,8 +188,21 @@
   };
 
   const abre = s => s.open || vispera(s.date);
-  const unlocked = sessions.filter(s => abre(s) <= cursor);
+  const openingTime = s => new Date(abre(s).includes("T") ? abre(s) : `${abre(s)}T00:00:00-06:00`).getTime();
+  const unlocked = sessions.filter(s => s.number === 1 || openingTime(s) <= now.getTime());
   const current  = unlocked[unlocked.length - 1] || sessions[0];
+
+  // También se actualiza una pestaña que se haya dejado abierta antes de las 7.
+  // Las ligas de vista previa (?fecha=...&hora=...) conservan la hora simulada.
+  if (!preview) {
+    const nextOpening = sessions.map(openingTime).find(time => time > now.getTime());
+    if (nextOpening) {
+      setTimeout(() => location.reload(), Math.min(nextOpening - now.getTime(), 2147483647));
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden && Date.now() >= nextOpening) location.reload();
+      });
+    }
+  }
   const [y, m, d] = cursor.split("-");
   const pad = n => String(n).padStart(2, "0");
   const shortDate = iso => `${Number(iso.slice(8))} ${MONTHS[iso.slice(5, 7)]}`;
@@ -232,6 +249,7 @@
       const panel = panelFor(number);
       if (!panel) return;
       panels.forEach(p => { p.hidden = p !== panel; });
+      document.dispatchEvent(new CustomEvent("sem3:sessionchange", { detail: number }));
       if (push) ponerLema(number);
       stops.forEach(btn => {
         const on = Number(btn.dataset.sesion) === number;
