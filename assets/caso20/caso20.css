@@ -6,6 +6,8 @@
 .case-page .btn-primary:hover{color:var(--card)}
 .case-page .case-actions{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}
 .case-page .btn{justify-content:center}
+/* .section quita el relleno lateral de .wrap; aquí se le devuelve. */
+.case-page .section.wrap{padding-inline:clamp(1rem,4vw,2.2rem)}
 .case-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:1.5rem;padding:.8rem clamp(1rem,4vw,2.2rem);border-bottom:2px solid var(--edge);background:var(--paper)}
 .case-brand{display:flex;gap:.65rem;align-items:center;color:var(--ink);text-decoration:none;flex-shrink:0}
 .case-brand>span:last-child{display:grid;line-height:1.15}
@@ -155,7 +157,7 @@
   .case-page{background:#fff!important;color:#111;font-size:11pt}
   .case-header,.case-actions,.case-toast,.case-timer,.organizer-input,.team-exports,.local-badge,.case-footer button{display:none!important}
   .case-page .section{padding:1.2rem 0}.case-hero{padding-block:1rem}.case-hero h1{font-size:32pt}
-  .case-page .wrap{max-width:none;padding-inline:0}.case-strip{background:#fff;color:#111}
+  .case-page .wrap,.case-page .section.wrap{max-width:none;padding-inline:0}.case-strip{background:#fff;color:#111}
   .event-ticket,.analysis-form,.decision-map,.team-card{box-shadow:none;transform:none;break-inside:avoid}
   .case-page .case-field textarea{min-height:5rem}.reading-layout,.day-layout,.case-footer{grid-template-columns:1fr}
   body[data-print] #screenPage{display:none!important}

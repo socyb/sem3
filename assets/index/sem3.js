@@ -95,6 +95,7 @@
   // Martes de 16:00 a 19:00 en el salón C-102. El 15 de septiembre no hay sesión.
   // El 6 de octubre la sesión es la conferencia que la Academia nos asignó en la
   // Semana Académica: Auditorio Echenique García, de 16:00 a 18:00.
+  // El 20 de octubre es la jornada de Método del Caso: edificio J, de 16:00 a 18:00.
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   const sessions = [
@@ -114,8 +115,8 @@
       "Las preguntas que quieras hacerles"],
     [ 8,"2026-10-13","Tu pregunta de investigación","Trabajo final · equipo, tema y pregunta","II",
       "Una innovación que te interese y algo para escribir","2026-10-13T07:00:00-06:00"],
-    [ 9,"2026-10-20","La cadena de la inteligencia artificial","Cómputo · datos · energía · trabajo","III",
-      "Tu control de lectura"],
+    [ 9,"2026-10-20","Jornada de Método del Caso","Contentra · ¿quién decide lo que vemos?","III",
+      "El caso leído y tu análisis individual"],
     [10,"2026-10-27","Microcréditos y Estudios sobre ciencia, tecnología y sociedad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
       "Tu control de lectura"],
     [11,"2026-11-03","Sectores emergentes","Chips y minerales críticos · biotecnología · energía · movilidad","III",
@@ -145,7 +146,7 @@
      6: ["La luz que prendes cruzó una frontera.", "Alguien la compró antes que tú."],
      7: ["Alguien ya estuvo en tu lugar.", "Pregúntale qué encontró al salir."],
      8: ["Un tema no se investiga.", "Se investiga una pregunta."],
-     9: ["La inteligencia artificial no flota en la nube.", "Corre sobre cómputo, datos, energía y trabajo."],
+     9: ["Alguien decide lo que vemos.", "Hoy te toca decidir a ti."],
     10: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
     11: ["Todo sector fue emergente alguna vez.", "La pregunta es quién llega primero."],
     12: ["El nearshoring no es un regalo.", "México tiene que ganárselo."],
