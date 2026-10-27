@@ -96,6 +96,7 @@
   // El 6 de octubre la sesión es la conferencia que la Academia nos asignó en la
   // Semana Académica: Auditorio Echenique García, de 16:00 a 18:00.
   // El 20 de octubre es la jornada de Método del Caso: edificio J, de 16:00 a 18:00.
+  // El 27 de octubre la invitada se conecta desde Medellín: la sesión es por Zoom.
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   const sessions = [
@@ -117,8 +118,8 @@
       "Una innovación que te interese y algo para escribir","2026-10-13T07:00:00-06:00"],
     [ 9,"2026-10-20","Jornada de Método del Caso","Contentra · ¿quién decide lo que vemos?","III",
       "El caso leído y tu análisis individual"],
-    [10,"2026-10-27","Microcréditos y Estudios sobre ciencia, tecnología y sociedad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
-      "Tu control de lectura"],
+    [10,"2026-10-27","Microcréditos, innovación y sostenibilidad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
+      "Una pregunta para Deisy"],
     [11,"2026-11-03","Sectores emergentes","Chips y minerales críticos · biotecnología · energía · movilidad","III",
       "Tu control de lectura"],
     [12,"2026-11-10","México y los sectores de alto crecimiento","Plan México · semiconductores · nearshoring","III",
@@ -147,7 +148,7 @@
      7: ["Alguien ya estuvo en tu lugar.", "Pregúntale qué encontró al salir."],
      8: ["Un tema no se investiga.", "Se investiga una pregunta."],
      9: ["Alguien decide lo que vemos.", "Hoy te toca decidir a ti."],
-    10: ["El crédito también es tecnología.", "Y decide quién puede empezar."],
+    10: ["Un crédito puede transformar un territorio.", "Lo difícil es que el cambio se quede."],
     11: ["Todo sector fue emergente alguna vez.", "La pregunta es quién llega primero."],
     12: ["El nearshoring no es un regalo.", "México tiene que ganárselo."],
     13: ["Si es gratis,", "el producto eres tú."],
@@ -350,6 +351,128 @@
       }
     }
   }
+
+  /* ── Lo del curso, plegado ──────────────────────────────────────────── */
+  // La ruta, la evaluación, el profesor y los recursos viven en <details>.
+  // Una liga que apunte a uno de ellos (#ruta, #profesor…) lo abre antes de
+  // llegar; al imprimir se abren todos y después vuelven a como estaban.
+  const folds = $$("details.fold");
+  const abrirPliegue = (hash) => {
+    const id = decodeURIComponent((hash || "").slice(1));
+    const fold = id ? document.getElementById(id)?.closest("details.fold") : null;
+    if (fold) fold.open = true;
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a) abrirPliegue(a.getAttribute("href"));
+  });
+  window.addEventListener("hashchange", () => abrirPliegue(location.hash));
+  abrirPliegue(location.hash);
+
+  let cerrados = [];
+  window.addEventListener("beforeprint", () => {
+    cerrados = folds.filter(f => !f.open);
+    cerrados.forEach(f => { f.open = true; });
+  });
+  window.addEventListener("afterprint", () => {
+    cerrados.forEach(f => { f.open = false; });
+    cerrados = [];
+  });
+
+  /* ── Datos bajo llave ───────────────────────────────────────────────── */
+  // La liga de Zoom no queda a la vista en el código: viaja cifrada en
+  // data-sellado = base64(sal de 16 bytes · iv de 12 · AES-GCM), con una llave
+  // PBKDF2-SHA-256 de 150 000 vueltas sacada de la clave. Por dentro es un JSON
+  // { href, label, items: [[dt, dd], …] }. La clave no distingue mayúsculas,
+  // espacios ni guiones, y se recuerda en el dispositivo una vez que abrió.
+  const CLAVE = "sem3-27-clave";
+  const limpiaClave = k => k.toLowerCase().replace(/[\s-]/g, "");
+
+  const abrirSello = async (sellado, clave) => {
+    const bytes = Uint8Array.from(atob(sellado), c => c.charCodeAt(0));
+    const base = await crypto.subtle.importKey(
+      "raw", new TextEncoder().encode(clave), "PBKDF2", false, ["deriveKey"]);
+    const llave = await crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt: bytes.slice(0, 16), iterations: 150000, hash: "SHA-256" },
+      base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+    const claro = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: bytes.slice(16, 28) }, llave, bytes.slice(28));
+    return JSON.parse(new TextDecoder().decode(claro));
+  };
+
+  $$(".vault[data-sellado]").forEach(vault => {
+    const lock  = $(".vault-lock", vault);
+    const open  = $(".vault-open", vault);
+    const input = lock && $("input", lock);
+    const msg   = $(".vault-msg", vault);
+    if (!lock || !open || !input) return;
+
+    const mostrar = (datos) => {
+      const link = document.createElement("a");
+      link.className = "btn btn-primary";
+      link.href = datos.href;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = `${datos.label} ↗`;
+
+      const copy = document.createElement("button");
+      copy.className = "btn btn-ghost btn-small";
+      copy.type = "button";
+      copy.textContent = "Copiar liga";
+      copy.addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(datos.href); say("Liga copiada ✓"); }
+        catch { say("No se pudo copiar en este navegador"); }
+      });
+
+      const actions = document.createElement("div");
+      actions.className = "vault-actions";
+      actions.append(link, copy);
+
+      const dl = document.createElement("dl");
+      dl.className = "vault-data";
+      (datos.items || []).forEach(([term, value]) => {
+        const row = document.createElement("div");
+        const dt = document.createElement("dt");
+        const dd = document.createElement("dd");
+        dt.textContent = term;
+        dd.textContent = value;
+        row.append(dt, dd);
+        dl.append(row);
+      });
+
+      open.replaceChildren(actions, dl);
+      lock.hidden = true;
+      open.hidden = false;
+      return link;
+    };
+
+    const probar = async (clave) => {
+      const link = mostrar(await abrirSello(vault.dataset.sellado, clave));
+      try { localStorage.setItem(CLAVE, clave); } catch { /* almacenamiento no disponible */ }
+      return link;
+    };
+
+    lock.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const clave = limpiaClave(input.value);
+      if (!clave) return;
+      if (!window.crypto?.subtle) {
+        msg.textContent = "Este navegador no puede abrir los datos aquí. Entra desde socyb.github.io/sem3.";
+        return;
+      }
+      msg.textContent = "Abriendo…";
+      try {
+        (await probar(clave)).focus();
+      } catch {
+        msg.textContent = "Esa no es la clave. Inténtalo de nuevo.";
+        input.select();
+      }
+    });
+
+    let guardada = null;
+    try { guardada = localStorage.getItem(CLAVE); } catch { /* almacenamiento no disponible */ }
+    if (guardada && window.crypto?.subtle) probar(guardada).catch(() => {});
+  });
 
   /* ── Radar de innovación ────────────────────────────────────────────── */
   const NODES = {

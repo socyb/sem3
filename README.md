@@ -74,16 +74,21 @@ demás páginas del profesor y este repositorio.
 
 ## Detalles de la página
 
-La sesión 08, **Tu pregunta de investigación**, pasa al frente del `index` el
-**13 de octubre de 2026 a las 07:00, hora de Ciudad de México**. La apertura se
-resuelve en el navegador, como las sesiones anteriores, y también actualiza una
-pestaña que haya quedado abierta. La actividad completa se conserva en la bitácora
-y en [`investigacion.html`](investigacion.html); la tarjeta del equipo se guarda
-en el mismo dispositivo al usar cualquiera de las dos páginas.
+La portada lleva solo lo de la sesión que toca: el lema del día, la línea del
+tiempo y el panel de la sesión. La ruta, la evaluación, el profesor y los recursos
+quedan plegados al final, en **El resto del seminario**, y se abren con un clic o
+desde el menú de arriba.
 
-Para revisar la apertura: `?fecha=2026-10-13&hora=06:59` muestra la sesión anterior
-y `?fecha=2026-10-13&hora=07:00` muestra la sesión 08. Las horas de vista previa se
-interpretan en Ciudad de México; sin estos parámetros se usa el instante real.
+La sesión 10, **Microcréditos, innovación y sostenibilidad**, es con la
+Ing. Deisy Carmona, que se conecta desde Medellín por Zoom. Los datos de la reunión
+no están a la vista en el código: viajan cifrados y la página los muestra solo
+cuando se escribe la clave que se le da al grupo. Una vez abiertos, el dispositivo
+la recuerda.
+
+Para ver la página como se vería otro día: `?fecha=2026-10-25` muestra la sesión 09
+y `?fecha=2026-10-27` la sesión 10. Con `&hora=07:00` se fija también la hora; las
+horas de vista previa se interpretan en Ciudad de México y sin estos parámetros se
+usa el instante real.
 
 - **Un código QR** en la barra superior, que se amplía al hacerle clic. Sirve para
   proyectarlo en clase y que el grupo abra la página desde el celular.
