@@ -17,7 +17,7 @@
 
   /* ── Tema claro / oscuro (la misma preferencia que la página del seminario) ── */
   const root = document.documentElement;
-  const embedded = Boolean($("#panel-8"));
+  const embedded = Boolean($(".research-session"));
   if (!embedded) {
     const themeBtn = $("#themeToggle");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -189,7 +189,7 @@
     };
     $("#clockStop")?.addEventListener("click", stopClock);
     document.addEventListener("sem3:sessionchange", (event) => {
-      if (event.detail !== 8) stopClock();
+      if (event.detail !== 12) stopClock();
     });
   }
 

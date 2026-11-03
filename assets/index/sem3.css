@@ -776,6 +776,12 @@ html[data-theme="dark"] .tl-stop[aria-selected="true"] .tl-tag{color:#180510}
 .link-card.is-teal{border-color:var(--teal)}
 .link-card.is-teal .go{color:var(--teal)}
 
+/* Un libro con su portada al lado de la ficha */
+.book-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1rem,2.6vw,1.8rem);align-items:start}
+.book-card .book-cover{display:block;width:118px;height:auto;border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow-xs)}
+.book-card .vbullets{margin-bottom:1rem}
+@media (max-width:560px){.book-card{grid-template-columns:1fr}.book-card .book-cover{width:96px}}
+
 /* ══════════════════════════ INVITADO ══════════════════════════════════════ */
 .guest{
   display:grid;grid-template-columns:210px 1fr;gap:clamp(1.2rem,3vw,2.4rem);

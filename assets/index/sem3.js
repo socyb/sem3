@@ -97,6 +97,9 @@
   // Semana Académica: Auditorio Echenique García, de 16:00 a 18:00.
   // El 20 de octubre es la jornada de Método del Caso: edificio J, de 16:00 a 18:00.
   // El 27 de octubre la invitada se conecta desde Medellín: la sesión es por Zoom.
+  // El 13 de octubre nos visitó el Dr. Javier Jasso Villazul; la hora para la pregunta
+  // de investigación pasó al 10 de noviembre, junto con las lecturas de nearshoring.
+  // La 12 se abre el 4 de noviembre para dar una semana al control de lectura.
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   const sessions = [
@@ -114,16 +117,16 @@
       "Una pregunta escrita para él"],
     [ 7,"2026-10-06","Conversando con egresados de Negocios Internacionales","Semana Académica · Auditorio Echenique García","II",
       "Las preguntas que quieras hacerles"],
-    [ 8,"2026-10-13","Tu pregunta de investigación","Trabajo final · equipo, tema y pregunta","II",
-      "Una innovación que te interese y algo para escribir","2026-10-13T07:00:00-06:00"],
+    [ 8,"2026-10-13","Innovación y conocimiento","Con el Dr. Javier Jasso Villazul · FCA UNAM","II",
+      "Tus preguntas para el invitado","2026-10-13T07:00:00-06:00"],
     [ 9,"2026-10-20","Jornada de Método del Caso","Contentra · ¿quién decide lo que vemos?","III",
       "El caso leído y tu análisis individual"],
     [10,"2026-10-27","Microcréditos, innovación y sostenibilidad","Con la Ing. Deisy Carmona · desde Medellín vía Zoom","III",
       "Una pregunta para Deisy"],
     [11,"2026-11-03","Ciudadanía digital","Con el Dr. Amílcar Chavarría Cruz · medios digitales y desinformación","III",
       "Tus preguntas para el invitado"],
-    [12,"2026-11-10","México y los sectores de alto crecimiento","Plan México · semiconductores · nearshoring","III",
-      "Tu control de lectura"],
+    [12,"2026-11-10","México y los sectores de alto crecimiento","Nearshoring y semiconductores · tu pregunta de investigación","III",
+      "Tu control de lectura y una innovación que te interese","2026-11-04"],
     [13,"2026-11-17","Datos, plataformas y vigilancia","Capitalismo de vigilancia · filtro burbuja","IV",
       "Tu control de lectura"],
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
@@ -146,7 +149,7 @@
      5: ["Toda acción tiene consecuencias.", "Casi nunca las que buscábamos."],
      6: ["La luz que prendes cruzó una frontera.", "Alguien la compró antes que tú."],
      7: ["Alguien ya estuvo en tu lugar.", "Pregúntale qué encontró al salir."],
-     8: ["Un tema no se investiga.", "Se investiga una pregunta."],
+     8: ["La tecnología se puede comprar.", "Las capacidades hay que construirlas."],
      9: ["Alguien decide lo que vemos.", "Hoy te toca decidir a ti."],
     10: ["Un crédito puede transformar un territorio.", "Lo difícil es que el cambio se quede."],
     11: ["La ciudadanía también se ejerce en línea.", "¿Cómo participamos entre tanta información?"],
