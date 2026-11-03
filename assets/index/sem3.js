@@ -99,9 +99,12 @@
   // El 27 de octubre la invitada se conecta desde Medellín: la sesión es por Zoom.
   // El 13 de octubre nos visitó el Dr. Javier Jasso Villazul; la hora para la pregunta
   // de investigación pasó al 10 de noviembre, junto con las lecturas de nearshoring.
-  // La 12 se abre el 4 de noviembre para dar una semana al control de lectura.
+  // La 12 se abre el 4 de noviembre para dar una semana al control de lectura,
+  // pero ya está en la bitácora desde el 3 para quien quiera adelantarse.
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
+  // El octavo también es opcional: desde cuándo sale la parada en la bitácora,
+  // antes de su apertura. Ahí ya se puede abrir, pero la portada sigue con la de hoy.
   const sessions = [
     [ 1,"2026-08-18","Mesa de innovaciones","Nos conocemos · qué tecnología te mueve","I",
       "Un objeto que uses todos los días y algo para escribir"],
@@ -126,7 +129,7 @@
     [11,"2026-11-03","Ciudadanía digital","Con el Dr. Amílcar Chavarría Cruz · medios digitales y desinformación","III",
       "Tus preguntas para el invitado"],
     [12,"2026-11-10","México y los sectores de alto crecimiento","Nearshoring y semiconductores · tu pregunta de investigación","III",
-      "Tu control de lectura y una innovación que te interese","2026-11-04"],
+      "Tu control de lectura y una innovación que te interese","2026-11-04","2026-11-03"],
     [13,"2026-11-17","Datos, plataformas y vigilancia","Capitalismo de vigilancia · filtro burbuja","IV",
       "Tu control de lectura"],
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
@@ -135,8 +138,8 @@
       "Tu exposición lista"],
     [16,"2026-12-08","Cierre del seminario","Exposiciones · examen final","IV",
       "Tu exposición y el trabajo final"]
-  ].map(([number, date, title, subtitle, unit, bring, open]) =>
-    ({ number, date, title, subtitle, unit, bring, open, room: "C-102" }));
+  ].map(([number, date, title, subtitle, unit, bring, open, listed]) =>
+    ({ number, date, title, subtitle, unit, bring, open, listed, room: "C-102" }));
 
   /* ── Lema de la portada: uno por sesión ─────────────────────────────── */
   // Primera línea en redonda, segunda en cursiva guinda. La última sesión
@@ -193,14 +196,21 @@
   };
 
   const abre = s => s.open || vispera(s.date);
-  const openingTime = s => new Date(abre(s).includes("T") ? abre(s) : `${abre(s)}T00:00:00-06:00`).getTime();
+  const instante = iso => new Date(iso.includes("T") ? iso : `${iso}T00:00:00-06:00`).getTime();
+  const openingTime = s => instante(abre(s));
+  const listingTime = s => s.listed ? Math.min(instante(s.listed), openingTime(s)) : openingTime(s);
   const unlocked = sessions.filter(s => s.number === 1 || openingTime(s) <= now.getTime());
   const current  = unlocked[unlocked.length - 1] || sessions[0];
+  // La bitácora puede ir un paso adelante de la portada: las sesiones con octavo
+  // dato salen en la línea desde esa fecha, aunque todavía no sean la de hoy.
+  const listed   = sessions.filter(s => s.number === 1 || listingTime(s) <= now.getTime());
 
   // También se actualiza una pestaña que se haya dejado abierta antes de las 7.
   // Las ligas de vista previa (?fecha=...&hora=...) conservan la hora simulada.
   if (!preview) {
-    const nextOpening = sessions.map(openingTime).find(time => time > now.getTime());
+    const nextOpening = sessions.flatMap(s => [listingTime(s), openingTime(s)])
+      .filter(time => time > now.getTime())
+      .sort((a, b) => a - b)[0];
     if (nextOpening) {
       setTimeout(() => location.reload(), Math.min(nextOpening - now.getTime(), 2147483647));
       document.addEventListener("visibilitychange", () => {
@@ -234,7 +244,7 @@
   }
 
   const countEl = $("#sessionCount");
-  if (countEl) countEl.textContent = `${pad(unlocked.length)} / ${sessions.length}`;
+  if (countEl) countEl.textContent = `${pad(listed.length)} / ${sessions.length}`;
 
   /* ── Línea del tiempo: una parada por sesión, la de hoy abierta ──────── */
   // Solo tienen panel escrito las sesiones que ya ocurrieron y se documentaron;
@@ -268,8 +278,9 @@
       }
     };
 
-    unlocked.forEach(s => {
+    listed.forEach(s => {
       const esHoy = s.number === current.number;
+      const adelantada = s.number > current.number;
       const cuando = s.date === cursor          ? "Hoy"
                    : vispera(s.date) === cursor ? "Mañana"
                    : s.date > cursor            ? "Próxima"
@@ -288,7 +299,7 @@
           `<span class="tl-num">Sesión ${pad(s.number)}</span>` +
           `<time datetime="${s.date}">${shortDate(s.date)}</time>` +
           `<strong></strong><small></small>` +
-          `<span class="tl-tag">${esHoy ? cuando : "Tema " + s.unit}</span>` +
+          `<span class="tl-tag">${esHoy || adelantada ? cuando : "Tema " + s.unit}</span>` +
         `</span>`;
       btn.querySelector("strong").textContent = s.title;
       btn.querySelector("small").textContent  = s.subtitle;
@@ -304,7 +315,7 @@
       stops.push(btn);
     });
 
-    const faltan = sessions.length - unlocked.length;
+    const faltan = sessions.length - listed.length;
     if (faltan > 0) {
       const resto = document.createElement("div");
       resto.className = "tl-stop is-locked";
@@ -336,10 +347,12 @@
     });
 
     // Al abrir: la sesión que pida la liga, si no la de hoy, si no la última escrita.
+    // Una sesión que se adelantó a la bitácora solo se abre si la liga la pide.
     const pedida = Number(params.get("sesion"));
+    const enLinea  = listed.filter(s => panelFor(s.number)).map(s => s.number);
     const escritas = unlocked.filter(s => panelFor(s.number)).map(s => s.number);
     const inicio =
-      (escritas.includes(pedida) && pedida) ||
+      (enLinea.includes(pedida) && pedida) ||
       (escritas.includes(current.number) && current.number) ||
       escritas[escritas.length - 1];
 

@@ -85,6 +85,11 @@ no están a la vista en el código: viajan cifrados y la página los muestra sol
 cuando se escribe la clave que se le da al grupo. Una vez abiertos, el dispositivo
 la recuerda.
 
+La bitácora puede ir un paso adelante de la portada. La sesión 12, **México y los
+sectores de alto crecimiento**, ya está en la línea del tiempo desde el 3 de noviembre
+para quien quiera adelantar las lecturas, pero la portada sigue con la sesión del día
+hasta el 4. Se abre con un clic en su parada o con `?sesion=12`.
+
 Para ver la página como se vería otro día: `?fecha=2026-10-25` muestra la sesión 09
 y `?fecha=2026-10-27` la sesión 10. Con `&hora=07:00` se fija también la hora; las
 horas de vista previa se interpretan en Ciudad de México y sin estos parámetros se
