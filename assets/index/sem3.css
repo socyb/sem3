@@ -751,6 +751,7 @@ html[data-theme="dark"] .tl-stop[aria-selected="true"] .tl-tag{color:#180510}
 .tl-head .kicker{margin:0}
 .tl-hint{margin:0;font-size:.9rem;color:var(--muted)}
 .tl-head #sessionCount{margin:0 0 0 auto}
+.tl-head .tl-jump{align-self:center}
 
 /* Los paneles de sesión: solo se ve el que está abierto. */
 .session-panel[hidden]{display:none}

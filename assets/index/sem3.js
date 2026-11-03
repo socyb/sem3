@@ -356,15 +356,47 @@
       (escritas.includes(current.number) && current.number) ||
       escritas[escritas.length - 1];
 
+    // Deja la parada de una sesión al centro del riel.
+    const rail = $("#timeline");
+    const centrar = (number, behavior = "auto") => {
+      const btn = stops.find(b => Number(b.dataset.sesion) === number);
+      if (btn && rail && rail.scrollWidth > rail.clientWidth) {
+        rail.scrollTo({ left: Math.max(0, btn.offsetLeft - (rail.clientWidth - btn.offsetWidth) / 2), behavior });
+      }
+    };
+
     if (inicio) {
       openSession(inicio, false);
       // Si la liga pide una sesión, el lema la acompaña; si no, se queda el de hoy.
       if (inicio === pedida) ponerLema(pedida);
-      const btn = stops.find(b => Number(b.dataset.sesion) === inicio);
-      const rail = $("#timeline");
-      if (btn && rail && rail.scrollWidth > rail.clientWidth) {
-        rail.scrollLeft = Math.max(0, btn.offsetLeft - (rail.clientWidth - btn.offsetWidth) / 2);
-      }
+      centrar(inicio);
+    }
+
+    // Cuando la bitácora va adelantada, un botón lleva directo a la próxima sesión
+    // y de regreso a la de hoy: en el celular esa parada queda fuera de la vista.
+    const proxima = listed.find(s => s.number > current.number && panelFor(s.number));
+    const hint = $(".tl-hint");
+    if (proxima && hint) {
+      hint.textContent = "Toca una parada para volver a una sesión anterior o adelantarte a la próxima.";
+      const salto = document.createElement("button");
+      salto.type = "button";
+      salto.className = "btn btn-primary btn-small tl-jump";
+      const hoyEscrita = escritas.includes(current.number);
+      const rotular = (number) => {
+        const regreso = number === proxima.number && hoyEscrita;
+        salto.dataset.destino = regreso ? current.number : proxima.number;
+        salto.textContent = regreso
+          ? `← Volver a la sesión de hoy (${pad(current.number)})`
+          : `Ir a la próxima: sesión ${pad(proxima.number)} →`;
+      };
+      salto.addEventListener("click", () => {
+        const destino = Number(salto.dataset.destino);
+        openSession(destino);
+        centrar(destino, "smooth");
+      });
+      document.addEventListener("sem3:sessionchange", (e) => rotular(e.detail));
+      rotular(inicio);
+      hint.after(salto);
     }
   }
 
