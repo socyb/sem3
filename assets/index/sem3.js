@@ -156,7 +156,7 @@
      9: ["Alguien decide lo que vemos.", "Hoy te toca decidir a ti."],
     10: ["Un crédito puede transformar un territorio.", "Lo difícil es que el cambio se quede."],
     11: ["La ciudadanía también se ejerce en línea.", "¿Cómo participamos entre tanta información?"],
-    12: ["El nearshoring no es un regalo.", "México tiene que ganárselo."],
+    12: ["Ensamblar, diseñar, decidir.", "¿Dónde queremos participar?"],
     13: ["Si es gratis,", "el producto eres tú."],
     14: ["Las máquinas no despiden a nadie.", "Alguien decide hacerlo."],
     15: ["Toda tecnología tiene reglas.", "La pregunta es quién las escribe."],
