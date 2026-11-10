@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c1123f">
+  <title>Videoteca por temas · Seminario de Negocios Internacionales III · FCA UNAM</title>
+  <meta name="description" content="Todos los videos de la playlist del Seminario de Negocios Internacionales III ordenados por tema, con buscador por palabra clave, canal, idioma y duración.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c1123f'/%3E%3Ccircle cx='16' cy='16' r='10.5' fill='none' stroke='%23f6f1e6' stroke-width='1.3'/%3E%3Cellipse cx='16' cy='16' rx='4.4' ry='10.5' fill='none' stroke='%23f6f1e6' stroke-width='1.1'/%3E%3Cpath d='M5.5 16h21M8 10.4h16M8 21.6h16' stroke='%23f6f1e6' stroke-width='1.1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="assets/index/sem3.css?v=2026-11-03">
+  <script>
+    /* Tema guardado antes de pintar, con la misma preferencia que la página del seminario. */
+    (() => {
+      let t = null;
+      try { t = localStorage.getItem("sem3-27-theme"); } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    })();
+  </script>
+  <style>
+    /* Tomado de la videoteca de Geopolítica: portada, buscador y tarjetas de video. */
+.arch-hero{padding:clamp(2.2rem,5vw,3.4rem) 0 .5rem}
+.arch-hero h1{
+  margin:.35rem 0 .5rem;font-size:clamp(2.1rem,5vw,3.3rem);font-weight:900;letter-spacing:-.04em;line-height:1.04;
+}
+.arch-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}
+.arch-meta li{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .7rem;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);background:var(--card);
+}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1.2rem;margin-top:1.5rem}
+.vcard{
+  display:flex;flex-direction:column;background:var(--card);border:2px solid var(--edge);
+  border-radius:var(--radius-sm);box-shadow:var(--shadow-xs);overflow:hidden;
+  transition:transform var(--t),box-shadow var(--t);
+}
+.vcard:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow)}
+.vthumb{position:relative;display:block;line-height:0;border-bottom:2px solid var(--edge)}
+.vthumb img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--paper-2)}
+.vthumb .vdur{
+  position:absolute;right:.5rem;bottom:.5rem;padding:.15rem .45rem;border-radius:5px;
+  background:rgba(22,32,44,.88);color:#fff;font-family:var(--mono);font-size:.72rem;
+}
+.vthumb .vplay{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:2.4rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5);opacity:.85;
+}
+.vbody{display:flex;flex-direction:column;gap:.55rem;padding:.95rem 1.05rem;flex:1}
+.vbody h4{margin:0;font-family:var(--display);font-size:1.02rem;font-weight:900;letter-spacing:-.02em;line-height:1.2}
+.vbody h4 a{color:inherit;text-decoration:none}
+.vbody h4 a:hover{color:var(--guinda)}
+.vmeta{
+  margin:0;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);
+}
+.gloss-search{flex:1 1 260px;max-width:420px}
+.gloss-search input{
+  width:100%;padding:.62rem .95rem;border:2px solid var(--edge);border-radius:999px;
+  background:var(--card);color:var(--ink);font:inherit;font-size:.95rem;box-shadow:var(--shadow-xs);
+}
+.gloss-search input:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vgroup{padding:2.2rem 0 1rem;border-top:2px solid var(--edge)}
+.vgroup:first-of-type{border-top:0}
+.vgroup[hidden],.vgroup .vcard[hidden]{display:none}
+.vgroup-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.4rem 1.2rem}
+.vgroup-head h2{margin:0;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;letter-spacing:-.035em}
+.vgroup-head .kicker{margin-bottom:.35rem}
+.vgroup-n{margin:0;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+    /* Propio de esta página: índice de temas, filtros y etiquetas. */
+    .pt-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:.7rem;margin:1.6rem 0 0;padding:0;list-style:none}
+    .pt-index a{
+      display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;height:100%;
+      padding:.65rem .85rem;border:2px solid var(--edge);border-left:8px solid var(--acc,var(--guinda));
+      border-radius:var(--radius-sm);background:var(--card);color:var(--ink);text-decoration:none;
+      font-weight:700;font-size:.9rem;line-height:1.25;box-shadow:var(--shadow-xs);transition:transform var(--t),box-shadow var(--t);
+    }
+    .pt-index a:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-sm)}
+    .pt-index a span{font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--muted);white-space:nowrap}
+    .pt-index a.is-empty{opacity:.4;pointer-events:none}
+
+    .pt-tools{position:sticky;top:64px;z-index:5;padding:.9rem 0;margin-bottom:.4rem;background:var(--paper);border-bottom:2px solid var(--edge)}
+    .pt-row{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center}
+    .pt-row + .pt-row{margin-top:.7rem}
+    .pt-tools .gloss-search{max-width:520px}
+    .pt-select{display:flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .pt-select select{
+      padding:.42rem .7rem;border:2px solid var(--edge);border-radius:999px;background:var(--card);color:var(--ink);
+      font:inherit;font-family:var(--sans);font-size:.85rem;letter-spacing:0;text-transform:none;font-weight:700;cursor:pointer;
+    }
+    .pt-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+    .pt-chips button{
+      padding:.3rem .75rem;border:2px solid var(--edge);border-radius:999px;background:var(--card);color:var(--ink);
+      font:inherit;font-size:.78rem;font-weight:700;cursor:pointer;
+    }
+    .pt-chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+    .pt-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pt-count{margin:0;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+    .pt-clear{border:0;background:none;color:var(--cobalt);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;text-decoration:underline;padding:0}
+    .pt-clear[hidden]{display:none}
+
+    .vgroup{scroll-margin-top:220px}
+    .vgroup-head .kicker{color:var(--acc,var(--guinda))}
+    .vgroup-desc{margin:.35rem 0 0;max-width:68ch;color:var(--ink-soft);font-size:.95rem}
+    .vgroup-head h2 a{color:inherit;text-decoration:none}
+    .vcard{position:relative}
+    .vcard .vthumb img{aspect-ratio:16/9}
+    .vbody h4 a::after{content:"";position:absolute;inset:0;z-index:1}
+    .vbody .vtags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:auto;position:relative;z-index:2}
+    .vtags button{
+      padding:.15rem .5rem;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--muted);
+      font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+    }
+    .vtags button:hover{border-color:var(--acc,var(--edge));color:var(--ink)}
+    .vtags button.is-main{border-color:var(--acc,var(--edge));color:var(--acc,var(--ink));font-weight:700}
+    .vlang{
+      position:absolute;left:.5rem;top:.5rem;padding:.12rem .4rem;border-radius:5px;
+      background:rgba(22,32,44,.88);color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
+    }
+    mark{background:var(--tint-amber);color:inherit;padding:0 .08em;border-radius:3px;box-shadow:inset 0 -2px 0 var(--amber)}
+    .pt-empty{padding:3rem 0;text-align:center;color:var(--ink-soft)}
+    .pt-empty strong{display:block;font-family:var(--display);font-size:1.5rem;margin-bottom:.4rem;color:var(--ink)}
+    .pt-more{margin:1.2rem 0 0}
+    .pt-more button{
+      padding:.5rem 1rem;border:2px solid var(--edge);border-radius:999px;background:var(--card);color:var(--ink);
+      font:inherit;font-weight:700;font-size:.85rem;cursor:pointer;box-shadow:var(--shadow-xs);
+    }
+    .pt-note{margin:1rem 0 0;font-size:.85rem;color:var(--muted);max-width:70ch}
+    @media (max-width:720px){
+      .pt-tools{position:static}
+      .vgroup{scroll-margin-top:80px}
+    }
+    @media print{.pt-tools,.pt-index,.pt-more{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#videos">Ir a los videos</a>
+
+  <header class="topbar" id="inicio">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--guinda)"/>
+        <circle cx="16" cy="16" r="10.5" fill="none" stroke="var(--paper)" stroke-width="1.3"/>
+        <ellipse cx="16" cy="16" rx="4.4" ry="10.5" fill="none" stroke="var(--paper)" stroke-width="1.1" opacity=".8"/>
+        <path d="M5.5 16h21M8 10.4h16M8 21.6h16" stroke="var(--paper)" stroke-width="1.1" opacity=".8"/>
+      </svg>
+      <span class="brand-text">
+        <strong>Seminario III</strong>
+        <small>FCA · UNAM · 1746</small>
+      </span>
+    </a>
+    <nav class="topnav" aria-label="Secciones">
+      <a href="#temas">Temas</a>
+      <a href="#videos">Videos</a>
+      <a id="plLink" href="https://www.youtube.com/playlist?list=PLvq3lYVuc4tZxwH3RyLVSCEhnLfIvkRGE" target="_blank" rel="noopener">Playlist ↗</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="themeToggle" type="button" title="Cambiar entre modo claro y oscuro" aria-label="Cambiar entre modo claro y oscuro">🌙</button>
+    </div>
+  </header>
+
+  <section class="arch-hero" id="temas">
+    <div class="wrap">
+      <p class="kicker">Playlist de YouTube · Seminario de Negocios Internacionales III</p>
+      <h1>La videoteca, <em>por temas</em></h1>
+      <p class="lead">Todos los videos de la playlist del seminario —tecnología, innovación y negocios— agrupados por tema según su título y su canal. Busca por palabra clave, filtra por idioma o duración, y da clic en cualquier video para abrirlo en YouTube.</p>
+      <ul class="arch-meta" id="ptMeta"></ul>
+      <ul class="pt-index" id="ptIndex" aria-label="Ir a un tema"></ul>
+    </div>
+  </section>
+
+  <main class="section" id="videos" style="padding-top:1.2rem">
+    <div class="wrap">
+      <div class="pt-tools" role="search">
+        <div class="pt-row">
+          <label class="gloss-search">
+            <span class="sr-only">Buscar por palabra clave</span>
+            <input type="search" id="ptQ" placeholder="Busca: ChatGPT, Google, algoritmos, Ponzi, mito…" autocomplete="off" spellcheck="false">
+          </label>
+          <label class="pt-select">Agrupar
+            <select id="ptGroup">
+              <option value="tema">por tema</option>
+              <option value="canal">por canal</option>
+              <option value="idioma">por idioma</option>
+              <option value="duracion">por duración</option>
+            </select>
+          </label>
+          <label class="pt-select">Ordenar
+            <select id="ptSort">
+              <option value="playlist">orden de la playlist</option>
+              <option value="vistas">más vistos</option>
+              <option value="largos">más largos</option>
+              <option value="cortos">más cortos</option>
+              <option value="titulo">título (A–Z)</option>
+            </select>
+          </label>
+        </div>
+        <div class="pt-row">
+          <span class="pt-label">Idioma</span>
+          <div class="pt-chips" id="ptLang" role="group" aria-label="Filtrar por idioma">
+            <button type="button" data-v="" aria-pressed="true">Todos</button>
+            <button type="button" data-v="es" aria-pressed="false">Español</button>
+            <button type="button" data-v="en" aria-pressed="false">Inglés</button>
+            <button type="button" data-v="otro" aria-pressed="false">Otros</button>
+          </div>
+          <span class="pt-label">Duración</span>
+          <div class="pt-chips" id="ptDur" role="group" aria-label="Filtrar por duración">
+            <button type="button" data-v="" aria-pressed="true">Todas</button>
+            <button type="button" data-v="corto" aria-pressed="false">&lt; 10 min</button>
+            <button type="button" data-v="medio" aria-pressed="false">10–30 min</button>
+            <button type="button" data-v="largo" aria-pressed="false">&gt; 30 min</button>
+          </div>
+        </div>
+        <div class="pt-row">
+          <p class="pt-count" id="ptCount" aria-live="polite"></p>
+          <button type="button" class="pt-clear" id="ptClear" hidden>Quitar filtros</button>
+        </div>
+      </div>
+
+      <div id="ptOut"></div>
+
+      <p class="pt-note">Los temas se asignan con las palabras clave del título y el nombre del canal; cada video aparece en su tema principal y lleva etiquetas de los demás temas que toca (da clic en una etiqueta para buscar por ella). Las vistas y duraciones son las que tenía YouTube al generar esta lista.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot-grid">
+      <p>
+        <strong>Seminario de Negocios Internacionales III</strong>
+        Licenciatura en Negocios Internacionales · Facultad de Contaduría y Administración · UNAM
+      </p>
+      <p>
+        <strong>Grupo 1746 · Semestre 2027-1</strong>
+        <a href="index.html#profesor">Dr. Jorge Cardiel Herrera</a><br>
+        <a href="https://socyb.github.io" target="_blank" rel="noopener noreferrer">socyb.github.io</a>
+      </p>
+      <a class="to-top" href="#inicio" aria-label="Volver al inicio">↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+/* Datos generados por tools/build_playlist_temas.py a partir de playlist_seminario3.json. */
+/* DATA-START */
+const PLAYLIST = {"title":"Seminario de Negocios Internacionales III","url":"https://youtube.com/playlist?list=PLvq3lYVuc4tZxwH3RyLVSCEhnLfIvkRGE","sections":[{"id":"ia","n":"Inteligencia artificial","desc":"ChatGPT, OpenAI, redes neuronales, IA generativa, robots y el debate sobre máquinas que «piensan»."},{"id":"bigtech","n":"Big Tech y plataformas","desc":"Google, Meta, Apple, Amazon, Microsoft, Twitter y TikTok: su poder, sus pleitos y sus modelos de negocio."},{"id":"datos","n":"Algoritmos, datos y vigilancia","desc":"Algoritmos, big data, burbujas de filtro, privacidad, ciudades inteligentes y Estados que vigilan."},{"id":"ciber","n":"Ciberseguridad y hackeo","desc":"Gobiernos y hospitales hackeados, fugas de datos, phreaking y cómo una canción puede tumbar una computadora."},{"id":"geo","n":"Geopolítica de la tecnología","desc":"La carrera tecnológica entre EE. UU., China, Europa, India y Corea; chips, regulación y guerra con drones."},{"id":"finanzas","n":"Finanzas, fraudes y mercados","desc":"GameStop, BlackRock, esquemas Ponzi y piramidales, cripto y blockchain, crisis bancarias y microfinanzas."},{"id":"emprendimiento","n":"Emprendimiento, startups e innovación","desc":"Unicornios, startups en India, África y Brasil, M-Pesa, innovación educativa y el mito del emprendedor."},{"id":"historia","n":"Historia de la tecnología e internet","desc":"De los autómatas al ChatGPT: la World Wide Web, la Ley de Moore, la máquina de Turing y las predicciones del pasado."},{"id":"mitos","n":"Mitos, filosofía e imaginarios","desc":"Pandora, Prometeo, Ícaro, Talos y la caverna de Platón; consecuencias no deseadas, teoría de juegos y ciencia ficción."},{"id":"sociedad","n":"Trabajo, salud y sociedad","desc":"Trabajadores frente a la IA, salud mental, ambiente, consumo y los efectos cotidianos de la tecnología."}],"videos":[{"id":"ca7ufSI1Qxg","t":"“I Work For Psychopaths”: Meta Workers Expose AI Surveillance","c":"More Perfect Union","d":894,"ds":"14:54","v":1659829,"i":1,"l":"en","s":"sociedad","g":["sociedad","datos","ia","bigtech"]},{"id":"1bp12w_olDQ","t":"Why Anthropic’s IPO Is So Dangerous","c":"More Perfect Union","d":852,"ds":"14:12","v":948000,"i":2,"l":"en","s":"finanzas","g":["finanzas","ia"]},{"id":"AUq2twt8mgM","t":"AI just hacked a government. How can that happen? | BBC News","c":"BBC News","d":614,"ds":"10:14","v":661000,"i":3,"l":"en","s":"ciber","g":["ciber","ia"]},{"id":"_59-lmRevFs","t":"Australia’s Albanese rebukes OpenAI after government website hacked • FRANCE 24 English","c":"FRANCE 24 English","d":103,"ds":"1:43","v":3100,"i":4,"l":"en","s":"ciber","g":["ciber","geo","ia"]},{"id":"eVUYCiRLgB4","t":"How China Plans to Win the Global AI Race","c":"Bloomberg Originals","d":714,"ds":"11:54","v":578418,"i":5,"l":"en","s":"geo","g":["geo","ia"]},{"id":"yGxDuRd20Mg","t":"AI agent hacks Australian healthcare portal, raises fresh fears over lack of control | DW News","c":"DW News","d":1329,"ds":"22:09","v":48000,"i":6,"l":"en","s":"ciber","g":["ciber","geo","ia"]},{"id":"gKOzDU64iPA","t":"Do billionaires even understand the sci-fi they’re inspired by? | The Listening Post","c":"Al Jazeera English","d":576,"ds":"9:36","v":136774,"i":7,"l":"en","s":"mitos","g":["mitos"]},{"id":"FNqLrGGFH7c","t":"How Silicon Valley giants are turning into war contractors | All Hail","c":"Al Jazeera English","d":1500,"ds":"25:00","v":247183,"i":8,"l":"en","s":"geo","g":["geo","emprendimiento"]},{"id":"pbW1ySDef_E","t":"Apple’s Origins Are In An ILLEGAL Product - Phone Phreaking","c":"Techquickie","d":337,"ds":"5:37","v":124000,"i":9,"l":"en","s":"historia","g":["historia","ciber","bigtech"]},{"id":"GUrDI6OkJfU","t":"Tim Berners-Lee: How This Guy Invented the World Wide Web 30 Years Ago","c":"DW Shift","d":357,"ds":"5:57","v":186000,"i":10,"l":"en","s":"historia","g":["historia"]},{"id":"pMdJxVjZMRI","t":"The myth of Pandora’s box - Iseult Gillespie","c":"TED-Ed","d":249,"ds":"4:09","v":9234229,"i":11,"l":"en","s":"mitos","g":["mitos"]},{"id":"q4pDUxth5fQ","t":"The myth of Sisyphus - Alex Gendler","c":"TED-Ed","d":297,"ds":"4:57","v":8900000,"i":12,"l":"en","s":"mitos","g":["mitos"]},{"id":"U_u91SjrEOE","t":"The myth of Prometheus - Iseult Gillespie","c":"TED-Ed","d":287,"ds":"4:47","v":9811909,"i":13,"l":"en","s":"mitos","g":["mitos"]},{"id":"a5G_mPCPpzk","t":"Unintended consequences - Edward Tenner","c":"TED-Ed","d":970,"ds":"16:10","v":21679,"i":14,"l":"en","s":"mitos","g":["mitos"]},{"id":"keD6przLGBE","t":"Berlin's biggest ever hack: How one employee let criminals steal 6 terabyte of data | DW News","c":"DW News","d":674,"ds":"11:14","v":473638,"i":15,"l":"en","s":"ciber","g":["ciber","datos"]},{"id":"iszhP8_cQvc","t":"New York City unveils cover-up over toxic cloud | DW News","c":"DW News","d":1778,"ds":"29:38","v":89000,"i":16,"l":"en","s":"sociedad","g":["sociedad"]},{"id":"9XYt-_GdPIU","t":"The controversy around OpenAI \"solving\" a $1m math problem (Navier-Stokes)","c":"Physics by Oimeow","d":486,"ds":"8:06","v":2600000,"i":17,"l":"en","s":"ia","g":["ia"]},{"id":"9loU38NksKc","t":"Meta Just Settled for $18 Billion. Here’s What That Means for You.","c":"DW Shift","d":251,"ds":"4:11","v":9000,"i":18,"l":"en","s":"bigtech","g":["bigtech","finanzas"]},{"id":"xZD8_imniuo","t":"Why Apple Has a Big AI Problem","c":"Bloomberg Originals","d":677,"ds":"11:17","v":528000,"i":19,"l":"en","s":"bigtech","g":["bigtech","ia"]},{"id":"DkhhE97Swmo","t":"Therapy for the Vibe-Coded Brain","c":"JetBrains Academy","d":601,"ds":"10:01","v":888000,"i":20,"l":"en","s":"sociedad","g":["sociedad","ia"]},{"id":"0ADvC4ioqe4","t":"Meta’s $1 trillion lawsuit could change Instagram and Facebook forever | BBC News","c":"BBC News","d":599,"ds":"9:59","v":1300000,"i":21,"l":"en","s":"bigtech","g":["bigtech","finanzas"]},{"id":"IlbPO9Vmuuo","t":"What's Wrong With Germany?","c":"Bloomberg Originals","d":749,"ds":"12:29","v":3000000,"i":22,"l":"en","s":"geo","g":["geo"]},{"id":"nIbxQN1nHsQ","t":"The Real Winners of Korea’s AI Stock Crash | AB Explained","c":"Asian Boss","d":3266,"ds":"54:26","v":425650,"i":23,"l":"en","s":"finanzas","g":["finanzas","geo","ia"]},{"id":"Iv7OdQMNzz0","t":"Apple's app store business is breaking","c":"The Friday Checkout","d":618,"ds":"10:18","v":105869,"i":24,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"6hqnAml0iBY","t":"The Shure SM57’s Secret History: How Soviet Spy Tech Turned it Into a Rock Star","c":"The Microphone Assassin","d":525,"ds":"8:45","v":38329,"i":25,"l":"en","s":"historia","g":["historia","ciber","geo"]},{"id":"1ih7WJrcjWg","t":"The American empire is over: Richard Wolff on Trump, tariffs and the rising power of BRICS | UpFront","c":"Al Jazeera English","d":2231,"ds":"37:11","v":4500000,"i":26,"l":"en","s":"geo","g":["geo"]},{"id":"3ANw3Fhnbv8","t":"Apple pulls data protection tool after UK government security row | BBC News","c":"BBC News","d":205,"ds":"3:25","v":177958,"i":27,"l":"en","s":"datos","g":["datos","geo","bigtech"]},{"id":"Gga8fNcZy38","t":"India needs to do more to catch up with AI tech | DW News","c":"DW News","d":1219,"ds":"20:19","v":49000,"i":28,"l":"en","s":"geo","g":["geo","ia"]},{"id":"uiHxvR15SbA","t":"How an Unstoppable 200-Year-Old Robot Fooled the World","c":"Thoughty2","d":1309,"ds":"21:49","v":3614893,"i":29,"l":"en","s":"historia","g":["historia","ia"]},{"id":"KnXee-GN8AE","t":"From 1998: Elon Musk and internet startups vs. Microsoft","c":"CBS Sunday Morning","d":475,"ds":"7:55","v":2454986,"i":30,"l":"en","s":"historia","g":["historia","emprendimiento","bigtech"]},{"id":"d_gUVptaXyw","t":"AI and mental health: Young people turning to AI therapist bots | BBC News","c":"BBC News","d":852,"ds":"14:12","v":50000,"i":31,"l":"en","s":"sociedad","g":["sociedad","ia"]},{"id":"udCg6O7aeV4","t":"It’s Not Just You – The Internet is Dying","c":"LMGClips","d":644,"ds":"10:44","v":346000,"i":32,"l":"en","s":"sociedad","g":["sociedad","historia","bigtech"]},{"id":"mScpHTIi-kM","t":"Once you understand game theory, you understand the world.","c":"Veritasium","d":1639,"ds":"27:19","v":27000000,"i":33,"l":"en","s":"mitos","g":["mitos"]},{"id":"BOHyLkp7TpE","t":"1997: TIM BERNERS-LEE warns the WEB could DIVIDE US | HARDtalk | Past Predictions | BBC Archive","c":"BBC Archive","d":435,"ds":"7:15","v":40000,"i":34,"l":"en","s":"historia","g":["historia"]},{"id":"ydiX4Iayosg","t":"Why Silicon Valley needs a new name","c":"DW Planet A","d":627,"ds":"10:27","v":37026,"i":35,"l":"en","s":"historia","g":["historia","emprendimiento","sociedad"]},{"id":"I19ezZcyB6w","t":"The EU agrees on AI regulations: What will it mean for people and businesses in the EU? | DW News","c":"DW News","d":281,"ds":"4:41","v":47533,"i":37,"l":"en","s":"geo","g":["geo","ia"]},{"id":"d3L2uPuxOxU","t":"How Nvidia Grew From Gaming To A.I. Giant, Now Powering ChatGPT","c":"CNBC","d":1074,"ds":"17:54","v":5045472,"i":38,"l":"en","s":"historia","g":["historia","ia","bigtech"]},{"id":"OFS90-FX6pg","t":"The 35 Year History of ChatGPT","c":"Art of the Problem","d":1615,"ds":"26:55","v":1300000,"i":39,"l":"en","s":"historia","g":["historia","ia"]},{"id":"MZ1OMTevxdE","t":"D'où vient le mythe de l'entrepreneur ? | Les idées larges | ARTE","c":"ARTE","d":1416,"ds":"23:36","v":134120,"i":41,"l":"fr","s":"emprendimiento","g":["emprendimiento","mitos"]},{"id":"vBMY99HwcFM","t":"No More ChatGPT? How AI control will affect Us","c":"DW Shift","d":211,"ds":"3:31","v":492,"i":42,"l":"en","s":"ia","g":["ia"]},{"id":"kgCUn4fQTsc","t":"Google Engineer on His Sentient AI Claim","c":"Bloomberg Tech","d":634,"ds":"10:34","v":3872768,"i":43,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"GTFDVZU-Nv0","t":"How to solve our Big Dam Problem","c":"DW Planet A","d":746,"ds":"12:26","v":350932,"i":45,"l":"en","s":"sociedad","g":["sociedad"]},{"id":"Ve810FHZ1CQ","t":"Thin underwater cables hold the internet. See a map of them all.","c":"Vox","d":179,"ds":"2:59","v":3200000,"i":46,"l":"en","s":"historia","g":["historia"]},{"id":"Q2Wrcyt_wco","t":"How Ukraine's frontline soldiers make use of drones for their counteroffensive | DW News","c":"DW News","d":862,"ds":"14:22","v":326000,"i":47,"l":"en","s":"geo","g":["geo"]},{"id":"dO-G657yzWc","t":"Google's Power: Why we don't have a choice","c":"DW Shift","d":272,"ds":"4:32","v":807,"i":48,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"-CTUJA5O7QA","t":"La economía celebra el 25 aniversario de Google, una empresa creada en un garaje por dos estudiantes","c":"DW Español","d":720,"ds":"12:00","v":24000,"i":49,"l":"es","s":"bigtech","g":["bigtech","finanzas","emprendimiento","historia"]},{"id":"WXuK6gekU1Y","t":"AlphaGo - The Movie | Full award-winning documentary","c":"Google DeepMind and Reel As Dirt","d":5428,"ds":"1:30:28","v":38000000,"i":50,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"K0OtGIPRcAs","t":"11 Of The Most Faked Foods In The World | Big Business | Business Insider Marathon","c":"Business Insider and 2 more","d":1840,"ds":"30:40","v":26000000,"i":51,"l":"en","s":"emprendimiento","g":["emprendimiento"]},{"id":"6xvrKW2H_hA","t":"Why Silicon Valley is here","c":"Vox","d":527,"ds":"8:47","v":1000000,"i":52,"l":"en","s":"historia","g":["historia","emprendimiento"]},{"id":"p8yyNOtJ3kw","t":"Is WhatsApp, Facebook’s Biggest Acquisition, Paying Off A Decade Later?","c":"CNBC","d":607,"ds":"10:07","v":1400000,"i":53,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"lBiA9bu1BQ0","t":"Why is Google search getting worse?","c":"DW Shift","d":200,"ds":"3:20","v":1600,"i":54,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"WNr6QuAZVLY","t":"Entra en vigor la nueva Ley de Servicios Digitales","c":"DW Español","d":201,"ds":"3:21","v":11000,"i":55,"l":"es","s":"geo","g":["geo","bigtech"]},{"id":"oqMjtHjTfyA","t":"Behind the Scenes of a Vacation Giant: Clever Savings Tips at Booking.com","c":"Galileo","d":1178,"ds":"19:38","v":189000,"i":56,"l":"de","s":"bigtech","g":["bigtech"]},{"id":"qlIURRhLPFw","t":"Inteligencia artificial racista   DW","c":"talento cloud","d":277,"ds":"4:37","v":50,"i":57,"l":"es","s":"ia","g":["ia","bigtech"]},{"id":"SKia5QUiGkE","t":"Twitter Founders on Musk’s Tumultuous Takeover | The Circuit","c":"Bloomberg Originals","d":1442,"ds":"24:02","v":115000,"i":58,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"p9Q5a1Vn-Hk","t":"Inside OpenAI, the Architect of ChatGPT, featuring Mira Murati | The Circuit with Emily Chang","c":"Bloomberg Originals","d":1442,"ds":"24:02","v":3300000,"i":59,"l":"en","s":"ia","g":["ia"]},{"id":"inJRQSrl9tY","t":"Elon Musk: Tech visionary or ruthless entrepreneur?","c":"DW Shift","d":386,"ds":"6:26","v":516,"i":60,"l":"en","s":"emprendimiento","g":["emprendimiento","bigtech"]},{"id":"K0ldxCh3cnI","t":"An AI artist explains his workflow","c":"Vox","d":498,"ds":"8:18","v":593000,"i":61,"l":"en","s":"ia","g":["ia"]},{"id":"OU9cKjWsvH0","t":"'The Godfather of AI' quits Google and warns of its dangers. Why Apple co-founder isn't concerned","c":"CNN","d":646,"ds":"10:46","v":1600000,"i":62,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"gQfQiXP9yZA","t":"AI is Evolving Faster Than You Think Pt. 2 (Art and Beyond)","c":"ColdFusion","d":1371,"ds":"22:51","v":921000,"i":63,"l":"en","s":"ia","g":["ia"]},{"id":"YFQ-v1jCpF0","t":"Reddit vs Wallstreet - GameStop, The Movie","c":"ColdFusion","d":1600,"ds":"26:40","v":3600000,"i":64,"l":"en","s":"finanzas","g":["finanzas","bigtech"]},{"id":"ksV1BkcT2WI","t":"Scientists create robotic hand able to hold objects - BBC News","c":"BBC News","d":282,"ds":"4:42","v":101000,"i":65,"l":"en","s":"ia","g":["ia"]},{"id":"dBy4twDV4PY","t":"How China is losing its technology advantage","c":"TechAltar","d":1028,"ds":"17:08","v":492000,"i":67,"l":"en","s":"geo","g":["geo"]},{"id":"8OpW5qboDDs","t":"'Pause Giant AI Experiments' - Letter Breakdown w/ Research Papers, Altman, Sutskever and more","c":"AI Explained","d":850,"ds":"14:10","v":351000,"i":68,"l":"en","s":"ia","g":["ia"]},{"id":"1x-i9z617z4","t":"How We Make Money on YouTube with 20M Subs","c":"Kurzgesagt – In a Nutshell","d":598,"ds":"9:58","v":5700000,"i":69,"l":"en","s":"emprendimiento","g":["emprendimiento","finanzas","bigtech"]},{"id":"eUTYpTdzNhM","t":"Driving a Car With AI Powered by Your Emotions","c":"Bloomberg Originals","d":116,"ds":"1:56","v":17000,"i":70,"l":"en","s":"ia","g":["ia","sociedad"]},{"id":"CFyP4Vfr2Oc","t":"Why do world governments fear TikTok — and should we? Tech expert Scott Galloway explains | DW News","c":"DW News","d":891,"ds":"14:51","v":74000,"i":71,"l":"en","s":"geo","g":["geo","bigtech"]},{"id":"Do_WyMawgFM","t":"1962: Are HUMANOID MACHINES Imminent? | Machines Like Men | Past Predictions | BBC Archive","c":"BBC Archive","d":1050,"ds":"17:30","v":12000,"i":72,"l":"en","s":"historia","g":["historia","ia"]},{"id":"Jlbxj182bhg","t":"¿La Ley de HUANG es la nueva Ley de Moore? | Data Coffee #14","c":"Dot CSV","d":1186,"ds":"19:46","v":239000,"i":73,"l":"es","s":"historia","g":["historia","datos","ia"]},{"id":"mZ3c-qV-NsE","t":"Ley de Moore: La singularidad tecnológica - Bully Magnets - Historia Documental","c":"Bully Magnets - Historia Documental","d":587,"ds":"9:47","v":86000,"i":74,"l":"es","s":"historia","g":["historia"]},{"id":"48AOOynnmqU","t":"What Happened To Google Search?","c":"Enrico Tartarotti","d":845,"ds":"14:05","v":3200000,"i":75,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"5zunNs4Kx8U","t":"AI Smarter Than Humans? Even Ancient Greece was scared of that!","c":"DW Shift","d":254,"ds":"4:14","v":1300,"i":76,"l":"en","s":"mitos","g":["mitos","ia"]},{"id":"oRF5SH6392s","t":"Quantum Computing - A New Era","c":"DW Shift","d":752,"ds":"12:32","v":7700,"i":77,"l":"en","s":"historia","g":["historia"]},{"id":"ndT-3ACvnsQ","t":"ChatGPT - The Hype, the Challenges, and the Future","c":"Dot CSV","d":1411,"ds":"23:31","v":942000,"i":78,"l":"es","s":"ia","g":["ia"]},{"id":"j8Bxdp60lo8","t":"STABLE DIFFUSION 2, la IA OPEN SOURCE de imágenes es MEJOR de lo que parece!","c":"Dot CSV","d":1016,"ds":"16:56","v":273000,"i":79,"l":"es","s":"ia","g":["ia"]},{"id":"JYVMuWGCtK4","t":"Amazon, Netflix, Meta: Why Big Tech Is Facing Massive Layoffs | WSJ","c":"The Wall Street Journal","d":286,"ds":"4:46","v":1500000,"i":80,"l":"en","s":"bigtech","g":["bigtech","finanzas","sociedad"]},{"id":"EnPaXPr9W8Y","t":"FTX bajo investigación, inflación, hipotecas a la baja, Tom Ford multimillonario y más de economía","c":"CNN en Español","d":343,"ds":"5:43","v":17000,"i":81,"l":"es","s":"finanzas","g":["finanzas"]},{"id":"tCUuvyVwbJs","t":"How BIG is Amazon? (They Help Power the CIA and Netflix!)","c":"ColdFusion","d":987,"ds":"16:27","v":2100000,"i":82,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"A3cGMNxRNJ0","t":"Google, Facebook, Amazon - El poder ilimitado de los consorcios digitales | DW Documental","c":"DW Documental","d":2546,"ds":"42:26","v":9700000,"i":83,"l":"es","s":"bigtech","g":["bigtech"]},{"id":"UzGemfwaTT8","t":"Amazon, Jeff Bezos y la colección de datos | DW Documental","c":"DW Documental","d":2551,"ds":"42:31","v":6400000,"i":84,"l":"es","s":"datos","g":["datos","bigtech"]},{"id":"m5yVHer5SPk","t":"The City That Knows Everything About You | Big Data: Cities of the Future","c":"DW Español","d":572,"ds":"9:32","v":251000,"i":85,"l":"es","s":"datos","g":["datos"]},{"id":"j-0cUmUyb-Y","t":"Big Data - Tim Smith","c":"TED-Ed","d":368,"ds":"6:08","v":622000,"i":86,"l":"en","s":"datos","g":["datos"]},{"id":"vJ1cfb-5pHQ","t":"The Great Google Crash: The World’s Dependency Revealed","c":"ColdFusion","d":793,"ds":"13:13","v":1100000,"i":87,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"HyZhanswBBw","t":"The AI Supercomputer That Changed The Economy - Aladdin","c":"The Beauty of Finance","d":260,"ds":"4:20","v":68000,"i":88,"l":"en","s":"finanzas","g":["finanzas","ia"]},{"id":"ga_we_sOopk","t":"How BlackRock Became The World's Largest Asset Manager","c":"CNBC","d":859,"ds":"14:19","v":3200000,"i":89,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"lHqlRYJsXGQ","t":"Apple vs. Facebook: Why iOS 14.5 Started a Big Tech Fight | WSJ","c":"The Wall Street Journal","d":532,"ds":"8:52","v":898000,"i":90,"l":"en","s":"datos","g":["datos","finanzas","bigtech"]},{"id":"G-pAwZTFCKI","t":"Apple vs Facebook - The Great Privacy Fight","c":"ColdFusion","d":799,"ds":"13:19","v":492000,"i":91,"l":"en","s":"datos","g":["datos","bigtech"]},{"id":"oRkNaF0QvnI","t":"Why algorithms are called algorithms | BBC Ideas","c":"BBC Ideas","d":189,"ds":"3:09","v":3300000,"i":92,"l":"en","s":"datos","g":["datos"]},{"id":"6hfOvs8pY1k","t":"What's an algorithm? - David J. Malan","c":"TED-Ed","d":298,"ds":"4:58","v":2800000,"i":93,"l":"en","s":"datos","g":["datos"]},{"id":"nmgFG7PUHfo","t":"The Most Underrated Algorithm","c":"Veritasium","d":1593,"ds":"26:33","v":10000000,"i":94,"l":"en","s":"datos","g":["datos"]},{"id":"prx9bxzns3g","t":"How news feed algorithms supercharge confirmation bias | Eli Pariser | Big Think","c":"Big Think","d":299,"ds":"4:59","v":116000,"i":95,"l":"en","s":"datos","g":["datos"]},{"id":"4w48Ip-KPRs","t":"Beware online \"filter bubbles\" - Eli Pariser","c":"TED-Ed","d":545,"ds":"9:05","v":83000,"i":96,"l":"en","s":"datos","g":["datos"]},{"id":"2856XOaUPpg","t":"Did Google’s A.I. Just Become Sentient? Two Employees Think So.","c":"ColdFusion","d":804,"ds":"13:24","v":1700000,"i":98,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"L5ptc9WWcJc","t":"Why Algorithms Can’t Think: “Artificial Communication” by Elena Esposito","c":"Carefree Wandering","d":3764,"ds":"1:02:44","v":30000,"i":99,"l":"en","s":"datos","g":["datos","ia"]},{"id":"hmiN2BsCJ7g","t":"Will Algorithms Dictate the Future of our Literature? | Dr. Elena Esposito #46","c":"The Neutral Ground Podcast","d":2778,"ds":"46:18","v":1300,"i":100,"l":"en","s":"datos","g":["datos","mitos"]},{"id":"QGLGq8WIMzM","t":"The Rise of A.I. Companions [Documentary]","c":"ColdFusion","d":1054,"ds":"17:34","v":1000000,"i":101,"l":"en","s":"sociedad","g":["sociedad","ia"]},{"id":"Jy3zjXK4ao4","t":"Google Just Put an A.I. Brain in a Robot [Research Breakthrough]","c":"ColdFusion","d":674,"ds":"11:14","v":899000,"i":102,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"zb18MZn9Ies","t":"Elena Esposito: Future and uncertainty in the digital society","c":"Alexander von Humboldt Institut für Internet und Gesellschaft","d":7010,"ds":"1:56:50","v":4900,"i":103,"l":"en","s":"datos","g":["datos","historia"]},{"id":"3tjylTouTGc","t":"Agricultores en EE. UU. sufren la inflación: ¿qué opinan de la gestión económica del Gobierno?","c":"DW Español","d":470,"ds":"7:50","v":180000,"i":104,"l":"es","s":"sociedad","g":["sociedad","finanzas"]},{"id":"n87VBVbjUeE","t":"Mobile payment in Africa | M-Pesa | SHIFT","c":"DW Shift","d":251,"ds":"4:11","v":48000,"i":105,"l":"en","s":"emprendimiento","g":["emprendimiento","geo"]},{"id":"l1vO-Gx1mkU","t":"I used to lecture, now I engage: Teachers Transform Lives","c":"Bridge International Academies","d":95,"ds":"1:35","v":634,"i":106,"l":"en","s":"emprendimiento","g":["emprendimiento"]},{"id":"LApS3H1SgU8","t":"Tunapanda Institute","c":"TunapandaOrg","d":112,"ds":"1:52","v":255,"i":107,"l":"en","s":"emprendimiento","g":["emprendimiento"]},{"id":"q3dkGupx0ac","t":"What are Open Badges?","c":"Badgr","d":336,"ds":"5:36","v":12000,"i":108,"l":"en","s":"emprendimiento","g":["emprendimiento"]},{"id":"qCop1PYoINU","t":"Elon Musk completes Twitter takeover | DW News","c":"DW News","d":255,"ds":"4:15","v":26000,"i":109,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"XpZ5STahhPE","t":"1994: Are YOU Ready for the INTERNET? | Tomorrow's World | Retro Tech | BBC Archive","c":"BBC Archive","d":309,"ds":"5:09","v":1800000,"i":110,"l":"en","s":"historia","g":["historia"]},{"id":"VMxKcdwrR4M","t":"How YouTube and Twitch Streamers Actually Make Money","c":"Bloomberg Originals","d":684,"ds":"11:24","v":49000,"i":111,"l":"en","s":"emprendimiento","g":["emprendimiento","finanzas","bigtech"]},{"id":"SBGfHk91Vrk","t":"How to spot a pyramid scheme - Stacie Bosley","c":"TED-Ed","d":302,"ds":"5:02","v":6300000,"i":112,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"PxByoc9zHu8","t":"Meet the Man Who Pulled Off the Biggest Scam in History","c":"Thoughty2","d":1310,"ds":"21:50","v":2000000,"i":113,"l":"en","s":"finanzas","g":["finanzas","historia"]},{"id":"iaXLDz_UeYY","t":"What is a Turing machine?","c":"Derivando","d":318,"ds":"5:18","v":1000000,"i":114,"l":"es","s":"historia","g":["historia"]},{"id":"PtSSoZW19vs","t":"Inside Intel’s Bold $26 Billion U.S. Plan To Regain Chip Dominance","c":"CNBC","d":1185,"ds":"19:45","v":2600000,"i":115,"l":"en","s":"geo","g":["geo","bigtech"]},{"id":"RU6fIGX88rA","t":"The banking collapse has begun with Credit Suisse - global economic crisis","c":"Finanzas para todos","d":1225,"ds":"20:25","v":428000,"i":116,"l":"es","s":"finanzas","g":["finanzas"]},{"id":"s6MwGeOm8iI","t":"Multilevel Marketing: Last Week Tonight with John Oliver (HBO)","c":"LastWeekTonight","d":1918,"ds":"31:58","v":36000000,"i":117,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"5S-ZjGvOZ1A","t":"The Largest Ponzi Schemes in History","c":"ColdFusion","d":1638,"ds":"27:18","v":2100000,"i":118,"l":"en","s":"finanzas","g":["finanzas","historia"]},{"id":"24ILA0AglLM","t":"Your Guide to Day Trading in a Post-Gamestop World","c":"Bloomberg Originals","d":531,"ds":"8:51","v":47000,"i":119,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"2AHmJraM8Lw","t":"GameStop Was Nothing Compared to What’s Coming for Wall Street","c":"Bloomberg Originals","d":1262,"ds":"21:02","v":554000,"i":120,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"MhMhg97fmzE","t":"How to Lose $20 Billion in Two Days","c":"Bloomberg Originals","d":973,"ds":"16:13","v":2500000,"i":121,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"zbzcZr_Nadc","t":"China's Race for AI Supremacy","c":"Bloomberg Originals","d":870,"ds":"14:30","v":717000,"i":122,"l":"en","s":"geo","g":["geo","ia"]},{"id":"qXO-D5sbRdA","t":"The Promise and Threat of China's Smart Cities","c":"Bloomberg Originals","d":887,"ds":"14:47","v":301000,"i":123,"l":"en","s":"datos","g":["datos","geo"]},{"id":"JHfL6_f-Se8","t":"How An Unemployed Trader Became a $700 Million Exile","c":"Bloomberg Originals","d":751,"ds":"12:31","v":1100000,"i":124,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"Keme8oxHHPQ","t":"Why India's Tech Unicorns Are Breaking Records","c":"Bloomberg Originals","d":945,"ds":"15:45","v":362000,"i":125,"l":"en","s":"emprendimiento","g":["emprendimiento","geo"]},{"id":"4aZDNO7c8Z8","t":"Why Investors Are Piling into African Startups","c":"Bloomberg Originals","d":967,"ds":"16:07","v":357000,"i":126,"l":"en","s":"emprendimiento","g":["emprendimiento","geo"]},{"id":"N87PRcYuqkM","t":"The Dark Side of Microfinance","c":"Bloomberg Originals","d":1017,"ds":"16:57","v":254000,"i":127,"l":"en","s":"finanzas","g":["finanzas"]},{"id":"Yl_4ovxnj2M","t":"AI or Bust in Seattle's Real Estate Market","c":"Bloomberg Originals","d":902,"ds":"15:02","v":300000,"i":128,"l":"en","s":"emprendimiento","g":["emprendimiento","ia"]},{"id":"fdcahbYu26o","t":"Using Blockchain to Help Brazil’s Women Build Businesses","c":"Bloomberg Originals","d":406,"ds":"6:46","v":320000,"i":129,"l":"en","s":"emprendimiento","g":["emprendimiento","finanzas"]},{"id":"h3oM-l5kNOk","t":"Titán taiwanés presenta dos prototipos de autos eléctricos","c":"DW Español","d":77,"ds":"1:17","v":27000,"i":130,"l":"es","s":"emprendimiento","g":["emprendimiento","geo"]},{"id":"i4MFvhHVOZc","t":"¡Y AHORA la IA también crea VÍDEOS y MODELOS 3D! (de DALL-E 2 a DreamFusion)","c":"Dot CSV","d":963,"ds":"16:03","v":386000,"i":131,"l":"es","s":"ia","g":["ia"]},{"id":"eNIqz_noix8","t":"What is a Neural Network? Part 3: Backpropagation | DotCSV","c":"Dot CSV","d":682,"ds":"11:22","v":346000,"i":132,"l":"es","s":"ia","g":["ia"]},{"id":"uwbHOpp9xkc","t":"What is a Neural Network? Part 2: The Network | DotCSV","c":"Dot CSV","d":694,"ds":"11:34","v":441000,"i":133,"l":"es","s":"ia","g":["ia"]},{"id":"MRIv2IwFTPg","t":"What is a Neural Network? Part 1: The Neuron | DotCSV","c":"Dot CSV","d":555,"ds":"9:15","v":876000,"i":134,"l":"es","s":"ia","g":["ia"]},{"id":"1RWOpQXTltA","t":"Plato’s Allegory of the Cave - Alex Gendler","c":"TED-Ed","d":273,"ds":"4:33","v":8200000,"i":137,"l":"en","s":"mitos","g":["mitos"]},{"id":"3s2QPQnuaGk","t":"The myth of Icarus and Daedalus - Amy Adkins","c":"TED-Ed","d":309,"ds":"5:09","v":9500000,"i":138,"l":"en","s":"mitos","g":["mitos"]},{"id":"VlWfyoDggl0","t":"Can a pop song crash a computer?","c":"DW Español","d":202,"ds":"3:22","v":20000,"i":139,"l":"es","s":"ciber","g":["ciber"]},{"id":"pflohzdRGP0","t":"Russia's reengagement with Africa pays off | DW News","c":"DW News","d":273,"ds":"4:33","v":150000,"i":140,"l":"en","s":"geo","g":["geo"]},{"id":"Xanveizfq5Q","t":"Japan tells young people to drink more alcohol - BBC News","c":"BBC News","d":211,"ds":"3:31","v":245000,"i":141,"l":"en","s":"sociedad","g":["sociedad"]},{"id":"O483GXz1WAU","t":"En CdMx, catean call center por presunta relación con extorsiones de préstamos por apps","c":"MILENIO","d":306,"ds":"5:06","v":288000,"i":142,"l":"es","s":"sociedad","g":["sociedad"]},{"id":"ebVH65IL8FY","t":"Zuckerberg metaverse slammed for ugly graphics","c":"CNBC Television","d":186,"ds":"3:06","v":591000,"i":143,"l":"en","s":"bigtech","g":["bigtech"]},{"id":"ghZBY1f0Pt0","t":"More ad space on Apple devices: broken promises?","c":"DW Español","d":218,"ds":"3:38","v":10000,"i":146,"l":"es","s":"bigtech","g":["bigtech"]},{"id":"ux547wpA0dc","t":"China - ¿Estado policial o laboratorio del futuro? | DW Documental","c":"DW Documental","d":2548,"ds":"42:28","v":10000000,"i":147,"l":"es","s":"datos","g":["datos","geo"]},{"id":"F-k8e9i3ItU","t":"China se apodera de Europa - La Nueva Ruta de la Seda (2/2) | DW Documental","c":"DW Documental","d":2545,"ds":"42:25","v":1500000,"i":148,"l":"es","s":"geo","g":["geo"]},{"id":"qj8zk8qsrDo","t":"How the Tortilla Machine Was Created | Fausto Celorio History","c":"Farwell Investor","d":929,"ds":"15:29","v":1200000,"i":149,"l":"en","s":"emprendimiento","g":["emprendimiento","historia"]},{"id":"7gSU_Xes3GQ","t":"China - Surveillance state or way of the future? | DW Documentary","c":"DW Documentary","d":2546,"ds":"42:26","v":3400000,"i":150,"l":"en","s":"datos","g":["datos","geo"]},{"id":"omMcrvVGTMs","t":"The Game of Life","c":"Dot CSV","d":249,"ds":"4:09","v":250000,"i":151,"l":"es","s":"mitos","g":["mitos"]},{"id":"k964_uNn3l0","t":"Regresión Lineal y Mínimos Cuadrados Ordinarios | DotCSV","c":"Dot CSV","d":583,"ds":"9:43","v":462000,"i":152,"l":"es","s":"ia","g":["ia"]},{"id":"V9Kr2SujqHw","t":"FINALLY Understand What BLOCKCHAIN Is TODAY - (Bitcoin, Cryptos, NFTs and more)","c":"Dot CSV","d":1390,"ds":"23:10","v":2200000,"i":153,"l":"es","s":"finanzas","g":["finanzas"]},{"id":"nqXn1JSEHGo","t":"DALL·E 2, La IA que Genera CUALQUIER IMAGEN","c":"Dot CSV","d":1260,"ds":"21:00","v":325000,"i":154,"l":"es","s":"ia","g":["ia"]},{"id":"Imkqe-IXDyw","t":"Scientific innovations sparked by the pandemic | COVID-19 Special","c":"DW News","d":1564,"ds":"26:04","v":34000,"i":155,"l":"en","s":"emprendimiento","g":["emprendimiento","sociedad"]},{"id":"zPyOnZpeFnQ","t":"How covid-19 is boosting innovation","c":"The Economist","d":1144,"ds":"19:04","v":750000,"i":156,"l":"en","s":"emprendimiento","g":["emprendimiento","sociedad"]},{"id":"vVTA-E3G8bQ","t":"The Greek myth of Talos, the first robot - Adrienne Mayor","c":"TED-Ed","d":247,"ds":"4:07","v":3400000,"i":157,"l":"en","s":"mitos","g":["mitos","ia"]},{"id":"0yCJMt9Mx9c","t":"How does artificial intelligence learn? - Briana Brownell","c":"TED-Ed","d":297,"ds":"4:57","v":850000,"i":158,"l":"en","s":"ia","g":["ia","bigtech"]},{"id":"Sb8XVheowVQ","t":"Models for Understanding a Chaotic Reality | DotCSV","c":"Dot CSV","d":615,"ds":"10:15","v":247000,"i":159,"l":"es","s":"mitos","g":["mitos"]}]};
+/* DATA-END */
+  </script>
+  <script>
+(() => {
+  "use strict";
+  const $ = s => document.querySelector(s);
+
+  /* ── Tema claro / oscuro (misma clave que index.html) ─────────────────── */
+  const themeBtn = $("#themeToggle");
+  const paintTheme = () => {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    themeBtn.textContent = dark ? "☀️" : "🌙";
+    themeBtn.setAttribute("aria-label", dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+  };
+  paintTheme();
+  themeBtn.addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("sem3-27-theme", next); } catch (e) {}
+    paintTheme();
+  });
+  const fold = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const esc = s => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  const ACC = ["var(--guinda)", "var(--cobalt)", "var(--teal)", "var(--amber)", "var(--plum)"];
+  const SEC = new Map(PLAYLIST.sections.map((s, i) => [s.id, { ...s, acc: ACC[i % ACC.length], order: i }]));
+  const LANG = { es: "Español", en: "Inglés", de: "Alemán", fr: "Francés" };
+  const DUR = [
+    { id: "corto", n: "Cortos · menos de 10 minutos", test: m => m < 10 },
+    { id: "medio", n: "Medianos · de 10 a 30 minutos", test: m => m >= 10 && m <= 30 },
+    { id: "largo", n: "Largos · más de 30 minutos", test: m => m > 30 },
+  ];
+  const durOf = v => (DUR.find(d => d.test(v.d / 60)) || DUR[0]).id;
+  const langGroup = l => (l === "es" || l === "en") ? l : "otro";
+
+  const videos = PLAYLIST.videos.map(v => ({
+    ...v,
+    dur: durOf(v),
+    hay: fold([v.t, v.c, LANG[v.l] || v.l, ...v.g.map(g => SEC.get(g)?.n || "")].join(" · ")),
+  }));
+  const plUrl = PLAYLIST.url || $("#plLink").href;
+  $("#plLink").href = plUrl;
+  const LIST_ID = new URL(plUrl, location.href).searchParams.get("list") || "";
+
+  /* ── Formatos ─────────────────────────────────────────────────────────── */
+  const fmtViews = n => n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(".0", "") + " M vistas"
+    : n >= 1e3 ? Math.round(n / 1e3) + " mil vistas" : n ? n + " vistas" : "";
+  const fmtTotal = sec => {
+    const h = Math.floor(sec / 3600), m = Math.round((sec % 3600) / 60);
+    return h ? `${h} h ${m} min` : `${m} min`;
+  };
+  const plural = (n, a, b) => `${n} ${n === 1 ? a : b}`;
+
+  /* ── Cabecera: totales e índice de temas ──────────────────────────────── */
+  const channels = new Set(videos.map(v => v.c));
+  $("#ptMeta").innerHTML = [
+    plural(videos.length, "video", "videos"),
+    fmtTotal(videos.reduce((a, v) => a + v.d, 0)) + " en total",
+    plural(SEC.size, "tema", "temas"),
+    plural(channels.size, "canal", "canales"),
+  ].map(t => `<li>${t}</li>`).join("");
+
+  /* ── Estado (se refleja en la URL para poder compartir una búsqueda) ──── */
+  const state = { q: "", group: "tema", sort: "playlist", lang: "", dur: "" };
+  const params = new URLSearchParams(location.search);
+  for (const k of Object.keys(state)) if (params.get(k)) state[k] = params.get(k);
+
+  const q = $("#ptQ"), gSel = $("#ptGroup"), sSel = $("#ptSort");
+  q.value = state.q; gSel.value = state.group; sSel.value = state.sort;
+  if (gSel.value !== state.group) state.group = gSel.value = "tema";
+  if (sSel.value !== state.sort) state.sort = sSel.value = "playlist";
+
+  const syncChips = (el, val) => el.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === val)));
+  syncChips($("#ptLang"), state.lang);
+  syncChips($("#ptDur"), state.dur);
+
+  const saveUrl = () => {
+    const p = new URLSearchParams();
+    if (state.q.trim()) p.set("q", state.q.trim());
+    if (state.group !== "tema") p.set("group", state.group);
+    if (state.sort !== "playlist") p.set("sort", state.sort);
+    if (state.lang) p.set("lang", state.lang);
+    if (state.dur) p.set("dur", state.dur);
+    const s = p.toString();
+    history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash);
+  };
+
+  /* ── Búsqueda ─────────────────────────────────────────────────────────── */
+  // Varias palabras = deben aparecer todas. Texto entre comillas = frase exacta.
+  const terms = raw => {
+    const out = [];
+    fold(raw).replace(/"([^"]+)"|(\S+)/g, (_, phrase, word) => { out.push((phrase || word).trim()); });
+    return out.filter(Boolean);
+  };
+  const highlight = (text, words) => {
+    if (!words.length) return esc(text);
+    // Se marca sobre el texto sin acentos para que «panama» resalte «Panamá».
+    const f = fold(text);
+    const marks = new Array(text.length).fill(false);
+    for (const w of words) {
+      let i = f.indexOf(w);
+      while (i !== -1) { for (let k = i; k < i + w.length; k++) marks[k] = true; i = f.indexOf(w, i + w.length); }
+    }
+    // fold() conserva la longitud salvo en casos raros; si no, no resaltar.
+    if (f.length !== text.length) return esc(text);
+    let html = "", open = false;
+    for (let i = 0; i < text.length; i++) {
+      if (marks[i] && !open) { html += "<mark>"; open = true; }
+      if (!marks[i] && open) { html += "</mark>"; open = false; }
+      html += esc(text[i]);
+    }
+    return html + (open ? "</mark>" : "");
+  };
+
+  /* ── Agrupación y orden ───────────────────────────────────────────────── */
+  const sorters = {
+    playlist: (a, b) => a.i - b.i,
+    vistas: (a, b) => b.v - a.v,
+    largos: (a, b) => b.d - a.d,
+    cortos: (a, b) => a.d - b.d,
+    titulo: (a, b) => a.t.localeCompare(b.t, "es", { sensitivity: "base" }),
+  };
+  const groupers = {
+    tema: () => [...SEC.values()].map(s => ({ key: s.id, kicker: "Tema", n: s.n, desc: s.desc, acc: s.acc, has: v => v.s === s.id })),
+    canal: list => {
+      const counts = new Map();
+      list.forEach(v => counts.set(v.c, (counts.get(v.c) || 0) + 1));
+      const many = [...counts.entries()].filter(([, n]) => n > 1)
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "es"));
+      const solo = new Set([...counts.entries()].filter(([, n]) => n === 1).map(([c]) => c));
+      return [
+        ...many.map(([c], i) => ({ key: "c-" + i, kicker: "Canal", n: c || "Sin canal", acc: ACC[i % ACC.length], has: v => v.c === c })),
+        { key: "c-otros", kicker: "Canales", n: "Otros canales", desc: "Canales con un solo video en la lista.", acc: "var(--muted)", has: v => solo.has(v.c) },
+      ];
+    },
+    idioma: () => [
+      { key: "es", kicker: "Idioma", n: "En español", acc: ACC[0], has: v => v.l === "es" },
+      { key: "en", kicker: "Idioma", n: "En inglés", acc: ACC[1], has: v => v.l === "en" },
+      { key: "otro", kicker: "Idioma", n: "En otros idiomas", acc: ACC[2], has: v => langGroup(v.l) === "otro" },
+    ],
+    duracion: () => DUR.map((d, i) => ({ key: d.id, kicker: "Duración", n: d.n, acc: ACC[i], has: v => v.dur === d.id })),
+  };
+
+  /* ── Tarjetas ─────────────────────────────────────────────────────────── */
+  const card = (v, words, groupKind) => {
+    const url = `https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}` + (LIST_ID ? `&list=${encodeURIComponent(LIST_ID)}` : "");
+    const main = SEC.get(v.s);
+    const tags = v.g.map(id => SEC.get(id)).filter(Boolean)
+      .map(s => `<button type="button" data-tag="${esc(s.n)}" class="${s.id === v.s ? "is-main" : ""}" style="--acc:${s.acc}" title="Buscar videos de «${esc(s.n)}»">${esc(s.n.split(/[,·]/)[0])}</button>`).join("");
+    const meta = [v.c, fmtViews(v.v), "#" + v.i].filter(Boolean).map(esc).join(" · ");
+    return `<article class="vcard" style="--acc:${main ? main.acc : ACC[0]}">
+      <a class="vthumb" href="${url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <img src="https://i.ytimg.com/vi/${esc(v.id)}/mqdefault.jpg" alt="" loading="lazy" decoding="async" width="320" height="180">
+        <span class="vplay">▶</span>${v.ds ? `<span class="vdur">${esc(v.ds)}</span>` : ""}
+        ${groupKind !== "idioma" ? `<span class="vlang">${esc(v.l)}</span>` : ""}
+      </a>
+      <div class="vbody">
+        <h4><a href="${url}" target="_blank" rel="noopener">${highlight(v.t, words)}</a></h4>
+        <p class="vmeta">${highlight(meta, words)}</p>
+        <div class="vtags">${tags}</div>
+      </div>
+    </article>`;
+  };
+
+  /* ── Pintar ───────────────────────────────────────────────────────────── */
+  const LIMIT = 24;            // tarjetas visibles por grupo antes de «ver todos»
+  const expanded = new Set();
+  const out = $("#ptOut");
+
+  const render = () => {
+    const words = terms(state.q);
+    const list = videos.filter(v =>
+      (!state.lang || langGroup(v.l) === state.lang) &&
+      (!state.dur || v.dur === state.dur) &&
+      words.every(w => v.hay.includes(w))
+    ).sort(sorters[state.sort]);
+
+    const groups = groupers[state.group](list)
+      .map(g => ({ ...g, items: list.filter(g.has) }));
+
+    // Índice de temas (siempre por tema, con lo que queda tras filtrar).
+    $("#ptIndex").innerHTML = [...SEC.values()].map(s => {
+      const n = list.filter(v => v.s === s.id).length;
+      return `<li><a href="#g-${s.id}" data-sec="${s.id}" style="--acc:${s.acc}" class="${n ? "" : "is-empty"}">${esc(s.n)} <span>${n}</span></a></li>`;
+    }).join("");
+
+    const filtered = words.length || state.lang || state.dur;
+    out.innerHTML = groups.filter(g => g.items.length).map(g => {
+      const total = g.items.reduce((a, v) => a + v.d, 0);
+      const open = filtered || expanded.has(state.group + g.key) || g.items.length <= LIMIT + 4;
+      const shown = open ? g.items : g.items.slice(0, LIMIT);
+      return `<section class="vgroup" id="g-${esc(g.key)}" style="--acc:${g.acc}">
+        <div class="vgroup-head">
+          <div>
+            <p class="kicker">${esc(g.kicker)}</p>
+            <h2>${esc(g.n)}</h2>
+            ${g.desc ? `<p class="vgroup-desc">${esc(g.desc)}</p>` : ""}
+          </div>
+          <p class="vgroup-n">${plural(g.items.length, "video", "videos")} · ${fmtTotal(total)}</p>
+        </div>
+        <div class="vgrid">${shown.map(v => card(v, words, state.group)).join("")}</div>
+        ${shown.length < g.items.length ? `<p class="pt-more"><button type="button" data-more="${esc(state.group + g.key)}">Ver los ${g.items.length} videos de este grupo</button></p>` : ""}
+      </section>`;
+    }).join("") || `<div class="pt-empty"><strong>Ningún video coincide</strong>Prueba con otra palabra o quita los filtros.</div>`;
+
+    $("#ptCount").textContent = list.length === videos.length
+      ? `${plural(videos.length, "video", "videos")} en ${plural(groups.filter(g => g.items.length).length, "grupo", "grupos")}`
+      : `${list.length} de ${videos.length} videos`;
+    $("#ptClear").hidden = !filtered;
+    saveUrl();
+  };
+
+  /* ── Eventos ──────────────────────────────────────────────────────────── */
+  let t;
+  q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { state.q = q.value; render(); }, 120); });
+  gSel.addEventListener("change", () => { state.group = gSel.value; render(); });
+  sSel.addEventListener("change", () => { state.sort = sSel.value; render(); });
+  for (const [id, key] of [["#ptLang", "lang"], ["#ptDur", "dur"]]) {
+    $(id).addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      state[key] = b.dataset.v; syncChips($(id), state[key]); render();
+    });
+  }
+  $("#ptClear").addEventListener("click", () => {
+    state.q = q.value = ""; state.lang = state.dur = "";
+    syncChips($("#ptLang"), ""); syncChips($("#ptDur"), ""); render();
+  });
+  out.addEventListener("click", e => {
+    const tag = e.target.closest("[data-tag]");
+    if (tag) {
+      state.q = q.value = `"${tag.dataset.tag}"`;
+      render();
+      $("#videos").scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const more = e.target.closest("[data-more]");
+    if (more) { expanded.add(more.dataset.more); render(); }
+  });
+  // El índice salta al tema; si la vista no está agrupada por tema, primero la cambia.
+  $("#ptIndex").addEventListener("click", e => {
+    const a = e.target.closest("[data-sec]"); if (!a) return;
+    if (state.group !== "tema") { state.group = gSel.value = "tema"; render(); }
+    e.preventDefault();
+    document.getElementById("g-" + a.dataset.sec)?.scrollIntoView({ behavior: "smooth" });
+    history.replaceState(null, "", location.pathname + location.search + "#g-" + a.dataset.sec);
+  });
+  // «/» enfoca el buscador; Esc lo limpia.
+  document.addEventListener("keydown", e => {
+    if (e.key === "/" && document.activeElement !== q && !/input|select|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); q.focus(); }
+  });
+  q.addEventListener("keydown", e => { if (e.key === "Escape" && q.value) { q.value = ""; state.q = ""; render(); } });
+
+  render();
+  if (location.hash.startsWith("#g-")) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+})();
+  </script>
+</body>
+</html>
