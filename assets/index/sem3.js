@@ -134,10 +134,10 @@
       "Tu control de lectura"],
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
       "Todo lo del segundo tema repasado"],
-    [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · exposiciones","IV",
-      "Tu exposición lista"],
-    [16,"2026-12-08","Cierre del seminario","Exposiciones · examen final","IV",
-      "Tu exposición y el trabajo final"]
+    [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",
+      "Tu trabajo final terminado para entregar y conversar sobre él en la entrevista"],
+    [16,"2026-12-08","Cierre del seminario","Examen final","IV",
+      "Lo del seminario repasado para el examen final"]
   ].map(([number, date, title, subtitle, unit, bring, open, listed]) =>
     ({ number, date, title, subtitle, unit, bring, open, listed, room: "C-102" }));
 
