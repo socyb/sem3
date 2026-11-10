@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/index/sem3.css">
   <link rel="stylesheet" href="assets/investigacion/investigacion.css">
   <script defer src="assets/investigacion/investigacion.js"></script>
+  <script defer src="assets/investigacion/presentacion.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#pasos">Ir a los cinco pasos</a>
@@ -76,7 +77,8 @@
         <p class="hero-meta">Seminario de Negocios Internacionales III · <a href="index.html"><b>Página del seminario</b></a><br>Dr. Jorge Cardiel Herrera · Facultad de Contaduría y Administración, UNAM</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#paso-1">Empezar por el paso 1 →</a>
+          <button class="btn btn-primary" type="button" data-workshop-open aria-haspopup="dialog" aria-controls="workshopSlides">Modo diapositivas · 60 minutos →</button>
+          <a class="btn" href="#paso-1">Leer la actividad</a>
           <a class="btn btn-ghost" href="#tarjeta">Ir a la tarjeta del equipo</a>
         </div>
 
@@ -179,7 +181,7 @@
       <div class="section-head">
         <p class="kicker k-blue">La hora, en cinco pasos</p>
         <h2>Por dónde vamos</h2>
-        <p class="lead">Cada paso deja algo escrito en la tarjeta del equipo. Al final de la hora la tarjeta está completa y lista para subirla.</p>
+        <p class="lead">Cada paso deja algo escrito en la tarjeta del equipo. Al final de la hora deben publicar su ficha del equipo en el Foro de Moodle del Seminario. Los tiempos incluyen la explicación y el trabajo de cada fase.</p>
       </div>
 
       <ol class="board">
@@ -224,7 +226,7 @@
             <span class="board-num">05</span>
             <span class="board-min">10 min</span>
             <strong>La tarjeta</strong>
-            <small>Pásenla en limpio, pruébenla con otro equipo y súbanla.</small>
+            <small>Revisen la ficha y publíquenla en el Foro de Moodle del Seminario.</small>
           </a>
           <button class="timer-btn" type="button" data-timer="600" data-label="05 · La tarjeta" aria-label="Iniciar reloj de 10 minutos para el paso 5">▶ 10:00</button>
         </li>
@@ -628,7 +630,7 @@
         <div class="section-head">
           <p class="kicker">Paso 05 · 10 minutos</p>
           <h2>La tarjeta del equipo</h2>
-          <p class="lead">Una sola por trabajo, individual o en equipo, en un solo teléfono o computadora: lo que escriban se queda guardado en ese aparato. Antes de salir, cópienla.</p>
+          <p class="lead">Una sola por trabajo, individual o en equipo, en un solo teléfono o computadora: lo que escriban se queda guardado en ese aparato. Al terminar la hora, copien la ficha y publíquenla en el Foro de Moodle del Seminario. Guardarla aquí no la entrega.</p>
         </div>
         <button class="timer-btn timer-btn-lg" type="button" data-timer="600" data-label="05 · La tarjeta" aria-label="Iniciar reloj de 10 minutos para el paso 5">▶ 10:00</button>
       </div>
@@ -717,7 +719,7 @@
           </fieldset>
 
           <div class="builder-actions">
-            <button class="btn btn-primary" id="teamCopyBtn" type="button">Copiar la tarjeta</button>
+            <button class="btn btn-primary" id="teamCopyBtn" type="button">Copiar la ficha para el foro</button>
             <button class="btn" id="teamPrintBtn" type="button">Imprimir la tarjeta</button>
             <button class="btn btn-ghost btn-small" id="teamClearBtn" type="button">Empezar de nuevo</button>
           </div>
@@ -762,14 +764,14 @@
       <ol class="steps">
         <li>
           <div>
-            <h3>Pruébenla con otro equipo · 5 minutos</h3>
-            <p>Lean su tarjeta al equipo de al lado. Ellos les hacen dos preguntas: <strong>¿de qué hablan exactamente?</strong> y <strong>¿qué dato los haría cambiar de idea?</strong> Si no pueden contestar, ajusten la tarjeta. Luego cambian los papeles.</p>
+            <h3>Completen y prueben la ficha · primeros 5 minutos</h3>
+            <p>Completen la ficha y léanla al equipo de al lado. Ellos les hacen dos preguntas: <strong>¿de qué hablan exactamente?</strong> y <strong>¿qué dato los haría cambiar de idea?</strong> Si no pueden contestar, ajusten la tarjeta. Luego cambian los papeles.</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Súbanla a Moodle</h3>
-            <p>Copien la tarjeta y súbanla al espacio del trabajo en <a href="https://negociosinternacionales.fca.unam.mx" target="_blank" rel="noopener noreferrer">Moodle</a>. Es el punto de partida de su investigación, cualquiera que sea el formato de la entrega final.</p>
+            <h3>Publíquenla en el Foro de Moodle del Seminario · últimos 5 minutos</h3>
+            <p>Pulsen <strong>«Copiar la ficha para el foro»</strong> y creen una publicación en el <strong>Foro de Moodle del Seminario</strong>, dentro de <a href="https://negociosinternacionales.fca.unam.mx" target="_blank" rel="noopener noreferrer">Moodle</a>. Escriban el nombre del equipo o proyecto en el asunto y peguen la ficha completa en el mensaje. Envíenla y comprueben que aparece en el foro. <strong>Una publicación por equipo o trabajo individual, al terminar esta hora.</strong></p>
           </div>
         </li>
       </ol>
@@ -803,12 +805,12 @@
           <span class="rc-num">1</span>
           <p class="rc-dates">Hoy</p>
           <h3>Equipo, tema y pregunta tentativa</h3>
-          <p>La tarjeta del trabajo individual o en equipo, entregada en Moodle.</p>
+          <p>La ficha del trabajo individual o en equipo, publicada al final de la hora en el Foro de Moodle del Seminario.</p>
         </article>
         <article class="route-card">
           <span class="rc-num">2</span>
-          <p class="rc-dates">Primera revisión</p>
-          <h3>Preguntas, hipótesis y fuentes</h3>
+          <p class="rc-dates">Martes 17 de noviembre</p>
+          <h3>Taller de Estado del Arte</h3>
           <p>La pregunta principal afinada y dos secundarias como máximo, una hipótesis provisional, las fuentes reunidas con su ficha completa y una imagen que identifique al equipo.</p>
         </article>
         <article class="route-card">
@@ -923,6 +925,178 @@
       <button class="btn btn-primary btn-small" id="qrCopyBtn" type="button">Copiar liga</button>
       <a class="btn btn-ghost btn-small" href="assets/investigacion/qr-investigacion.svg" download="qr-pregunta-investigacion-1746.svg">Descargar QR</a>
     </div>
+  </dialog>
+
+  <!-- Presentación del taller: cinco fases, una hora en total -->
+  <dialog class="workshop-slides" id="workshopSlides" aria-label="Tu pregunta de investigación · modo diapositivas">
+    <div class="ws-stage" id="wsStage" tabindex="-1">
+      <section class="ws-slide" aria-labelledby="wsTitle0">
+        <p class="kicker k-blue">Seminario III · Taller de 60 minutos</p>
+        <h2 id="wsTitle0">Un tema no se investiga.<br><em>Se investiga una pregunta.</em></h2>
+        <p class="ws-lead">Al terminar, publiquen su ficha del equipo en el <strong>Foro de Moodle del Seminario</strong>.</p>
+        <ol class="ws-agenda">
+          <li><b>01</b> Armen el equipo <strong>10 min</strong></li>
+          <li><b>02</b> Escojan el campo <strong>10 min</strong></li>
+          <li><b>03</b> Recorten <strong>10 min</strong></li>
+          <li><b>04</b> Pregunten <strong>20 min</strong></li>
+          <li><b>05</b> Revisen y publiquen la ficha <strong>10 min</strong></li>
+        </ol>
+        <p class="ws-note">Los tiempos incluyen la explicación y el trabajo de cada fase. Inicien el reloj al entrar a cada una. Avancen con las flechas; T pausa o reanuda y Esc sale.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="1" aria-labelledby="wsTitle1" hidden>
+        <p class="kicker k-blue">Fase 01 · 10 minutos, incluida la explicación</p>
+        <h2 id="wsTitle1">Armen el equipo</h2>
+        <p class="ws-lead">De 1 a 8 personas. Elijan un interés compartido y distribuyan cinco funciones.</p>
+        <ul class="ws-list">
+          <li><strong>Coordinación:</strong> mantiene el rumbo y reúne los avances.</li>
+          <li><strong>Evidencia:</strong> busca fuentes y registra de dónde sale cada afirmación.</li>
+          <li><strong>Datos:</strong> revisa cifras, unidades y comparaciones.</li>
+          <li><strong>Contraargumento:</strong> busca lo que podría contradecir la respuesta.</li>
+          <li><strong>Relatoría:</strong> escribe la ficha y coordina el texto o guion.</li>
+        </ul>
+        <p class="ws-callout">Son funciones que pueden combinar o compartir. Si trabajas individualmente, asumes las cinco.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="1" aria-labelledby="wsTitle2" hidden>
+        <p class="kicker k-blue">Fase 01 · A trabajar</p>
+        <h2 id="wsTitle2">Un nombre y responsabilidades</h2>
+        <ol class="ws-list">
+          <li>Compartan qué innovación o sector les da curiosidad.</li>
+          <li>Decidan con quiénes trabajarán y den un nombre al proyecto.</li>
+          <li>Anoten a cada integrante y la función o funciones que asume.</li>
+        </ol>
+        <p class="ws-callout"><strong>En la ficha:</strong> nombre del equipo o proyecto individual, integrantes y roles. Una sola ficha por trabajo.</p>
+        <p class="ws-note">Pueden ir llenando la ficha de esta página desde ahora, en un solo dispositivo.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="2" aria-labelledby="wsTitle3" hidden>
+        <p class="kicker k-teal">Fase 02 · 10 minutos, incluida la explicación</p>
+        <h2 id="wsTitle3">Escojan un campo que puedan estudiar</h2>
+        <p class="ws-lead">Elijan una innovación y el sector donde ocurre. Antes de quedarse con ellos, revisen las cuatro reglas de Eco.</p>
+        <div class="ws-grid">
+          <article><h3>Les interesa</h3><p>Todos pueden explicar qué les da curiosidad del tema.</p></article>
+          <article><h3>Las fuentes se consiguen</h3><p>Hay datos y documentos a su alcance durante el semestre.</p></article>
+          <article><h3>Las fuentes se entienden</h3><p>Pueden leer su idioma y comprender sus conceptos.</p></article>
+          <article><h3>El método está a su alcance</h3><p>Saben hacer lo que el estudio exige o pueden aprenderlo a tiempo.</p></article>
+        </div>
+        <p class="ws-note">Adaptado de Umberto Eco, <cite>Cómo se hace una tesis</cite>, pp. 23–25.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="2" aria-labelledby="wsTitle4" hidden>
+        <p class="kicker k-teal">Fase 02 · A trabajar</p>
+        <h2 id="wsTitle4">Nombren la innovación y el sector</h2>
+        <div class="ws-grid">
+          <article><h3>La innovación</h3><p>¿Qué producto o proceso quieren estudiar? Descríbanlo con precisión.</p></article>
+          <article><h3>El sector</h3><p>¿En qué actividad económica ocurre? Pueden apoyarse en la CIIU.</p></article>
+        </div>
+        <p class="ws-example"><strong>Ejemplo de campo:</strong> empaque y prueba de chips, dentro de la fabricación de componentes electrónicos.</p>
+        <p class="ws-callout"><strong>En la ficha:</strong> innovación, sector y las cuatro reglas revisadas. Si una falla, ajusten el campo antes de seguir.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="3" aria-labelledby="wsTitle5" hidden>
+        <p class="kicker k-amber">Fase 03 · 10 minutos, incluida la explicación</p>
+        <h2 id="wsTitle5">Recorten hasta poder empezar</h2>
+        <p class="ws-lead">Un campo se vuelve manejable cuando fijan un lugar, un periodo y un conjunto de actores.</p>
+        <p class="ws-example">Tecnología → semiconductores → ensamble y prueba de chips → plantas anunciadas en Jalisco entre 2022 y 2026.</p>
+        <div class="ws-grid ws-three">
+          <article><h3>Dónde</h3><p>Un lugar con nombre: país, región, ciudad o corredor.</p></article>
+          <article><h3>Cuándo</h3><p>Un periodo con principio y fin, con fecha de corte.</p></article>
+          <article><h3>Quiénes</h3><p>Qué empresas, gobiernos o usuarios van a observar.</p></article>
+        </div>
+        <p class="ws-note">Ejemplo de recorte para investigar; aún deben comprobar qué casos existen.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="3" aria-labelledby="wsTitle6" hidden>
+        <p class="kicker k-amber">Fase 03 · A trabajar</p>
+        <h2 id="wsTitle6">Digan qué quieren decir</h2>
+        <p class="ws-lead">Elijan una palabra clave de su tema. Defínanla para que otra persona sepa qué casos entran y cuáles quedan fuera.</p>
+        <p class="ws-example">«Cuando decimos <em>fintech</em>, nos referimos a empresas que prestan dinero o procesan pagos desde una aplicación sin ser bancos. Dejamos fuera las aplicaciones de los bancos».</p>
+        <p>Es una definición de trabajo que deberán revisar al leer sus fuentes.</p>
+        <p class="ws-callout"><strong>En la ficha:</strong> dónde, cuándo, quiénes y «cuando decimos… nos referimos a…». Comprueben que el recorte se puede estudiar de aquí al 1 de diciembre.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="4" aria-labelledby="wsTitle7" hidden>
+        <p class="kicker k-plum">Fase 04 · 20 minutos, incluida la explicación</p>
+        <h2 id="wsTitle7">Del tema a una pregunta</h2>
+        <p class="ws-lead">La pregunta dice qué necesitan averiguar y qué evidencia permitiría responderla.</p>
+        <div class="ws-grid">
+          <article><h3>Tema recortado</h3><p>Las plantas de ensamble y prueba de chips anunciadas en Jalisco entre 2022 y 2026.</p></article>
+          <article><h3>Pregunta tentativa</h3><p>¿Qué condiciones facilitaron o frenaron la puesta en operación de esas plantas hasta noviembre de 2026?</p></article>
+        </div>
+        <p class="ws-callout">Escriban una pregunta principal con dónde, cuándo y quiénes. Debe poder contestarse con evidencia y admitir una respuesta distinta de la que esperan.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="4" aria-labelledby="wsTitle8" hidden>
+        <p class="kicker k-plum">Fase 04 · Las cuatro pruebas</p>
+        <h2 id="wsTitle8">Pongan a prueba la pregunta</h2>
+        <ol class="ws-list">
+          <li><strong>¿Se reconoce de qué hablan?</strong> El objeto y sus límites se entienden.</li>
+          <li><strong>¿Averigua algo?</strong> Busca una respuesta que todavía deben investigar.</li>
+          <li><strong>¿Le sirve a alguien?</strong> Expliquen qué decisión de una empresa del sector podría informar.</li>
+          <li><strong>¿Qué dato los haría cambiar de idea?</strong> Digan qué evidencia refutaría su respuesta provisional.</li>
+        </ol>
+        <p class="ws-callout">«Creemos que…» es una hipótesis provisional. «Cambiaríamos de idea si…» indica cómo la pondrán a prueba.</p>
+        <p class="ws-note">Adaptado de Eco, <cite>Cómo se hace una tesis</cite>, pp. 48–52.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="4" aria-labelledby="wsTitle9" hidden>
+        <p class="kicker k-plum">Fase 04 · A trabajar</p>
+        <h2 id="wsTitle9">Sepan dónde buscar la respuesta</h2>
+        <div class="ws-grid ws-three">
+          <article><h3>Datos oficiales</h3><p>Estadísticas, registros, censos o documentos públicos.</p></article>
+          <article><h3>Lo que dicen los actores</h3><p>Informes, comunicados y entrevistas. Contrasten sus afirmaciones.</p></article>
+          <article><h3>Observación con método</h3><p>Casos o procesos que puedan comparar con criterios explícitos.</p></article>
+        </div>
+        <p class="ws-callout"><strong>En la ficha:</strong> pregunta tentativa, respuesta provisional, dato que la refutaría y fuentes concretas donde empezarán a buscar.</p>
+        <p class="ws-note">Si no encuentran evidencia accesible, ajusten la pregunta. Las cuatro pruebas sirven para revisarla, no solo para marcar casillas.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="5" aria-labelledby="wsTitle10" hidden>
+        <p class="kicker k-blue">Fase 05 · 10 minutos, incluida la explicación</p>
+        <h2 id="wsTitle10">Completen y revisen su ficha</h2>
+        <p class="ws-lead">Usen los primeros 5 minutos para pasarla en limpio y probarla con otro equipo.</p>
+        <ul class="ws-list">
+          <li>Nombre del proyecto, integrantes y roles.</li>
+          <li>Innovación, sector y recorte: dónde, cuándo y quiénes.</li>
+          <li>Palabra clave definida y pregunta tentativa.</li>
+          <li>Respuesta provisional, dato que la refutaría y fuentes por consultar.</li>
+        </ul>
+        <p class="ws-callout">Pregunten al equipo de al lado: «¿Se entiende qué investigaremos?» y «¿Qué dato nos haría cambiar de idea?». Ajusten lo que haga falta.</p>
+      </section>
+
+      <section class="ws-slide" data-phase="5" aria-labelledby="wsTitle11" hidden>
+        <p class="kicker k-blue">Fase 05 · Últimos 5 minutos de la hora</p>
+        <h2 id="wsTitle11">Publiquen la ficha en el Foro de Moodle</h2>
+        <ol class="ws-list">
+          <li>Abran la ficha y pulsen <strong>«Copiar la ficha para el foro»</strong>.</li>
+          <li>Entren al <strong>Foro de Moodle del Seminario</strong> y creen una publicación.</li>
+          <li>Usen el nombre del equipo o proyecto como asunto y peguen la ficha completa en el mensaje.</li>
+          <li>Envíen la publicación y comprueben que aparece en el foro.</li>
+        </ol>
+        <p class="ws-callout"><strong>Una publicación por equipo o trabajo individual, al terminar esta hora.</strong> Guardarla en el dispositivo no equivale a entregarla.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#tarjeta" data-ws-card>Completar y copiar la ficha →</a>
+          <a class="btn" href="https://negociosinternacionales.fca.unam.mx" target="_blank" rel="noopener noreferrer">Entrar a Moodle ↗</a>
+        </div>
+      </section>
+    </div>
+    <footer class="ws-controls">
+      <div class="ws-progress" aria-hidden="true"><span id="wsProgress"></span></div>
+      <div class="ws-location"><span id="wsPhase">Una hora · Cinco fases</span><span id="wsCount" aria-live="polite">1 / 12</span></div>
+      <div class="ws-clock" id="wsClock" hidden>
+        <output id="wsTime" role="timer" aria-label="Tiempo restante de la fase">10:00</output>
+        <button class="btn btn-small" id="wsToggle" type="button">Iniciar</button>
+        <button class="btn btn-small" id="wsReset" type="button" aria-label="Reiniciar el tiempo de esta fase">↺</button>
+      </div>
+      <div class="ws-nav">
+        <button class="btn btn-small" id="wsPrev" type="button" aria-label="Diapositiva anterior">←</button>
+        <button class="btn btn-small" id="wsNext" type="button" aria-label="Diapositiva siguiente">→</button>
+        <button class="btn btn-small" id="wsFull" type="button" aria-label="Pantalla completa" aria-pressed="false">⛶</button>
+        <button class="btn btn-small" id="wsExit" type="button">Salir ✕</button>
+      </div>
+      <p id="wsStatus" class="ws-status" role="status"></p>
+    </footer>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

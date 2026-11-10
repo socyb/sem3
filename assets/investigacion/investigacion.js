@@ -180,6 +180,10 @@
       }
     });
 
+    document.addEventListener("sem3:presentationopen", () => {
+      if (ticker) clockPause.click();
+    });
+
     const stopClock = () => {
       clearInterval(ticker);
       ticker = null;
@@ -294,7 +298,7 @@
     form.addEventListener("submit", e => e.preventDefault());
 
     $("#teamCopyBtn")?.addEventListener("click", async () => {
-      const out = ["TARJETA DEL EQUIPO · TRABAJO FINAL",
+      const out = ["FICHA DEL EQUIPO · PREGUNTA DE INVESTIGACIÓN",
                    "Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · 2027-1", ""];
       const add = (label, value) => { if (value) out.push(`${label}: ${value}`); };
 
@@ -315,7 +319,7 @@
       });
 
       if (out.length === 3) { say("Escriban algo primero"); return; }
-      say((await copyText(out.join("\n"))) ? "Tarjeta copiada ✓" : "No se pudo copiar en este navegador");
+      say((await copyText(out.join("\n"))) ? "Ficha copiada · publíquenla en el Foro de Moodle del Seminario" : "No se pudo copiar en este navegador");
     });
 
     $("#teamPrintBtn")?.addEventListener("click", () => {
