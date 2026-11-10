@@ -21,7 +21,7 @@ Está pensada para abrirse en el salón desde el celular, tanto como para revisa
 con calma en casa.
 
 **Martes en C-102 · 16:00—19:00**
-16 sesiones · 4 temas · 48 horas
+15 sesiones · 4 temas · 45 horas
 
 ## Qué encontrarás en ella
 
@@ -36,7 +36,7 @@ que buscar nada en un calendario.
 | I | Los negocios y la innovación tecnológica | 18 de agosto — 8 de septiembre |
 | II | Inversión en investigación y desarrollo | 22 de septiembre — 13 de octubre |
 | III | Sectores tecnológicos con alto potencial de crecimiento | 20 de octubre — 10 de noviembre |
-| IV | Desafíos vinculados al desarrollo tecnológico | 17 de noviembre — 8 de diciembre |
+| IV | Desafíos vinculados al desarrollo tecnológico | 17 de noviembre — 1 de diciembre |
 
 De qué cuenta como innovación y qué no —taxonomías, genealogías de los inventos,
 cultura organizacional— hasta quién paga sus consecuencias. En medio, el

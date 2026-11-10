@@ -135,15 +135,12 @@
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
       "Todo lo del segundo tema repasado"],
     [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",
-      "Tu trabajo final terminado para entregar y conversar sobre él en la entrevista"],
-    [16,"2026-12-08","Cierre del seminario","Examen final","IV",
-      "Lo del seminario repasado para el examen final"]
+      "Tu trabajo final terminado para entregar y conversar sobre él en la entrevista"]
   ].map(([number, date, title, subtitle, unit, bring, open, listed]) =>
     ({ number, date, title, subtitle, unit, bring, open, listed, room: "C-102" }));
 
   /* ── Lema de la portada: uno por sesión ─────────────────────────────── */
-  // Primera línea en redonda, segunda en cursiva guinda. La última sesión
-  // vuelve al lema del semestre.
+  // Primera línea en redonda, segunda en cursiva guinda.
   const LEMAS = {
      1: ["Cada quien trae su radar.", "Juntos vemos el punto ciego."],
      2: ["Inventar no basta.", "Innovar es llegar al mercado."],
@@ -159,8 +156,7 @@
     12: ["Ensamblar, diseñar, decidir.", "¿Dónde queremos participar?"],
     13: ["Si es gratis,", "el producto eres tú."],
     14: ["Las máquinas no despiden a nadie.", "Alguien decide hacerlo."],
-    15: ["Toda tecnología tiene reglas.", "La pregunta es quién las escribe."],
-    16: ["Ninguna tecnología llega sola.", "Alguien decide. Alguien paga."]
+    15: ["Toda tecnología tiene reglas.", "La pregunta es quién las escribe."]
   };
 
   const heroTitle = $(".hero-title");
