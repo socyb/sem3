@@ -13,4 +13,4 @@ __pycache__/
 # PDFs
 *.pdf
 # …salvo los que se publican como material de clase
-!assets/presentacion/*.pdf
+!assets/presentacion/**/*.pdf

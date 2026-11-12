@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera los datos de playlist_temas.html a partir de playlist_seminario3.json.
+"""Genera los datos de playlist_temas.html a partir de tools/playlist_seminario3.json.
 
 Cada video se clasifica por palabras clave de su título y canal: la sección
 principal es la primera que coincide según PRIORITY (o la de OVERRIDES), y todas
@@ -15,7 +15,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "playlist_seminario3.json"
+SRC = ROOT / "tools" / "playlist_seminario3.json"
 PAGE = ROOT / "playlist_temas.html"
 
 
