@@ -101,6 +101,7 @@
   // de investigación pasó al 10 de noviembre, junto con las lecturas de nearshoring.
   // La 12 se abre el 4 de noviembre para dar una semana al control de lectura,
   // pero ya está en la bitácora desde el 3 para quien quiera adelantarse.
+  // La 13 se abre el 11 de noviembre, también por el control de lectura (Crawford).
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   // El octavo también es opcional: desde cuándo sale la parada en la bitácora,
@@ -130,8 +131,8 @@
       "Tus preguntas para el invitado"],
     [12,"2026-11-10","México y los sectores de alto crecimiento","Nearshoring y semiconductores · tu pregunta de investigación","III",
       "Tu control de lectura y una innovación que te interese","2026-11-04","2026-11-03"],
-    [13,"2026-11-17","Datos, plataformas y vigilancia","Capitalismo de vigilancia · filtro burbuja","IV",
-      "Tu control de lectura"],
+    [13,"2026-11-17","La inteligencia artificial está hecha de tierra y de trabajo","Kate Crawford · Atlas of AI","IV",
+      "Tu control de lectura de Crawford","2026-11-11"],
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
       "Todo lo del segundo tema repasado"],
     [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",
@@ -154,7 +155,7 @@
     10: ["Un crédito puede transformar un territorio.", "Lo difícil es que el cambio se quede."],
     11: ["La ciudadanía también se ejerce en línea.", "¿Cómo participamos entre tanta información?"],
     12: ["Ensamblar, diseñar, decidir.", "¿Dónde queremos participar?"],
-    13: ["Si es gratis,", "el producto eres tú."],
+    13: ["La nube está hecha de minas.", "Y de manos que nadie ve."],
     14: ["Las máquinas no despiden a nadie.", "Alguien decide hacerlo."],
     15: ["Toda tecnología tiene reglas.", "La pregunta es quién las escribe."]
   };
