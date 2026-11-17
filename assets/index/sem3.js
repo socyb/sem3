@@ -102,6 +102,7 @@
   // La 12 se abre el 4 de noviembre para dar una semana al control de lectura,
   // pero ya está en la bitácora desde el 3 para quien quiera adelantarse.
   // La 13 se abre el 11 de noviembre, también por el control de lectura (Crawford).
+  // La 14 se abre el 18 de noviembre, al día siguiente de la 13, por el de Doctorow.
   // El séptimo dato es opcional: fecha de apertura o fecha y hora con zona.
   // Sin ese dato, la sesión se abre a medianoche de la víspera en Ciudad de México.
   // El octavo también es opcional: desde cuándo sale la parada en la bitácora,
@@ -133,8 +134,8 @@
       "Tu control de lectura y una innovación que te interese","2026-11-04","2026-11-03"],
     [13,"2026-11-17","La inteligencia artificial está hecha de tierra y de trabajo","Kate Crawford · Atlas of AI","IV",
       "Tu control de lectura de Crawford","2026-11-11"],
-    [14,"2026-11-24","Trabajo y automatización · segundo parcial","Empleo · desigualdad · examen","IV",
-      "Todo lo del segundo tema repasado"],
+    [14,"2026-11-24","Trabajo y automatización · segundo parcial","Cory Doctorow · centauros inversos · examen","IV",
+      "Tu control de lectura de Doctorow y todo lo del segundo tema repasado","2026-11-18"],
     [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",
       "Tu trabajo final terminado para entregar y conversar sobre él en la entrevista"]
   ].map(([number, date, title, subtitle, unit, bring, open, listed]) =>
