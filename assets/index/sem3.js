@@ -134,7 +134,7 @@
     [12,"2026-11-10","México y los sectores de alto crecimiento","Nearshoring y semiconductores · tu pregunta de investigación","III",
       "Tu control de lectura y una innovación que te interese","2026-11-04","2026-11-03"],
     [13,"2026-11-17","La inteligencia artificial está hecha de tierra y de trabajo","Kate Crawford · Atlas of AI","IV",
-      "Tu control de lectura de Crawford","2026-11-11"],
+      "Tu control de lectura de Crawford, la tarjeta de tu equipo del 10 de noviembre y laptop o celular","2026-11-11"],
     [14,"2026-11-24","Trabajo y automatización · segundo parcial","Cory Doctorow · centauros inversos · examen","IV",
       "Tu control de lectura de Doctorow y todo lo del segundo tema repasado","2026-11-18"],
     [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",

@@ -1,0 +1,184 @@
+/* ==========================================================================
+   El estado del arte · segunda etapa del trabajo final
+   Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · 2027-1
+   Se carga después de assets/index/sem3.css y assets/investigacion/investigacion.css,
+   que traen el tablero, los relojes, las tarjetas que se voltean, la ficha
+   y el modo diapositivas. Aquí solo van las piezas nuevas.
+   ========================================================================== */
+
+/* ── Portada ────────────────────────────────────────────────────────────── */
+.hero-stats{
+  list-style:none;margin:1.8rem 0 0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.7rem;
+}
+.hero-stats li{
+  display:grid;gap:.1rem;min-width:6.6rem;padding:.6rem .9rem;
+  background:var(--card);border:2px solid var(--edge);border-radius:var(--radius-sm);box-shadow:var(--shadow-xs);
+}
+.hero-stats strong{font-family:var(--display);font-size:1.6rem;font-weight:900;line-height:1;letter-spacing:-.03em}
+.hero-stats span{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.hero-stats li:first-child strong{color:var(--guinda)}
+
+.sota-plate .sota-grid{opacity:.55}
+.plate-label .pl-falta{fill:var(--guinda)}
+.plate-label .pl-sector{fill:var(--teal)}
+.plate-label .pl-recorte{fill:var(--cobalt)}
+
+/* ── Qué es · qué no es ─────────────────────────────────────────────────── */
+.deck-goals{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.sota-isnot{margin-bottom:.4rem}
+.sota-isnot .is-critical li{text-decoration:line-through;text-decoration-color:var(--amber);text-decoration-thickness:2px}
+
+/* ── De la tarjeta a la pregunta afinada ────────────────────────────────── */
+.sota-refine{margin-bottom:1.6rem}
+.sota-refine li:nth-child(3),.sota-refine li:nth-child(4){margin-left:clamp(0rem,7vw,5.2rem);background:var(--card)}
+.sota-refine li:nth-child(3) p,.sota-refine li:nth-child(4) p{font-size:clamp(.95rem,1.6vw,1.04rem)}
+.sota-refine li.is-hyp{border-color:var(--teal);background:var(--tint-teal);border-style:dashed}
+.sota-refine li.is-hyp span{color:var(--teal)}
+.sota-refine li:first-child p{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1.5px}
+
+/* ── Dos capas y las palabras para buscar ───────────────────────────────── */
+.sota-layer h3{margin-top:.8rem}
+.sota-eg{
+  margin:.9rem 0 0;padding:.55rem .75rem;border-left:4px solid var(--teal);background:var(--paper-2);
+  font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+}
+.sota-layer:nth-child(2) .sota-eg{border-left-color:var(--cobalt)}
+
+.sota-tablebox{overflow-x:auto;border:2px solid var(--edge);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow-xs)}
+.sota-table{width:100%;min-width:620px;border-collapse:collapse;font-size:.93rem}
+.sota-table caption{
+  caption-side:top;text-align:left;padding:.75rem 1rem;border-bottom:2px solid var(--edge);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+}
+.sota-table th,.sota-table td{padding:.6rem 1rem;text-align:left;vertical-align:top;border-bottom:1px dashed var(--line)}
+.sota-table thead th{font-family:var(--mono);font-size:.64rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--guinda);background:var(--paper-2)}
+.sota-table tbody th{font-weight:700}
+.sota-table td:nth-child(3){font-family:var(--mono);font-size:.82rem}
+.sota-table td:last-child{font-family:var(--mono);font-size:.74rem;color:var(--teal);white-space:nowrap}
+.sota-table tr:last-child th,.sota-table tr:last-child td{border-bottom:0}
+
+.sota-ops{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:.6rem}
+.sota-ops li{display:grid;gap:.25rem;padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--card)}
+.sota-ops code{font-family:var(--mono);font-size:.82rem;color:var(--cobalt)}
+.sota-ops span{font-size:.84rem;color:var(--ink-soft)}
+
+/* ── El buscador ────────────────────────────────────────────────────────── */
+.sota-search{margin-top:1.8rem}
+.sota-search .kicker{display:block;margin-bottom:.6rem}
+.sota-search-row{display:flex;gap:.6rem;flex-wrap:wrap}
+.sota-search-row input{
+  flex:1 1 260px;min-width:0;padding:.7rem .85rem;background:var(--paper);
+  border:2px solid var(--edge);border-radius:var(--radius-sm);font-family:var(--mono);font-size:.9rem;
+}
+.sota-engines{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+
+/* ── Tres puertos ───────────────────────────────────────────────────────── */
+.sota-ports .card{display:flex;flex-direction:column;align-items:flex-start}
+.sota-ports h3{margin-top:.8rem}
+.sota-small{font-size:.88rem;color:var(--ink-soft)}
+.sota-list{margin:0 0 .4rem;padding-left:1.1rem;font-size:.9rem}
+.sota-list li{margin-bottom:.4rem}
+.sota-ports .go{margin-top:auto;margin-bottom:0}
+.sota-ai{background:var(--tint-amber)}
+.sota-prompt{
+  margin:.2rem 0 .8rem;padding:.7rem .85rem;border:2px dashed var(--amber);border-radius:var(--radius-sm);
+  background:var(--card);font-family:var(--mono);font-size:.78rem;line-height:1.55;color:var(--ink-soft);
+}
+.sota-goal{margin-top:1.8rem;max-width:62rem}
+
+/* ── La prueba del ancla ────────────────────────────────────────────────── */
+.sota-anchor{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.sota-flips{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
+.sota-how{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.sota-flip{display:grid;gap:.55rem;align-content:start}
+.sota-flip .flip{min-height:250px}
+.flip-ref{display:block;font-size:.95rem;line-height:1.5;overflow-wrap:anywhere}
+.flip-ref i{font-style:italic}
+.flip-verdict{display:block;font-family:var(--display);font-size:1.7rem;font-weight:900;letter-spacing:-.02em}
+.flip-back.is-real{background:var(--tint-teal)}
+.flip-back.is-real .flip-verdict{color:var(--teal)}
+.flip-back.is-fake{background:var(--tint-red)}
+.flip-back.is-fake .flip-verdict,.flip-back.is-fake .flip-tag{color:var(--guinda)}
+.sota-flip-tools{display:flex;flex-wrap:wrap;gap:.4rem}
+.sota-flip-tools .btn{padding:.3rem .7rem;font-size:.74rem}
+
+/* ── La ficha: aviso y fuentes ──────────────────────────────────── */
+.sota-prefill{
+  max-width:62rem;margin:0 0 1.4rem;padding:.8rem 1rem;border:2px solid var(--teal);border-radius:var(--radius-sm);
+  background:var(--tint-teal);font-size:.94rem;
+}
+.field small{display:block;margin-top:.35rem;font-size:.8rem;color:var(--muted);line-height:1.4}
+.field select{
+  width:100%;padding:.6rem .7rem;background:var(--paper);color:var(--ink);
+  border:2px solid var(--edge);border-radius:var(--radius-sm);font:inherit;font-size:.9rem;
+}
+
+.sota-apa{border:1.5px dashed var(--line);border-radius:var(--radius-sm);padding:.6rem .85rem;background:var(--paper)}
+.sota-apa summary{cursor:pointer;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt)}
+.sota-apa dl{display:grid;gap:.6rem;margin:.9rem 0 .7rem}
+.sota-apa dl div{display:grid;grid-template-columns:5.2rem 1fr;gap:.6rem;align-items:baseline}
+.sota-apa dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--guinda)}
+.sota-apa dd{margin:0;font-size:.84rem;line-height:1.5;overflow-wrap:anywhere;padding-left:1.4em;text-indent:-1.4em}
+.sota-apa p{margin:0;font-size:.84rem;color:var(--ink-soft)}
+
+.sota-sources{display:grid;gap:.9rem}
+.sota-sources:empty::before{
+  content:"Todavía no hay fuentes. Agreguen la primera en cuanto la abran.";
+  display:block;padding:.8rem;border:1.5px dashed var(--line);border-radius:var(--radius-sm);
+  font-size:.88rem;color:var(--muted);
+}
+.sota-src{
+  display:grid;gap:.7rem;padding:.9rem;border:2px solid var(--edge);border-left-width:8px;
+  border-radius:var(--radius-sm);background:var(--paper-2);
+}
+.sota-src.is-anchored{border-left-color:var(--teal)}
+.sota-src-head{display:flex;align-items:center;gap:.7rem}
+.sota-src-num{font-family:var(--display);font-size:1.3rem;font-weight:900;color:var(--guinda)}
+.sota-src-anchor{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.sota-src.is-anchored .sota-src-anchor{color:var(--teal);font-weight:500}
+.sota-src-drop{margin-left:auto;padding:.3rem .7rem;font-size:.74rem}
+.sota-src-checks{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));background:var(--card)}
+.sota-src-checks .checks-label{grid-column:1/-1}
+.sota-src-row{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));align-items:end}
+.sota-add{justify-self:start}
+.sota-hint{margin:0;font-size:.88rem;color:var(--ink-soft)}
+
+/* ── La ficha: vista previa ─────────────────────────────────────────────── */
+.sota-subs{margin:-.3rem 0 1rem;padding-left:1.3rem;display:grid;gap:.3rem;font-size:.9rem;font-weight:700;line-height:1.35}
+.sota-subs:empty{display:none}
+.sota-subs li::marker{font-family:var(--mono);font-size:.75rem;color:var(--guinda)}
+.sota-card .rcard-grid dt{min-width:5.2rem}
+.sota-card-label{
+  margin:1rem 0 .4rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--guinda);
+}
+.sota-card-refs{margin:0;padding-left:1.3rem;display:grid;gap:.55rem;font-size:.82rem;line-height:1.45}
+.sota-card-refs:empty{padding:0;list-style:none}
+.sota-card-refs:empty::before{content:attr(data-empty);color:var(--muted)}
+.sota-card-refs li{overflow-wrap:anywhere;padding-left:.15rem}
+.sota-card-refs small{display:block;margin-top:.1rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--muted)}
+.sota-card-refs .is-anchored small{color:var(--teal)}
+.sota-meters{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sota-meters p{flex-direction:column;align-items:flex-start;gap:.1rem}
+
+/* ── Responsivo e impresión ─────────────────────────────────────────────── */
+@media (max-width:760px){
+  .sota-refine li:nth-child(3),.sota-refine li:nth-child(4){margin-left:0}
+  .sota-apa dl div{grid-template-columns:1fr;gap:.15rem}
+  .sota-flip .flip{min-height:220px}
+}
+@media print{
+  .sota-search,.sota-flip-tools,.sota-add,.sota-src-drop,.sota-prefill{display:none!important}
+  .sota-src,.sota-flip{break-inside:avoid}
+  .hero-stats li{box-shadow:none}
+  /* «Imprimir la ficha»: fuera todo lo demás, para que no queden hojas en blanco. */
+  html.print-team-card body > :not(#tarjeta),
+  html.print-team-card #tarjeta .wrap > :not(.builder),
+  html.print-team-card #tarjeta .builder > :not(#teamCard){display:none!important}
+  html.print-team-card #tarjeta{padding:0;background:none;border:0}
+  html.print-team-card #tarjeta .wrap{padding:0;max-width:none}
+  html.print-team-card .builder{display:block}
+  html.print-team-card #teamCard{position:static!important;width:100%}
+  html.print-team-card .sota-card-refs li{break-inside:avoid}
+}

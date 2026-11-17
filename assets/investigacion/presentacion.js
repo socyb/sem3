@@ -10,6 +10,10 @@
   const time = $("#wsTime");
   const toggle = $("#wsToggle");
   const status = $("#wsStatus");
+  // El texto de portada y el nombre de cada tramo («fase», «paso») salen del HTML.
+  const intro = $("#wsPhase").textContent;
+  const unit = dialog.dataset.unit || "fase";
+  const Unit = unit.charAt(0).toUpperCase() + unit.slice(1);
   // El tablero de la actividad es la fuente de los nombres y las duraciones.
   const phases = [null, ...[...document.querySelectorAll("#pasos .board-item")].map(item => {
     const total = Number(item.querySelector("[data-timer]").dataset.timer);
@@ -35,7 +39,7 @@
     clock.classList.toggle("is-running", running === n);
     toggle.textContent = running === n ? "Pausar" : current.left <= 0 ? "Tiempo cumplido" : current.left < current.total ? "Reanudar" : "Iniciar";
     toggle.disabled = current.left <= 0;
-    toggle.setAttribute("aria-label", `${toggle.textContent} · fase ${n}`);
+    toggle.setAttribute("aria-label", `${toggle.textContent} · ${unit} ${n}`);
   };
   const pause = () => {
     if (running) {
@@ -54,7 +58,7 @@
     current.left = Math.max(0, (current.endsAt - Date.now()) / 1000);
     if (current.left <= 0) {
       pause();
-      status.textContent = `Terminó el tiempo de la fase ${n}. Revisen lo escrito antes de avanzar.`;
+      status.textContent = `Terminó el tiempo de${unit === "paso" ? "l" : " la"} ${unit} ${n}. Revisen lo escrito antes de avanzar.`;
     }
     paint();
   };
@@ -78,7 +82,7 @@
     slides.forEach((slide, i) => { slide.hidden = i !== at; });
     stage.scrollTop = 0;
     $("#wsCount").textContent = `${at + 1} / ${slides.length}`;
-    $("#wsPhase").textContent = nextPhase ? `Fase ${nextPhase} · ${phases[nextPhase].name}` : "Una hora · Cinco fases";
+    $("#wsPhase").textContent = nextPhase ? `${Unit} ${nextPhase} · ${phases[nextPhase].name}` : intro;
     $("#wsProgress").style.width = `${(at + 1) / slides.length * 100}%`;
     $("#wsPrev").disabled = at === 0;
     $("#wsNext").disabled = at === slides.length - 1;
@@ -115,7 +119,7 @@
     if (!n) return;
     pause();
     phases[n].left = phases[n].total;
-    status.textContent = `Reloj de la fase ${n} reiniciado y en pausa.`;
+    status.textContent = `Reloj de${unit === "paso" ? "l" : " la"} ${unit} ${n} reiniciado y en pausa.`;
     paint();
   });
   $("#wsExit").addEventListener("click", close);
