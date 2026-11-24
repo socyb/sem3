@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c1123f">
+  <meta name="description" content="Tarjeta del equipo: rediseñar al centauro inverso. Seminario de Negocios Internacionales III · FCA UNAM · Grupo 1746 · 2027-1.">
+  <title>Rediseñar al centauro inverso · Seminario III 2027-1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/centauro/centauro.css">
+  <script defer src="assets/centauro/centauro.js"></script>
+</head>
+<body>
+<main>
+  <p class="kicker">Sesión 14 · 24 de noviembre de 2026</p>
+  <h1>Rediseñar al <em>centauro inverso</em></h1>
+  <p class="lead">Les tocó un trabajo donde la máquina manda. Cambien el arreglo, no el aparato, hasta que quien trabaja elija dónde, cuándo y cómo usarla.</p>
+  <p class="nota">Basta un celular por equipo. Lo que escriban se queda guardado en ese celular.</p>
+
+  <form id="tarjeta" autocomplete="off">
+    <label for="equipo">Equipo</label>
+    <input id="equipo" name="equipo" type="text">
+    <label for="integrantes">Integrantes</label>
+    <textarea id="integrantes" name="integrantes" rows="2"></textarea>
+    <label for="caso">Su caso</label>
+    <select id="caso" name="caso">
+      <option value="">Elijan el que les tocó</option>
+      <option>1 · Cajas de autocobro en el súper</option>
+      <option>2 · Reparto de comida por app</option>
+      <option>3 · Call center que ahora atiende un chatbot</option>
+      <option>4 · Surtir pedidos en un almacén</option>
+      <option>5 · Manejar para una app de viajes</option>
+      <option>6 · Redactar notas con IA a destajo</option>
+      <option>7 · Moderar contenido de una red social</option>
+      <option>8 · Ventanilla de banco frente a la app</option>
+      <option>9 · Filtrar currículums con IA</option>
+      <option>10 · Traducir corrigiendo lo que hizo la IA</option>
+    </select>
+    <label for="quien"><b>1</b> ¿Para quién y a quién? <small>Quién gana hoy con la máquina y a quién se le aplica</small></label>
+    <textarea id="quien" name="quien" rows="3"></textarea>
+    <label for="kpi"><b>2</b> El KPI <small>Qué número lo gobierna y cómo se puede trampear</small></label>
+    <textarea id="kpi" name="kpi" rows="3"></textarea>
+    <label for="error"><b>3</b> El error <small>Cuando falla, quién da la cara y quién paga</small></label>
+    <textarea id="error" name="error" rows="3"></textarea>
+    <label for="rediseno"><b>4</b> El rediseño <small>Una regla, un contrato o un cambio de diseño</small></label>
+    <textarea id="rediseno" name="rediseno" rows="4"></textarea>
+    <label for="cita"><b>5</b> El respaldo <small>Una cita de Doctorow con su página</small></label>
+    <textarea id="cita" name="cita" rows="3"></textarea>
+    <label for="termino">Un término del glosario <small>En inglés y en español</small></label>
+    <input id="termino" name="termino" type="text">
+    <div class="botones">
+      <button type="button" class="btn primaria" id="copiar">Copiar la tarjeta</button>
+      <a class="btn" href="https://negociosinternacionales.fca.unam.mx" target="_blank" rel="noopener noreferrer">Abrir Moodle</a>
+      <button type="button" class="btn" id="borrar">Empezar de nuevo</button>
+    </div>
+    <p id="aviso" class="aviso" aria-live="polite"></p>
+    <textarea id="salida" rows="12" readonly hidden aria-label="Texto de la tarjeta"></textarea>
+  </form>
+  <p class="nota">Al terminar, copien la tarjeta y péguenla en el foro de participaciones de Moodle.</p>
+  <p class="nota"><a href="presentacion_s14.html">La presentación de la sesión</a> · <a href="index.html">La página del curso</a></p>
+</main>
+</body>
+</html>
