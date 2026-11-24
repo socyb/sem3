@@ -135,8 +135,8 @@
       "Tu control de lectura y una innovación que te interese","2026-11-04","2026-11-03"],
     [13,"2026-11-17","La inteligencia artificial está hecha de tierra y de trabajo","Kate Crawford · Atlas of AI","IV",
       "Tu control de lectura de Crawford, la tarjeta de tu equipo del 10 de noviembre y laptop o celular","2026-11-11"],
-    [14,"2026-11-24","Trabajo y automatización · segundo parcial","Cory Doctorow · centauros inversos · examen","IV",
-      "Tu control de lectura de Doctorow y todo lo del segundo tema repasado","2026-11-18"],
+    [14,"2026-11-24","Trabajo y automatización","Cory Doctorow · centauros inversos","IV",
+      "Tu control de lectura de Doctorow","2026-11-18"],
     [15,"2026-12-01","Gobernanza de la tecnología","Regulación · ética · ambiente · entrega final y entrevistas","IV",
       "Tu control de lectura de Png y tu trabajo final terminado para entregar y conversar sobre él en la entrevista","2026-11-25"]
   ].map(([number, date, title, subtitle, unit, bring, open, listed]) =>
